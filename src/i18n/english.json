@@ -1,0 +1,27 @@
+{
+  "product_name": "Processor\u00A0Logic\u00A0Visualizer",
+  "home_page": {
+    "title": "Welcom to {product_name}!",
+    "you_can_learn": "At this site, you can learn about...",
+    "gate": {
+      "title": "Logic Gates",
+      "subtitle": "The fundamental units of digital circuits, controlling signal flow and performing basic logic operations.",
+      "content": "In this section, you can explore the working principles of common logic gates such as AND, OR, NOT, NAND, NOR, XOR and XNOR."
+    },
+    "flip_flop": {
+      "title": "Flip-Flops",
+      "subtitle": "The core elements of sequential circuits, used for storing and controlling signal states.",
+      "content": "This section showcases various flip-flops (e.g., RS, D, JK, T) and their state transition rules, as well as their applications in circuits."
+    },
+    "digital_circuit": {
+      "title": "Digital Circuits",
+      "subtitle": "A combination of logic gates and flip-flops that enables precise signal transmission and complex functionality.",
+      "content": "This section introduces components like registers and counters, explaining their roles in circuit design."
+    },
+    "cpu": {
+      "title": "CPU Execution Process",
+      "subtitle": "The pinnacle of digital circuits, performing instruction execution through logic operations and signal coordination.",
+      "content": "This section simulates the CPU architecture and key processes such as fetch, decode, execute, and store, highlighting its internal collaboration mechanisms."
+    }
+  }
+}

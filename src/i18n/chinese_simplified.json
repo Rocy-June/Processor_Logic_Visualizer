@@ -1,0 +1,27 @@
+{
+  "product_name": "Processor\u00A0Logic\u00A0Visualizer",
+  "home_page": {
+    "title": "欢迎来到 {product_name}！",
+    "you_can_learn": "在这里，你将可以学到…",
+    "gate": {
+      "title": "逻辑门",
+      "subtitle": "数字电路的基础单元，控制信号流向并执行基本逻辑运算",
+      "content": "在此部分，您可以直观了解常见逻辑门（如AND、OR、NOT、NAND、NOR、XOR、XNOR）的工作原理"
+    },
+    "flip_flop": {
+      "title": "触发器",
+      "subtitle": "时序电路的核心，用于存储和控制信号状态",
+      "content": "本部分展示多种触发器（如RS、D、JK、T）的状态切换规则及其在电路中的应用"
+    },
+    "digital_circuit": {
+      "title": "数字电路",
+      "subtitle": "逻辑门和触发器的组合，通过精确传递信号构建复杂功能",
+      "content": "本部分介绍寄存器、计数器等元件及其在电路设计中的作用"
+    },
+    "cpu": {
+      "title": "CPU的执行过程",
+      "subtitle": "数字电路的集大成者，通过逻辑运算和信号协调实现指令执行",
+      "content": "本部分模拟CPU架构及取指、译码、执行等关键流程，展示其内部协作机制"
+    }
+  }
+}

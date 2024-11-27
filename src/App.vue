@@ -1,47 +1,18 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+  <transition @click="step[0] = step[0] ? 0 : 1">
+    <HomePage v-if="step[0] === 0"></HomePage>
+    <MenuPage v-else-if="step[0] === 1"></MenuPage>
+  </transition>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-}
+<script setup>
+import { reactive } from 'vue'
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
+import HomePage from './pages/HomePage.vue'
+import MenuPage from './pages/MenuPage.vue'
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
+// Controls the pages step, now here have 3 levels of step
+const step = reactive([0, 0, 0])
+</script>
 
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
-</style>
+<style lang="less" scoped></style>
