@@ -28,34 +28,46 @@
   },
   "menu_page": {
     "menu": "Menu",
-    "menu_beginning": "The Beginning",
-    "menu_switches": "Switches",
-    "menu_shannon": "A Symbolic Analysis of Relay and Switching Circuits - Claude Shannon",
-    "menu_logic_gates": "Logic Gates",
-    "menu_and_gate": "AND Gate",
-    "menu_or_gate": "OR Gate",
-    "menu_not_gate": "NOT Gate",
-    "menu_nand_gate": "NAND Gate",
-    "menu_nor_gate": "NOR Gate",
-    "menu_xor_gate": "XOR Gate",
-    "menu_xnor_gate": "XNOR Gate",
-    "menu_digital_circuits_1": "Digital Circuits - Part 1",
-    "menu_half_adder": "Half Adder",
-    "menu_full_adder": "Full Adder",
-    "menu_flip_flops": "Flip-Flops",
-    "menu_rs_ff": "RS(Reset-Set) Flip-Flops",
-    "menu_d_ff": "D(Data / Delay) Flip-Flop",
-    "menu_jk_ff": "JK Flip-Flop",
-    "menu_t_ff": "T(Toggle) Flip-Flop",
-    "menu_et_ff": "Edge-Triggered Flip-Flop",
-    "menu_digital_circuits_2": "Digital Circuits - Part 2",
-    "menu_latch": "Latches",
-    "menu_rwm": "Read Write Memory",
-    "menu_ram": "Random Access Memory",
-    "menu_fd": "Frequency Divider",
-    "menu_counter": "Counter",
-    "menu_cpu": "CPU(Central Processing Unit)",
-    "menu_excution_components": "Distinguishing Components in the Simulation",
-    "menu_cpu_excution_simulation": "CPU Execution Simulation"
+    "menu_beginning": {
+      "title": "The Beginning",
+      "switches": "Switches",
+      "claude_shannon": "A Symbolic Analysis of Relay and Switching Circuits - Claude Shannon"
+    },
+    "menu_logic_gates": {
+      "title": "Logic Gates",
+      "and_gate": "AND Gate",
+      "or_gate": "OR Gate",
+      "not_gate": "NOT Gate",
+      "nand_gate": "NAND Gate",
+      "nor_gate": "NOR Gate",
+      "xor_gate": "XOR Gate",
+      "xnor_gate": "XNOR Gate"
+    },
+    "menu_digital_circuits_1": {
+      "title": "Digital Circuits - Part 1",
+      "half_adder": "Half Adder",
+      "full_adder": "Full Adder"
+    },
+    "menu_flip_flops": {
+      "title": "Flip-Flops",
+      "rs_ff": "RS(Reset-Set) Flip-Flops",
+      "d_ff": "D(Data / Delay) Flip-Flop",
+      "jk_ff": "JK Flip-Flop",
+      "t_ff": "T(Toggle) Flip-Flop",
+      "et_ff": "Edge-Triggered Flip-Flop"
+    },
+    "menu_digital_circuits_2": {
+      "title": "Digital Circuits - Part 2",
+      "latch": "Latches",
+      "rwm": "Read Write Memory",
+      "ram": "Random Access Memory",
+      "fd": "Frequency Divider",
+      "counter": "Counter"
+    },
+    "menu_cpu": {
+      "title": "CPU(Central Processing Unit)",
+      "excution_components": "Distinguishing Components in the Simulation",
+      "cpu_excution_simulation": "CPU Execution Simulation"
+    }
   }
 }

@@ -28,34 +28,46 @@
   },
   "menu_page": {
     "menu": "選單",
-    "menu_beginning": "開始介紹",
-    "menu_switches": "開關",
-    "menu_shannon": "《繼電器與開關電路的符號分析》- 克勞德·香農 (Claude Shannon)",
-    "menu_logic_gates": "邏輯閘",
-    "menu_and_gate": "與閘 (AND Gate)",
-    "menu_or_gate": "或閘 (OR Gate)",
-    "menu_not_gate": "非閘 (NOT Gate)",
-    "menu_nand_gate": "與非閘 (NAND Gate)",
-    "menu_nor_gate": "或非閘 (NOR Gate)",
-    "menu_xor_gate": "異或閘 (XOR Gate)",
-    "menu_xnor_gate": "同或閘 (XNOR Gate)",
-    "menu_digital_circuits_1": "數位電路 - 第一部分",
-    "menu_half_adder": "半加器 (Half Adder)",
-    "menu_full_adder": "全加器 (Full Adder)",
-    "menu_flip_flops": "正反器 (FF / Flip-Flop)",
-    "menu_rs_ff": "RS 正反器 (Reset-Set FF)",
-    "menu_d_ff": "D 正反器 (Data / Delay FF)",
-    "menu_jk_ff": "JK 正反器",
-    "menu_t_ff": "T 正反器 (Toggle FF)",
-    "menu_et_ff": "邊沿正反器 (Edge-Triggered FF)",
-    "menu_digital_circuits_2": "數位電路 - 第二部分",
-    "menu_latch": "鎖存器 (Latche)",
-    "menu_rwm": "讀寫記憶體 (RWM / Read Write Memory)",
-    "menu_ram": "隨機存取記憶體 (RAM / Random Access Memory)",
-    "menu_fd": "分頻器 (Frequency Divider)",
-    "menu_counter": "計數器 (Counter)",
-    "menu_cpu": "中央處理器 (CPU / Central Processing Unit)",
-    "menu_excution_components": "模擬中的元件區分",
-    "menu_cpu_excution_simulation": "CPU 運作模擬"
+    "menu_beginning": {
+      "title": "開始介紹",
+      "switches": "開關",
+      "claude_shannon": "《繼電器與開關電路的符號分析》- 克勞德·香農"
+    },
+    "menu_logic_gates": {
+      "title": "邏輯閘",
+      "and_gate": "與閘 (AND Gate)",
+      "or_gate": "或閘 (OR Gate)",
+      "not_gate": "非閘 (NOT Gate)",
+      "nand_gate": "與非閘 (NAND Gate)",
+      "nor_gate": "或非閘 (NOR Gate)",
+      "xor_gate": "異或閘 (XOR Gate)",
+      "xnor_gate": "同或閘 (XNOR Gate)"
+    },
+    "menu_digital_circuits_1": {
+      "title": "數位電路 - 第一部分",
+      "half_adder": "半加器 (Half Adder)",
+      "full_adder": "全加器 (Full Adder)"
+    },
+    "menu_flip_flops": {
+      "title": "正反器 (FF / Flip-Flop)",
+      "rs_ff": "RS 正反器 (Reset-Set FF)",
+      "d_ff": "D 正反器 (Data / Delay FF)",
+      "jk_ff": "JK 正反器",
+      "t_ff": "T 正反器 (Toggle FF)",
+      "et_ff": "邊沿正反器 (Edge-Triggered FF)"
+    },
+    "menu_digital_circuits_2": {
+      "title": "數位電路 - 第二部分",
+      "latch": "鎖存器 (Latche)",
+      "rwm": "讀寫記憶體 (RWM / Read Write Memory)",
+      "ram": "隨機存取記憶體 (RAM / Random Access Memory)",
+      "fd": "分頻器 (Frequency Divider)",
+      "counter": "計數器 (Counter)"
+    },
+    "menu_cpu": {
+      "title": "中央處理器 (CPU / Central Processing Unit)",
+      "excution_components": "區分模擬中的各個部件",
+      "cpu_excution_simulation": "CPU 運作模擬"
+    }
   }
 }

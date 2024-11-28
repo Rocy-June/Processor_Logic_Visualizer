@@ -28,34 +28,46 @@
   },
   "menu_page": {
     "menu": "メニュー",
-    "menu_beginning": "概要の開始",
-    "menu_switches": "スイッチ",
-    "menu_shannon": "リレーとスイッチング回路の記号解析 - クロード・シャノン",
-    "menu_logic_gates": "論理ゲート",
-    "menu_and_gate": "AND ゲート",
-    "menu_or_gate": "OR ゲート",
-    "menu_not_gate": "NOT ゲート",
-    "menu_nand_gate": "NAND ゲート",
-    "menu_nor_gate": "NOR ゲート",
-    "menu_xor_gate": "XOR ゲート",
-    "menu_xnor_gate": "XNOR ゲート",
-    "menu_digital_circuits_1": "デジタル回路 - パート1",
-    "menu_half_adder": "半加算器",
-    "menu_full_adder": "全加算器",
-    "menu_flip_flops": "フリップフロップ",
-    "menu_rs_ff": "RS(リセット・セット型) フリップフロップ",
-    "menu_d_ff": "D(データ / ディレイ型) フリップフロップ",
-    "menu_jk_ff": "JKフリップフロップ",
-    "menu_t_ff": "T(トグル型) フリップフロップ",
-    "menu_et_ff": "エッジトリガ型フリップフロップ",
-    "menu_digital_circuits_2": "デジタル回路 - パート2",
-    "menu_latch": "ラッチ回路",
-    "menu_rwm": "読み書きメモリ",
-    "menu_ram": "ランダムアクセスメモリ",
-    "menu_fd": "周波数分周器",
-    "menu_counter": "カウンタ回路",
-    "menu_cpu": "中央処理装置 (CPU / Central Processing Unit)",
-    "menu_excution_components": "シミュレーション中の構成要素区別",
-    "menu_cpu_excution_simulation": "CPU実行シミュレーション"
+    "menu_beginning": {
+      "title": "概要の開始",
+      "switches": "スイッチ",
+      "claude_shannon": "リレーとスイッチング回路の記号解析 - クロード・シャノン"
+    },
+    "menu_logic_gates": {
+      "title": "論理ゲート",
+      "and_gate": "AND ゲート",
+      "or_gate": "OR ゲート",
+      "not_gate": "NOT ゲート",
+      "nand_gate": "NAND ゲート",
+      "nor_gate": "NOR ゲート",
+      "xor_gate": "XOR ゲート",
+      "xnor_gate": "XNOR ゲート"
+    },
+    "menu_digital_circuits_1": {
+      "title": "デジタル回路 - パート1",
+      "half_adder": "半加算器",
+      "full_adder": "全加算器"
+    },
+    "menu_flip_flops": {
+      "title": "フリップフロップ",
+      "rs_ff": "RS(リセット・セット型) フリップフロップ",
+      "d_ff": "D(データ / ディレイ型) フリップフロップ",
+      "jk_ff": "JK フリップフロップ",
+      "t_ff": "T(トグル型) フリップフロップ",
+      "et_ff": "エッジトリガ型 フリップフロップ"
+    },
+    "menu_digital_circuits_2": {
+      "title": "デジタル回路 - パート2",
+      "latch": "ラッチ回路",
+      "rwm": "読み書きメモリ",
+      "ram": "ランダムアクセスメモリ",
+      "fd": "周波数分周器",
+      "counter": "カウンタ回路"
+    },
+    "menu_cpu": {
+      "title": "中央処理装置 (CPU / Central Processing Unit)",
+      "excution_components": "シミュレーション中の構成要素区別",
+      "cpu_excution_simulation": "CPU 実行シミュレーション"
+    }
   }
 }

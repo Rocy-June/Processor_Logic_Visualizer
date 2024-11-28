@@ -191,48 +191,54 @@ const emit = defineEmits(['prev-page', 'page-changed'])
 
 const menus = [
   {
-    text: 'menu_beginning',
-    children: [{ text: 'menu_switches' }, { text: 'menu_shannon' }],
+    text: 'menu_beginning.title',
+    children: [{ text: 'menu_beginning.switches' }, { text: 'menu_beginning.claude_shannon' }],
   },
   {
-    text: 'menu_logic_gates',
+    text: 'menu_logic_gates.title',
     children: [
-      { text: 'menu_and_gate' },
-      { text: 'menu_or_gate' },
-      { text: 'menu_not_gate' },
-      { text: 'menu_nand_gate' },
-      { text: 'menu_nor_gate' },
-      { text: 'menu_xor_gate' },
-      { text: 'menu_xnor_gate' },
+      { text: 'menu_logic_gates.and_gate' },
+      { text: 'menu_logic_gates.or_gate' },
+      { text: 'menu_logic_gates.not_gate' },
+      { text: 'menu_logic_gates.nand_gate' },
+      { text: 'menu_logic_gates.nor_gate' },
+      { text: 'menu_logic_gates.xor_gate' },
+      { text: 'menu_logic_gates.xnor_gate' },
     ],
   },
   {
-    text: 'menu_digital_circuits_1',
-    children: [{ text: 'menu_half_adder' }, { text: 'menu_full_adder' }],
-  },
-  {
-    text: 'menu_flip_flops',
+    text: 'menu_digital_circuits_1.title',
     children: [
-      { text: 'menu_rs_ff' },
-      { text: 'menu_d_ff' },
-      { text: 'menu_jk_ff' },
-      { text: 'menu_t_ff' },
-      { text: 'menu_et_ff' },
+      { text: 'menu_digital_circuits_1.half_adder' },
+      { text: 'menu_digital_circuits_1.full_adder' },
     ],
   },
   {
-    text: 'menu_digital_circuits_2',
+    text: 'menu_flip_flops.title',
     children: [
-      { text: 'menu_latch' },
-      { text: 'menu_rwm' },
-      { text: 'menu_ram' },
-      { text: 'menu_fd' },
-      { text: 'menu_counter' },
+      { text: 'menu_flip_flops.rs_ff' },
+      { text: 'menu_flip_flops.d_ff' },
+      { text: 'menu_flip_flops.jk_ff' },
+      { text: 'menu_flip_flops.t_ff' },
+      { text: 'menu_flip_flops.et_ff' },
     ],
   },
   {
-    text: 'menu_cpu',
-    children: [{ text: 'menu_excution_components' }, { text: 'menu_cpu_excution_simulation' }],
+    text: 'menu_digital_circuits_2.title',
+    children: [
+      { text: 'menu_digital_circuits_2.latch' },
+      { text: 'menu_digital_circuits_2.rwm' },
+      { text: 'menu_digital_circuits_2.ram' },
+      { text: 'menu_digital_circuits_2.fd' },
+      { text: 'menu_digital_circuits_2.counter' },
+    ],
+  },
+  {
+    text: 'menu_cpu.title',
+    children: [
+      { text: 'menu_cpu.excution_components' },
+      { text: 'menu_cpu.cpu_excution_simulation' },
+    ],
   },
 ]
 

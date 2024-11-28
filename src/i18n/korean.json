@@ -28,34 +28,46 @@
   },
   "menu_page": {
     "menu": "메뉴",
-    "menu_beginning": "소개 시작",
-    "menu_switches": "스위치",
-    "menu_shannon": "릴레이 및 스위칭 회로의 상징적 분석 - 클로드 섀넌",
-    "menu_logic_gates": "논리 게이트",
-    "menu_and_gate": "AND 게이트",
-    "menu_or_gate": "OR 게이트",
-    "menu_not_gate": "NOT 게이트",
-    "menu_nand_gate": "NAND 게이트",
-    "menu_nor_gate": "NOR 게이트",
-    "menu_xor_gate": "XOR 게이트",
-    "menu_xnor_gate": "XNOR 게이트",
-    "menu_digital_circuits_1": "디지털 회로 - 1부",
-    "menu_half_adder": "반가산기",
-    "menu_full_adder": "전가산기",
-    "menu_flip_flops": "플립플롭(FF / Flip-Flop)",
-    "menu_rs_ff": "RS(Reset-Set) 플립플롭",
-    "menu_d_ff": "D(Data / Delay) 플립플롭",
-    "menu_jk_ff": "JK 플립플롭",
-    "menu_t_ff": "T(Toggle) 플립플롭",
-    "menu_et_ff": "엣지 트리거(Edge-Triggered) 플립플롭",
-    "menu_digital_circuits_2": "디지털 회로 - 2부",
-    "menu_latch": "래치(Latche)",
-    "menu_rwm": "읽기-쓰기 메모리 (RWM / Read Write Memory)",
-    "menu_ram": "랜덤 액세스 메모리 (RAM / Random Access Memory)",
-    "menu_fd": "주파수 분주기 (Frequency Divider)",
-    "menu_counter": "카운터 (Counter)",
-    "menu_cpu": "중앙 처리 장치(CPU / Central Processing Unit)",
-    "menu_excution_components": "시뮬레이션에서의 구성 요소 구분",
-    "menu_cpu_excution_simulation": "CPU 실행 시뮬레이션"
+    "menu_beginning": {
+      "title": "소개 시작",
+      "switches": "스위치",
+      "claude_shannon": "릴레이 및 스위칭 회로의 상징적 분석 - 클로드 섀넌"
+    },
+    "menu_logic_gates": {
+      "title": "논리 게이트",
+      "and_gate": "AND 게이트",
+      "or_gate": "OR 게이트",
+      "not_gate": "NOT 게이트",
+      "nand_gate": "NAND 게이트",
+      "nor_gate": "NOR 게이트",
+      "xor_gate": "XOR 게이트",
+      "xnor_gate": "XNOR 게이트"
+    },
+    "menu_digital_circuits_1": {
+      "title": "디지털 회로 - 1부",
+      "half_adder": "반가산기",
+      "full_adder": "전가산기"
+    },
+    "menu_flip_flops": {
+      "title": "플립플롭",
+      "rs_ff": "RS(Reset-Set) 플립플롭",
+      "d_ff": "D(Data / Delay) 플립플롭",
+      "jk_ff": "JK 플립플롭",
+      "t_ff": "T(Toggle) 플립플롭",
+      "et_ff": "엣지 트리거 플립플롭"
+    },
+    "menu_digital_circuits_2": {
+      "title": "디지털 회로 - 2부",
+      "latch": "래치",
+      "rwm": "읽기-쓰기 메모리",
+      "ram": "랜덤 액세스 메모리",
+      "fd": "주파수 분주기",
+      "counter": "카운터"
+    },
+    "menu_cpu": {
+      "title": "중앙 처리 장치(CPU / Central Processing Unit)",
+      "excution_components": "시뮬레이션에서의 구성 요소 구분",
+      "cpu_excution_simulation": "CPU 실행 시뮬레이션"
+    }
   }
 }
