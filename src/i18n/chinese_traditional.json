@@ -1,0 +1,61 @@
+{
+  "product_name": "Processor\u00A0Logic\u00A0Visualizer",
+  "home_page": {
+    "title": "歡迎來到 {product_name}！",
+    "you_can_learn": "在這裡，您將學習到...",
+    "gate": {
+      "title": "邏輯閘",
+      "subtitle": "數位電路的基本單元，控制訊號的流向並執行基本邏輯運算",
+      "content": "在這部分，您可以直觀瞭解常見邏輯閘（如 AND、OR、NOT、NAND、NOR、XOR 和 XNOR）的工作原理"
+    },
+    "flip_flop": {
+      "title": "正反器",
+      "subtitle": "時序電路的核心元件，用於儲存和控制訊號的狀態",
+      "content": "這部分將介紹多種類型的正反器（如 RS、D、JK 和 T），並展示它們的狀態切換規則及應用於複雜電路中的方法"
+    },
+    "digital_circuit": {
+      "title": "數位電路",
+      "subtitle": "邏輯閘與正反器的組合，透過精確傳遞訊號實現複雜功能",
+      "content": "這部分將介紹暫存器、計數器等元件，並說明它們在電路設計中的重要作用"
+    },
+    "cpu": {
+      "title": "CPU 的運作過程",
+      "subtitle": "數位電路的集大成之作，透過邏輯運算與訊號協調來完成指令的執行",
+      "content": "這部分模擬了 CPU 的架構與運作流程，包括取指、解碼、執行與儲存等階段，並展示各模組如何協同工作"
+    },
+    "next_page": "讓我們開始吧！",
+    "disclaimer": "本網站部分圖片與文字由人工智慧生成，僅供學習與參考之用。如有任何錯誤或不準確之處，敬請見諒，並以實際情況為準。"
+  },
+  "menu_page": {
+    "menu": "選單",
+    "menu_beginning": "開始介紹",
+    "menu_switches": "開關",
+    "menu_shannon": "《繼電器與開關電路的符號分析》- 克勞德·香農 (Claude Shannon)",
+    "menu_logic_gates": "邏輯閘",
+    "menu_and_gate": "與閘 (AND Gate)",
+    "menu_or_gate": "或閘 (OR Gate)",
+    "menu_not_gate": "非閘 (NOT Gate)",
+    "menu_nand_gate": "與非閘 (NAND Gate)",
+    "menu_nor_gate": "或非閘 (NOR Gate)",
+    "menu_xor_gate": "異或閘 (XOR Gate)",
+    "menu_xnor_gate": "同或閘 (XNOR Gate)",
+    "menu_digital_circuits_1": "數位電路 - 第一部分",
+    "menu_half_adder": "半加器 (Half Adder)",
+    "menu_full_adder": "全加器 (Full Adder)",
+    "menu_flip_flops": "正反器 (FF / Flip-Flop)",
+    "menu_rs_ff": "RS 正反器 (Reset-Set FF)",
+    "menu_d_ff": "D 正反器 (Data / Delay FF)",
+    "menu_jk_ff": "JK 正反器",
+    "menu_t_ff": "T 正反器 (Toggle FF)",
+    "menu_et_ff": "邊沿正反器 (Edge-Triggered FF)",
+    "menu_digital_circuits_2": "數位電路 - 第二部分",
+    "menu_latch": "鎖存器 (Latche)",
+    "menu_rwm": "讀寫記憶體 (RWM / Read Write Memory)",
+    "menu_ram": "隨機存取記憶體 (RAM / Random Access Memory)",
+    "menu_fd": "分頻器 (Frequency Divider)",
+    "menu_counter": "計數器 (Counter)",
+    "menu_cpu": "中央處理器 (CPU / Central Processing Unit)",
+    "menu_excution_components": "模擬中的元件區分",
+    "menu_cpu_excution_simulation": "CPU 運作模擬"
+  }
+}

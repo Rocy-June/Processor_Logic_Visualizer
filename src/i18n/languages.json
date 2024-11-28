@@ -1,10 +1,22 @@
 [
   {
+    "local_name": "简体中文",
+    "pack_name": "chinese_simplified"
+  },
+  {
+    "local_name": "繁體中文",
+    "pack_name": "chinese_traditional"
+  },
+  {
     "local_name": "English",
     "pack_name": "english"
   },
   {
-    "local_name": "简体中文",
-    "pack_name": "chinese_simplified"
+    "local_name": "日本語",
+    "pack_name": "japanese"
+  },
+  {
+    "local_name": "한글",
+    "pack_name": "korean"
   }
 ]

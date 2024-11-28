@@ -7,6 +7,7 @@
         v-model="label"
         @click="input_click"
         @input="input_text_changed"
+        @blur="emit('blur')"
       />
       <div :class="{ seletor: true, active: show_drop_list }"></div>
     </div>
@@ -29,7 +30,7 @@ const value = defineModel()
 const label = defineModel('label')
 const filter = defineModel('filter')
 
-const emits = defineEmits(['change'])
+const emit = defineEmits(['change', 'blur'])
 
 const input_click = () => {
   show_drop_list.value = !show_drop_list.value
@@ -61,7 +62,7 @@ const select_option = (v, t) => {
   label.value = t
   value.value = v
   show_drop_list.value = false
-  emits('change')
+  emit('change')
 }
 
 provide('select_option', select_option)

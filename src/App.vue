@@ -2,18 +2,26 @@
   <div class="transition">
     <transition name="slide-to-left" appear>
       <HomePage v-if="steps[0] === 0" @next-page="home_page_next_page" style="z-index: 9" />
-      <MenuPage v-else-if="steps[0] === 1" style="z-index: 8" />
+      <MenuPage
+        v-else-if="steps[0] === 1"
+        @prev-page="menu_page_prev_page"
+        @page-changed="menu_page_select_page"
+        style="z-index: 8"
+      />
     </transition>
   </div>
 </template>
 
 <script setup>
-import { reactive } from 'vue'
+import { onMounted, reactive } from 'vue'
+import { useI18n } from 'vue-i18n'
 
 import HomePage from './pages/HomePage.vue'
 import MenuPage from './pages/MenuPage.vue'
 
-const steps = reactive([0, 0, 0])
+const { locale } = useI18n()
+
+const steps = reactive([1, 0, 0])
 
 const home_page_next_page = () => {
   steps[0] = 1
@@ -22,6 +30,25 @@ const home_page_next_page = () => {
     behavior: 'smooth',
   })
 }
+
+const menu_page_prev_page = () => {
+  steps[0] = 0
+  scrollTo({
+    top: 0,
+    behavior: 'smooth',
+  })
+}
+
+const menu_page_select_page = (e) => {
+  console.log('direct to:', e.main, e.sub)
+}
+
+onMounted(() => {
+  let local_language = localStorage.getItem('local_language')
+  local_language ??= locale.value
+
+  locale.value = local_language
+})
 </script>
 
 <style lang="less" scoped>

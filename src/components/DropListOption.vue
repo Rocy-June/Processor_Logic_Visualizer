@@ -4,7 +4,6 @@
     @click="handle_select"
   >
     <slot />
-    | {{ label }} x {{ filter }}
   </div>
 </template>
 

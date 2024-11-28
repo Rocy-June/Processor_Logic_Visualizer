@@ -1,0 +1,61 @@
+{
+  "product_name": "Processor\u00A0Logic\u00A0Visualizer",
+  "home_page": {
+    "title": "{product_name}へようこそ！",
+    "you_can_learn": "ここでは次の内容を学ぶことができます...",
+    "gate": {
+      "title": "論理ゲート",
+      "subtitle": "デジタル回路の基本構成要素で、信号の流れを制御し、基本的な論理演算を実現します。",
+      "content": "このセクションでは、AND、OR、NOT、NAND、NOR、XOR、XNORといった一般的な論理ゲートの動作原理を学ぶことができます。"
+    },
+    "flip_flop": {
+      "title": "フリップフロップ",
+      "subtitle": "順序回路の重要な構成要素で、信号状態を保持および制御します。",
+      "content": "このセクションでは、RS型、D型、JK型、T型フリップフロップの動作原理や回路への応用について学びます。"
+    },
+    "digital_circuit": {
+      "title": "デジタル回路",
+      "subtitle": "論理ゲートとフリップフロップを組み合わせ、正確な信号伝達と複雑な機能を実現します。",
+      "content": "このセクションでは、レジスタやカウンタなどの構成要素について解説し、それらが回路設計で果たす役割を説明します。"
+    },
+    "cpu": {
+      "title": "CPUの動作プロセス",
+      "subtitle": "デジタル回路の集大成として、論理演算と信号の同期化により命令を実行します。",
+      "content": "このセクションでは、CPUの構造やフェッチ、デコード、実行、保存といった主要な動作プロセスをシミュレーションし、内部の協調メカニズムを理解します。"
+    },
+    "next_page": "さあ、始めましょう！",
+    "disclaimer": "本ウェブサイトの一部の画像やテキストはAIによって生成されており、教育および参考目的のために提供されています。不正確な内容が含まれる場合がありますのでご了承ください。実際の状況を優先してください。"
+  },
+  "menu_page": {
+    "menu": "メニュー",
+    "menu_beginning": "概要の開始",
+    "menu_switches": "スイッチ",
+    "menu_shannon": "リレーとスイッチング回路の記号解析 - クロード・シャノン",
+    "menu_logic_gates": "論理ゲート",
+    "menu_and_gate": "AND ゲート",
+    "menu_or_gate": "OR ゲート",
+    "menu_not_gate": "NOT ゲート",
+    "menu_nand_gate": "NAND ゲート",
+    "menu_nor_gate": "NOR ゲート",
+    "menu_xor_gate": "XOR ゲート",
+    "menu_xnor_gate": "XNOR ゲート",
+    "menu_digital_circuits_1": "デジタル回路 - パート1",
+    "menu_half_adder": "半加算器",
+    "menu_full_adder": "全加算器",
+    "menu_flip_flops": "フリップフロップ",
+    "menu_rs_ff": "RS(リセット・セット型) フリップフロップ",
+    "menu_d_ff": "D(データ / ディレイ型) フリップフロップ",
+    "menu_jk_ff": "JKフリップフロップ",
+    "menu_t_ff": "T(トグル型) フリップフロップ",
+    "menu_et_ff": "エッジトリガ型フリップフロップ",
+    "menu_digital_circuits_2": "デジタル回路 - パート2",
+    "menu_latch": "ラッチ回路",
+    "menu_rwm": "読み書きメモリ",
+    "menu_ram": "ランダムアクセスメモリ",
+    "menu_fd": "周波数分周器",
+    "menu_counter": "カウンタ回路",
+    "menu_cpu": "中央処理装置 (CPU / Central Processing Unit)",
+    "menu_excution_components": "シミュレーション中の構成要素区別",
+    "menu_cpu_excution_simulation": "CPU実行シミュレーション"
+  }
+}

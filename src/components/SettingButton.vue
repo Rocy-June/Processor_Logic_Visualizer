@@ -11,6 +11,7 @@
             v-model:label="language_label"
             v-model:filter="language_filter"
             @change="language_changed"
+            @blur="language_blur"
           >
             <DropListOption
               v-for="(item, index) in language_list"
@@ -44,8 +45,6 @@ import languages from '@/i18n/languages.json'
 
 const { locale } = useI18n()
 
-window.a = locale
-
 const show_dialog = ref(false)
 const setting = ref(null)
 const language_label = defineModel('language_label')
@@ -74,6 +73,11 @@ const language_changed = () => {
   localStorage.setItem('local_language', language_value.value)
 }
 
+const language_blur = () => {
+  let current_lang = languages.find((item) => item.pack_name == locale.value)
+  language_label.value = current_lang.local_name
+}
+
 onMounted(() => {
   document.addEventListener('mousedown', handle_click_outside)
 
@@ -100,6 +104,7 @@ onBeforeUnmount(() => {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  z-index: 9;
 
   .gear-button {
     position: relative;

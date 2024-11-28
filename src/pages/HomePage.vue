@@ -112,6 +112,7 @@ const scroll_not_at_end = () => {
   .title {
     font-size: clamp(12px, calc((100vw - 4rem) / 27 * 2), 2em);
     margin-bottom: 4rem;
+    word-break: keep-all;
   }
 
   .lined {
