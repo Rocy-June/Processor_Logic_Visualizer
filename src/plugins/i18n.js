@@ -9,7 +9,7 @@ const messages = {
 }
 
 const i18n = createI18n({
-  locale: 'chinese_simplified',
+  locale: 'english',
   fallbackLocale: 'english',
   messages,
 })

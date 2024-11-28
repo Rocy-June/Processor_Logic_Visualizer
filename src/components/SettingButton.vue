@@ -1,0 +1,153 @@
+<template>
+  <div class="setting-box" ref="setting">
+    <button class="gear-button" type="button" @click="gear_click">
+      <ColoredSVG :src="gear_logo" color="var(--background-color)" />
+    </button>
+    <transition name="slide-to-left">
+      <div class="setting-dialog" v-if="show_dialog">
+        <ImageText :src="translate_logo" :size="25">
+          <DropList
+            v-model="language_value"
+            v-model:label="language_label"
+            v-model:filter="language_filter"
+            @change="language_changed"
+          >
+            <DropListOption
+              v-for="(item, index) in language_list"
+              :key="index"
+              :value="item.pack_name"
+              :label="item.local_name"
+              :active="item.pack_name == language_value"
+            >
+              {{ item.local_name }}
+            </DropListOption>
+          </DropList>
+        </ImageText>
+      </div>
+    </transition>
+  </div>
+</template>
+
+<script setup>
+import { ref, onMounted, onBeforeUnmount, computed } from 'vue'
+import { useI18n } from 'vue-i18n'
+
+import ColoredSVG from './ColoredSVG.vue'
+import ImageText from './ImageText.vue'
+import DropList from './DropList.vue'
+import DropListOption from './DropListOption.vue'
+
+import gear_logo from '@/assets/gear.svg'
+import translate_logo from '@/assets/translate_logo.svg'
+
+import languages from '@/i18n/languages.json'
+
+const { locale } = useI18n()
+
+window.a = locale
+
+const show_dialog = ref(false)
+const setting = ref(null)
+const language_label = defineModel('language_label')
+const language_value = defineModel('language_value')
+const language_filter = defineModel('language_filter')
+
+const gear_click = () => {
+  show_dialog.value = !show_dialog.value
+}
+
+const handle_click_outside = (event) => {
+  if (setting.value && !setting.value.contains(event.target)) {
+    show_dialog.value = false
+  }
+}
+
+const language_list = computed(() => {
+  return languages.filter(
+    (item) => item.local_name.toLowerCase().indexOf(language_filter.value.toLowerCase()) >= 0,
+  )
+})
+
+const language_changed = () => {
+  locale.value = language_value.value
+
+  localStorage.setItem('local_language', language_value.value)
+}
+
+onMounted(() => {
+  document.addEventListener('mousedown', handle_click_outside)
+
+  let local_language = localStorage.getItem('local_language')
+  local_language ??= locale.value
+
+  let current_lang = languages.find((item) => item.pack_name == local_language)
+  language_value.value = current_lang.pack_name
+  language_label.value = current_lang.local_name
+
+  locale.value = language_value.value
+})
+
+onBeforeUnmount(() => {
+  document.removeEventListener('mousedown', handle_click_outside)
+})
+</script>
+
+<style lang="less" scoped>
+.setting-box {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  .gear-button {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    background-color: var(--reverse-background-color);
+    border: 0;
+    border-radius: 99px;
+    opacity: 0.95;
+    z-index: 2;
+  }
+
+  .setting-dialog {
+    position: relative;
+    margin-top: 10px;
+    padding: 0.25rem;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: var(--background-color);
+    box-shadow: var(--box-shadow);
+    transition: all 0.3s;
+    z-index: 1;
+
+    > * {
+      padding: 0.3rem 0.75rem;
+    }
+  }
+}
+
+.slide-to-left-enter-active,
+.slide-to-left-leave-active {
+  transition: all 0.3s;
+}
+.slide-to-left-enter-from {
+  transform: translate(calc(50% - 25px), calc(-50% - 25px)) scale(0.25);
+  opacity: 0;
+}
+.slide-to-left-enter-to {
+  transform: translate(0, 0) scale(1);
+  opacity: 1;
+}
+.slide-to-left-leave-from {
+  transform: translate(0, 0) scale(1);
+  opacity: 1;
+}
+.slide-to-left-leave-to {
+  transform: translate(calc(50% - 25px), calc(-50% - 25px)) scale(0.25);
+  opacity: 0;
+}
+</style>

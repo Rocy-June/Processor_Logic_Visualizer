@@ -5,7 +5,6 @@
   --primary-dark-blue: #1b2838;
   --primary-teal: #78f3e9;
   --primary-light-blue: #66e6fe;
-  --primary-orange: #f5a623;
 
   /* secondary colors */
   --secondary-light-blue: #a0d2eb; /* 浅蓝色 */
@@ -13,6 +12,16 @@
   --secondary-soft-purple: #c3bfe8; /* 柔紫色 */
 
   /* semantic colors */
+  --red-orange: #e67434;
+  --light-yellow: #feed77;
+
+  --input-background-image-light: linear-gradient(0deg, #eceded, #efeae7);
+  --input-background-image-dark: linear-gradient(0deg, #eceded, #efeae7);
+
+  --box-shadow-light: 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 3px 6px -4px rgba(0, 0, 0, 0.12),
+    0 9px 28px 8px rgba(0, 0, 0, 0.05);
+  --box-shadow-dark: #ddd9;
+
   --background-light: var(--primary-light-gray);
   --background-dark: var(--primary-dark-blue);
 
@@ -23,31 +32,39 @@
   --text-dark: var(--primary-light-gray);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    /* dark mode overrides */
-    --color-background: var(--background-dark);
-
-    --color-border: var(--border-dark);
-    --color-border-hover: var(--primary-teal);
-
-    --color-heading: var(--text-dark);
-    --color-text: rgba(227, 227, 227, 0.7);
-    --color-sub-text: rgba(128, 128, 128, 0.7);
-  }
-}
-
 @media (prefers-color-scheme: light) {
   :root {
     /* light mode overrides */
-    --color-background: var(--background-light);
+    --background-color: var(--background-light);
+    --reverse-background-color: var(--background-dark);
 
-    --color-border: var(--border-light);
-    --color-border-hover: var(--primary-light-blue);
+    --box-shadow: var(--box-shadow-light);
+    --input-background-image: var(--input-background-image-light);
 
-    --color-heading: var(--text-light);
-    --color-text: rgba(27, 40, 56, 0.7);
-    --color-sub-text: rgba(128, 128, 128, 0.7);
+    --border-color: var(--border-light);
+    --border-hover-color: var(--primary-light-blue);
+
+    --heading-color: var(--text-light);
+    --text-color: rgba(27, 40, 56, 0.7);
+    --sub-text-color: rgba(128, 128, 128, 0.7);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* dark mode overrides */
+    --background-color: var(--background-dark);
+    --reverse-background-color: var(--background-light);
+
+    --box-shadow: var(--box-shadow-dark);
+    --input-background-image: var(--input-background-image-dark);
+
+    --border-color: var(--border-dark);
+    --border-hover-color: var(--primary-teal);
+
+    --heading-color: var(--text-dark);
+    --text-color: rgba(227, 227, 227, 0.7);
+    --sub-text-color: rgba(128, 128, 128, 0.7);
   }
 }
 
@@ -61,8 +78,8 @@
 
 body {
   min-height: 100vh;
-  color: var(--color-text);
-  background: var(--color-background);
+  color: var(--text-color);
+  background: var(--background-color);
   transition:
     color 0.5s,
     background-color 0.5s;
@@ -89,4 +106,21 @@ body {
 
 img {
   -webkit-user-drag: none;
+}
+
+button {
+  cursor: pointer;
+  transition:
+    filter 0.2s,
+    transform 0.2s;
+}
+
+button:hover {
+  filter: brightness(1.1);
+  transform: scale(1.03);
+}
+
+button:active {
+  filter: brightness(0.9);
+  transform: scale(0.97);
 }

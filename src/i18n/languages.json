@@ -1,0 +1,10 @@
+[
+  {
+    "local_name": "English",
+    "pack_name": "english"
+  },
+  {
+    "local_name": "简体中文",
+    "pack_name": "chinese_simplified"
+  }
+]
