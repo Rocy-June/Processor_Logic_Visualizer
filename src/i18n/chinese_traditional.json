@@ -31,7 +31,7 @@
     "menu_beginning": {
       "title": "開始介紹",
       "switches": "開關",
-      "claude_shannon": "《繼電器與開關電路的符號分析》- 克勞德·香農"
+      "claude_shannon": "《繼電器與開關電路的符號分析》- 克勞德 · 香農"
     },
     "menu_logic_gates": {
       "title": "邏輯閘",
@@ -69,5 +69,12 @@
       "excution_components": "區分模擬中的各個部件",
       "cpu_excution_simulation": "CPU 運作模擬"
     }
+  },
+  "switches_page": {
+    "title": "開關",
+    "switch_on": "開",
+    "switch_off": "關",
+    "explain": "電腦的世界其實非常簡單，它只認識兩個數字，0 和 1，就像哲學中的兩種對立思維一樣，1 代表「是」，0 代表「否」。而從電腦的底層結構來看，0 代表開關斷開，1 代表開關閉合",
+    "next_section": "下一章節"
   }
 }

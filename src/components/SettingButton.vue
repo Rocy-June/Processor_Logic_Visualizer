@@ -7,6 +7,7 @@
       <div class="setting-dialog" v-if="show_dialog">
         <ImageText :src="translate_logo" :size="25">
           <DropList
+            class="translate-drop-list"
             v-model="language_value"
             v-model:label="language_label"
             v-model:filter="language_filter"
@@ -132,6 +133,10 @@ onBeforeUnmount(() => {
     > * {
       padding: 0.3rem 0.75rem;
     }
+  }
+
+  .translate-drop-list {
+    width: 200px;
   }
 }
 

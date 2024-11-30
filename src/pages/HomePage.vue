@@ -60,13 +60,12 @@
     <div class="disclaimer">{{ $t('home_page.disclaimer') }}</div>
 
     <transition name="slide-in-left" appear>
-      <button
+      <MainHandleButton
         :class="{ next: true, 'center-bottom': is_scroll_to_end }"
-        type="button"
         @click="emit('next-page')"
       >
         {{ $t('home_page.next_page') }}
-      </button>
+      </MainHandleButton>
     </transition>
   </div>
 </template>
@@ -78,6 +77,7 @@ import LinedText from '@/components/LinedText.vue'
 import ImageText from '@/components/ImageText.vue'
 import VisibleObserver from '@/components/VisibleObserver.vue'
 import SettingButton from '@/components/SettingButton.vue'
+import MainHandleButton from '@/components/MainHandleButton.vue'
 
 import gate_logo from '@/assets/gate_logo.webp'
 import flip_flop_logo from '@/assets/flip_flop_logo.webp'
@@ -151,12 +151,6 @@ const scroll_not_at_end = () => {
     position: fixed;
     right: 2rem;
     bottom: 2rem;
-    padding: 1rem 2rem;
-    font-size: 24px;
-    border: 0;
-    border-radius: 9rem;
-    background-image: linear-gradient(20deg, var(--red-orange), var(--light-yellow));
-    color: var(--text-light);
     transition: all 0.3s;
 
     &.center-bottom {

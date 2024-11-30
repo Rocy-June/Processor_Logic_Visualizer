@@ -6,12 +6,12 @@
     "gate": {
       "title": "逻辑门",
       "subtitle": "数字电路的基础单元，控制信号流向并执行基本逻辑运算",
-      "content": "在此部分，您可以直观了解常见逻辑门（如AND、OR、NOT、NAND、NOR、XOR、XNOR）的工作原理"
+      "content": "在此部分，您可以直观了解常见逻辑门（如 AND、OR、NOT、NAND、NOR、XOR、XNOR）的工作原理"
     },
     "flip_flop": {
       "title": "触发器",
       "subtitle": "时序电路的核心，用于存储和控制信号状态",
-      "content": "本部分展示多种触发器（如RS、D、JK、T）的状态切换规则及其在电路中的应用"
+      "content": "本部分展示多种触发器（如 RS、D、JK、T）的状态切换规则及其在电路中的应用"
     },
     "digital_circuit": {
       "title": "数字电路",
@@ -19,9 +19,9 @@
       "content": "本部分介绍寄存器、计数器等元件及其在电路设计中的作用"
     },
     "cpu": {
-      "title": "CPU的执行过程",
+      "title": "CPU 的执行过程",
       "subtitle": "数字电路的集大成者，通过逻辑运算和信号协调实现指令执行",
-      "content": "本部分模拟CPU架构及取指、译码、执行等关键流程，展示其内部协作机制"
+      "content": "本部分模拟 CPU 架构及取指、译码、执行等关键流程，展示其内部协作机制"
     },
     "next_page": "让我们开始吧！",
     "disclaimer": "本网站部分图片与文案由人工智能生成，仅供学习和参考之用。如有任何不准确之处，敬请谅解，并以实际情况为准。"
@@ -31,7 +31,7 @@
     "menu_beginning": {
       "title": "开始介绍",
       "switches": "开关",
-      "claude_shannon": "《继电器和开关电路的符号分析》- 克劳德·香农"
+      "claude_shannon": "《继电器和开关电路的符号分析》- 克劳德 · 香农"
     },
     "menu_logic_gates": {
       "title": "逻辑门",
@@ -69,5 +69,12 @@
       "excution_components": "区分模拟中的各个部件",
       "cpu_excution_simulation": "CPU 执行模拟"
     }
+  },
+  "switches_page": {
+    "title": "开关",
+    "switch_on": "开",
+    "switch_off": "关",
+    "explain": "计算机的世界其实很简单，它只认识两个数字，0 和 1，就像哲学的两种对立思维一样，1 表示“是”，0 表示“否”。而对于计算机的底层结构来讲，0 代表开关断开，1 代表开关闭合",
+    "next_section": "下一章节"
   }
 }

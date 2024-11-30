@@ -1,46 +1,59 @@
 <template>
-  <div class="transition">
+  <div :class="{ 'page-transition': true, [locale]: true }">
     <transition name="slide-to-left" appear>
-      <HomePage v-if="steps[0] === 0" @next-page="home_page_next_page" style="z-index: 9" />
+      <HomePage v-if="steps[0] === 0" @next-page="set_page({ step1: 1 })" style="z-index: 9" />
       <MenuPage
         v-else-if="steps[0] === 1"
-        @prev-page="menu_page_prev_page"
+        @prev-page="set_page({ step1: 0 })"
         @page-changed="menu_page_select_page"
         style="z-index: 8"
+      />
+      <SwitchesPage
+        v-else-if="steps[0] === 2 && steps[1] === 0 && steps[2] === 0"
+        @menu-page="set_page({ step1: 1 })"
+        @next-page="set_page({ step1: 2, step2: 0, step3: 1 })"
       />
     </transition>
   </div>
 </template>
 
 <script setup>
-import { onMounted, reactive } from 'vue'
+import { onMounted, reactive, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 
 import HomePage from './pages/HomePage.vue'
 import MenuPage from './pages/MenuPage.vue'
+import SwitchesPage from './pages/SwitchesPage.vue'
 
 const { locale } = useI18n()
 
-const steps = reactive([1, 0, 0])
+const steps = reactive([0, 0, 0])
 
-const home_page_next_page = () => {
-  steps[0] = 1
-  scrollTo({
-    top: 0,
-    behavior: 'smooth',
-  })
-}
+watch(
+  () => steps,
+  () => {
+    localStorage.setItem('last_steps', JSON.stringify(steps))
+  },
+  { deep: true },
+)
 
-const menu_page_prev_page = () => {
-  steps[0] = 0
-  scrollTo({
-    top: 0,
-    behavior: 'smooth',
-  })
+const set_page = (option) => {
+  option.scroll_to_top ?? (option.scroll_to_top = true)
+
+  steps[0] = option.step1 ?? steps[0]
+  steps[1] = option.step2 ?? steps[1]
+  steps[2] = option.step3 ?? steps[2]
+
+  if (option.scroll_to_top)
+    scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    })
 }
 
 const menu_page_select_page = (e) => {
   console.log('direct to:', e.main, e.sub)
+  set_page({ step1: 2, step2: e.main, step3: e.sub })
 }
 
 onMounted(() => {
@@ -48,11 +61,17 @@ onMounted(() => {
   local_language ??= locale.value
 
   locale.value = local_language
+
+  //// Disabled on developing
+  // let last_steps = JSON.parse(localStorage.getItem('last_steps') ?? '[0,0,0]')
+  // for (let i = 0; i < last_steps.length; ++i) {
+  //   steps[i] = last_steps[i]
+  // }
 })
 </script>
 
 <style lang="less" scoped>
-.transition {
+.page-transition {
   position: relative;
 
   > * {
@@ -79,5 +98,60 @@ onMounted(() => {
 .slide-to-left-leave-to {
   left: -100%;
   opacity: 0;
+}
+</style>
+
+<style lang="less">
+.page-transition {
+  font-family: 'SarasaMonoSlab-SC';
+
+  * {
+    font-family: 'SarasaMonoSlab-SC';
+  }
+
+  // smallest font size
+  @font-face {
+    font-family: 'SarasaMonoSlab-SC';
+    src: url(@/assets/fonts/woff2/SarasaMonoSlabSC-Regular.woff2);
+  }
+
+  &.chinese_traditional {
+    font-family: 'SarasaMonoSlab-CL';
+
+    * {
+      font-family: 'SarasaMonoSlab-CL';
+    }
+
+    @font-face {
+      font-family: 'SarasaMonoSlab-CL';
+      src: url(@/assets/fonts/woff2/SarasaMonoSlabCL-Regular.woff2);
+    }
+  }
+
+  &.korean {
+    font-family: 'SarasaMonoSlab-K';
+
+    * {
+      font-family: 'SarasaMonoSlab-K';
+    }
+
+    @font-face {
+      font-family: 'SarasaMonoSlab-K';
+      src: url(@/assets/fonts/woff2/SarasaMonoSlabK-Regular.woff2);
+    }
+  }
+
+  &.japanese {
+    font-family: 'SarasaMonoSlab-J';
+
+    * {
+      font-family: 'SarasaMonoSlab-J';
+    }
+
+    @font-face {
+      font-family: 'SarasaMonoSlab-J';
+      src: url(@/assets/fonts/woff2/SarasaMonoSlabJ-Regular.woff2);
+    }
+  }
 }
 </style>

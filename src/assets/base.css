@@ -14,6 +14,7 @@
   /* semantic colors */
   --red-orange: #e67434;
   --light-yellow: #feed77;
+  --dark-blue: #50788b;
 
   --input-background-image-light: linear-gradient(0deg, #eceded, #efeae7);
   --input-background-image-dark: linear-gradient(0deg, #eceded, #efeae7);
@@ -106,6 +107,9 @@ body {
 
 img {
   -webkit-user-drag: none;
+}
+input[type='text'] {
+  width: 100%;
 }
 
 button {

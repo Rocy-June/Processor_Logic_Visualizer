@@ -69,5 +69,12 @@
       "excution_components": "Distinguishing Components in the Simulation",
       "cpu_excution_simulation": "CPU Execution Simulation"
     }
+  },
+  "switches_page": {
+    "title": "Switch",
+    "switch_on": "ON",
+    "switch_off": "OFF",
+    "explain": "The world of computers is actually quite simple. It only recognizes two numbers: 0 and 1, much like the two opposing ideas in philosophy—1 represents 'yes,' and 0 represents 'no.' In terms of the underlying structure of a computer, 0 means the switch is off, and 1 means the switch is on.",
+    "next_section": "Next section"
   }
 }
