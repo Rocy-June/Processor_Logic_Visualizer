@@ -31,7 +31,7 @@
     "menu_beginning": {
       "title": "開始介紹",
       "switches": "開關",
-      "claude_shannon": "《繼電器與開關電路的符號分析》- 克勞德 · 香農"
+      "claude_shannon": "《繼電器與開關電路的符號分析》"
     },
     "menu_logic_gates": {
       "title": "邏輯閘",

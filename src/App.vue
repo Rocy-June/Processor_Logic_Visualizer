@@ -1,17 +1,32 @@
 <template>
   <div :class="{ 'page-transition': true, [locale]: true }">
     <transition name="slide-to-left" appear>
-      <HomePage v-if="steps[0] === 0" @next-page="set_page({ step1: 1 })" style="z-index: 9" />
+      <HomePage
+        :key="1"
+        v-if="steps[0] === 0"
+        @next-page="set_page({ step1: 1 })"
+        style="z-index: 99"
+      />
       <MenuPage
+        :key="2"
         v-else-if="steps[0] === 1"
         @prev-page="set_page({ step1: 0 })"
         @page-changed="menu_page_select_page"
-        style="z-index: 8"
+        style="z-index: 98"
       />
       <SwitchesPage
+        :key="3"
         v-else-if="steps[0] === 2 && steps[1] === 0 && steps[2] === 0"
         @menu-page="set_page({ step1: 1 })"
         @next-page="set_page({ step1: 2, step2: 0, step3: 1 })"
+        style="z-index: 89"
+      />
+      <ClaudeShannonPage
+        :key="4"
+        v-else-if="steps[0] === 2 && steps[1] === 0 && steps[2] === 1"
+        @menu-page="set_page({ step1: 1 })"
+        @next-page="set_page({ step1: 2, step2: 1, step3: 0 })"
+        style="z-index: 88"
       />
     </transition>
   </div>
@@ -24,6 +39,7 @@ import { useI18n } from 'vue-i18n'
 import HomePage from './pages/HomePage.vue'
 import MenuPage from './pages/MenuPage.vue'
 import SwitchesPage from './pages/SwitchesPage.vue'
+import ClaudeShannonPage from './pages/ClaudeShannonPage.vue'
 
 const { locale } = useI18n()
 

@@ -31,7 +31,7 @@
     "menu_beginning": {
       "title": "소개 시작",
       "switches": "스위치",
-      "claude_shannon": "릴레이 및 스위칭 회로의 상징적 분석 - 클로드 섀넌"
+      "claude_shannon": "릴레이 및 스위칭 회로의 상징적 분석"
     },
     "menu_logic_gates": {
       "title": "논리 게이트",

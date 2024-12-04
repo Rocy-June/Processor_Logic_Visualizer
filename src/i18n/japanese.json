@@ -31,7 +31,7 @@
     "menu_beginning": {
       "title": "概要の開始",
       "switches": "スイッチ",
-      "claude_shannon": "リレーとスイッチング回路の記号解析 - クロード・シャノン"
+      "claude_shannon": "リレーとスイッチング回路の記号解析"
     },
     "menu_logic_gates": {
       "title": "論理ゲート",

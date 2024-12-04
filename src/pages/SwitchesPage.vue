@@ -1,7 +1,8 @@
+s
 <template>
-  <div :class="{ 'switches-box': true, active: switch_on }">
+  <div :class="{ 'switches-box': true, dark: !switch_on }">
     <h1>
-      <button type="button" class="prev-button" @click="emit('menu-page')">
+      <button type="button" class="menu-button" @click="emit('menu-page')">
         <ColoredSVG
           :src="list_logo"
           :color="switch_on ? 'var(--text-light)' : 'var(--text-dark)'"
@@ -10,31 +11,39 @@
       {{ $t('switches_page.title') }}
     </h1>
 
-    <div class="explain">{{ $t('switches_page.explain') }}</div>
+    <transition name="slide-to-bottom">
+      <div class="explain" v-if="handled">{{ $t('switches_page.explain') }}</div>
+    </transition>
 
     <transition name="switch-off" apear>
-      <div class="state-off" v-if="!switch_on">
+      <div :class="{ 'state-off': true, handled: handled }" v-if="!switch_on">
         <div class="state-text">{{ $t('switches_page.switch_off') }}</div>
         <div class="state-number">0</div>
       </div>
     </transition>
     <transition name="switch-on" apear>
-      <div class="state-on" v-if="switch_on">
+      <div :class="{ 'state-on': true, handled: handled }" v-if="switch_on">
         <div class="state-text">{{ $t('switches_page.switch_on') }}</div>
         <div class="state-number">1</div>
       </div>
     </transition>
 
-    <SwitchButton class="switch-button" v-model="switch_on" />
+    <SwitchButton
+      :class="{ 'switch-button': true, handled: handled }"
+      v-model="switch_on"
+      @click="switch_clicked"
+    />
 
-    <MainHandleButton class="next" @click="emit('next-page')">
-      {{ $t('switches_page.next_section') }}
-    </MainHandleButton>
+    <transition name="slide-to-left">
+      <MainHandleButton class="next" v-if="handled" @click="next_page">
+        {{ $t('switches_page.next_section') }}
+      </MainHandleButton>
+    </transition>
   </div>
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { nextTick, onMounted, ref } from 'vue'
 
 import ColoredSVG from '@/components/ColoredSVG.vue'
 import SwitchButton from '@/components/SwitchButton.vue'
@@ -44,7 +53,25 @@ import list_logo from '@/assets/list.svg'
 
 const emit = defineEmits(['menu-page', 'next-page'])
 
-const switch_on = ref(false)
+const switch_on = ref(true)
+const handled = ref(false)
+
+const switch_clicked = () => {
+  handled.value = true
+}
+
+const next_page = () => {
+  switch_on.value = true
+  nextTick(() => {
+    emit('next-page')
+  })
+}
+
+onMounted(() => {
+  setTimeout(() => {
+    switch_on.value = false
+  }, 750)
+})
 </script>
 
 <style lang="less" scoped>
@@ -52,7 +79,7 @@ const switch_on = ref(false)
   position: relative;
   padding: 2rem;
   font-size: 24px;
-  color: var(--text-dark);
+  color: var(--text-light);
   background-image: linear-gradient(
     115deg,
     var(--background-dark) 0%,
@@ -61,45 +88,32 @@ const switch_on = ref(false)
     var(--background-light) 100%
   );
   background-size: 400% 100%;
-  background-position-x: 0%;
+  background-position-x: 100%;
   background-repeat: no-repeat;
   transition: all 0.3s;
 
-  &.active {
-    color: var(--text-light);
-    background-position-x: 100%;
+  &.dark {
+    color: var(--text-dark);
+    background-position-x: 0%;
 
-    .prev-button:hover {
-      background-color: var(--secondary-light-blue);
-    }
-  }
-
-  .prev-button {
-    width: 50px;
-    height: 50px;
-    padding: 10px;
-    background-color: transparent;
-    border: 0;
-    border-radius: 99px;
-    transition: all 0.2s;
-
-    &:hover {
+    .menu-button:hover {
       background-color: var(--dark-blue);
-    }
-
-    .colored-svg-box {
-      transition: background-color 0.2s;
     }
   }
 
   .state-on,
   .state-off {
     position: absolute;
-    top: 65vh;
+    top: 50vh;
     text-align: center;
     font-size: 20vw;
     line-height: 100%;
     transform: translateY(-50%);
+    transition: all 0.3s;
+
+    &.handled {
+      top: 65vh;
+    }
 
     .state-text {
       position: absolute;
@@ -137,8 +151,21 @@ const switch_on = ref(false)
   .switch-button {
     position: absolute;
     left: 50vw;
-    bottom: 25vh;
+    bottom: 40vh;
     transform: translate(-50%, -50%);
+    transition: all 0.3s;
+
+    &:hover {
+      transform: translate(-50%, -50%) scale(1.03);
+    }
+
+    &:active {
+      transform: translate(-50%, -50%) scale(0.97);
+    }
+
+    &.handled {
+      bottom: 25vh;
+    }
   }
 
   .next {
@@ -151,7 +178,6 @@ const switch_on = ref(false)
 .switch-on-enter-active,
 .switch-on-leave-active {
   transition: all 0.3s;
-  transform-origin: 0% 0%;
 }
 .switch-on-enter-from {
   transform: translate(-50vw, -50%) !important;
@@ -173,7 +199,6 @@ const switch_on = ref(false)
 .switch-off-enter-active,
 .switch-off-leave-active {
   transition: all 0.3s;
-  transform-origin: 0% 0%;
 }
 .switch-off-enter-from {
   transform: translate(50vw, -50%) !important;
@@ -189,6 +214,48 @@ const switch_on = ref(false)
 }
 .switch-off-leave-to {
   transform: translate(50vw, -50%) !important;
+  opacity: 0;
+}
+
+.slide-to-bottom-enter-active,
+.slide-to-bottom-leave-active {
+  transition: all 0.3s;
+}
+.slide-to-bottom-enter-from {
+  transform: translateY(-50%);
+  opacity: 0;
+}
+.slide-to-bottom-enter-to {
+  transform: translateY(0);
+  opacity: 1;
+}
+.slide-to-bottom-leave-from {
+  transform: translateY(0);
+  opacity: 1;
+}
+.slide-to-bottom-leave-to {
+  transform: translateY(-50%);
+  opacity: 0;
+}
+
+.slide-to-left-enter-active,
+.slide-to-left-leave-active {
+  transition: all 0.3s;
+}
+.slide-to-left-enter-from {
+  transform: translateX(50%);
+  opacity: 0;
+}
+.slide-to-left-enter-to {
+  transform: translateX(0);
+  opacity: 1;
+}
+.slide-to-left-leave-from {
+  transform: translateX(0);
+  opacity: 1;
+}
+.slide-to-left-leave-to {
+  transform: translateX(50%);
   opacity: 0;
 }
 </style>
