@@ -12,7 +12,7 @@
         <div class="who-am-i-pic-box">
           <transition name="fade">
             <div class="unknown" v-if="!handled"></div>
-            <div class="known" v-else></div>
+            <div class="known" v-else keep-alive></div>
           </transition>
         </div>
         <transition name="fade">
@@ -45,16 +45,22 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
 
 import ColoredSVG from '@/components/ColoredSVG.vue'
 import MainHandleButton from '@/components/MainHandleButton.vue'
 
 import list_logo from '@/assets/list.svg'
+import shannon_img from '@/assets/C.E.Shannon.jpg'
 
 const emit = defineEmits(['menu-page', 'next-page'])
 
 const handled = ref(false)
+
+onMounted(() => {
+  const img = new Image()
+  img.src = shannon_img
+})
 
 const who_am_i_clicked = () => {
   handled.value = true
