@@ -1,5 +1,10 @@
 <template>
-  <button class="switch-button-box" :style="{ '--size': size }" @click="button_click">
+  <button
+    class="switch-button-box"
+    :style="{ '--size': size }"
+    :disabled="disabled"
+    @click="button_click"
+  >
     <input type="checkbox" v-model="enabled" />
   </button>
 </template>
@@ -9,6 +14,10 @@ defineProps({
   size: {
     type: String,
     default: '100px',
+  },
+  disabled: {
+    type: Boolean,
+    default: false,
   },
 })
 
@@ -21,7 +30,6 @@ const enabled = defineModel({
 
 const button_click = () => {
   enabled.value = !enabled.value
-  console.log(enabled.value)
 }
 </script>
 
@@ -71,7 +79,12 @@ const button_click = () => {
     display: none;
   }
 
-  &:active {
+  &:disabled {
+    filter: brightness(0.85);
+    cursor: not-allowed;
+  }
+
+  &:not(:disabled):active {
     &::before {
       width: calc(var(--thumb-size) * 1.5);
     }

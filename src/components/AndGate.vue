@@ -1,8 +1,8 @@
 <template>
-  <div>
-    <div>A: {{ a }}</div>
-    <div>B: {{ b }}</div>
-    <div>Y: {{ y }}</div>
+  <div :class="{ 'and-gate-box': true, active: y }">
+    <svg :width="size" :height="size" viewBox="0 0 100 100">
+      <path class="and-gate-path" d="m0 0v100h50a1 1 0 000-100z" />
+    </svg>
   </div>
 </template>
 
@@ -10,6 +10,9 @@
 import { watch } from 'vue'
 
 const props = defineProps({
+  size: {
+    type: String,
+  },
   a: {
     type: Boolean,
     default: false,
@@ -24,11 +27,25 @@ const y = defineModel({ default: false })
 
 const input_changed = () => {
   y.value = props.a && props.b
-  console.log(`changed! A: ${props.a}, B: ${props.b}, Y: ${y.value}`)
 }
 
 watch(() => props.a, input_changed)
 watch(() => props.b, input_changed)
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="less" scoped>
+.and-gate-box {
+  font-size: 0;
+
+  &.active {
+    .and-gate-path {
+      fill: var(--border-color);
+    }
+  }
+
+  .and-gate-path {
+    fill: var(--text-solid-color);
+    stroke: transparent;
+  }
+}
+</style>

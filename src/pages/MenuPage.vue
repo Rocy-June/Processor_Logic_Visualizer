@@ -1,180 +1,180 @@
 <template>
   <div class="menu-box">
-    <div class="center-menu">
-      <transition name="appear-0" appear>
-        <h1 class="menu-title">
-          <button type="button" class="prev-button" @click="emit('prev-page')">
-            <ColoredSVG :src="arrow_left" color="var(--text-color)" />
-          </button>
-          {{ $t('menu_page.menu') }}
-        </h1>
-      </transition>
+    <div class="scroll-box">
+      <div class="center-menu">
+        <transition name="appear-0" appear>
+          <h1 class="menu-title">
+            <button type="button" class="prev-button" @click="emit('prev-page')">
+              <ColoredSVG :src="arrow_left" color="var(--text-color)" />
+            </button>
+            {{ $t('menu_page.menu') }}
+          </h1>
+        </transition>
 
-      <SettingButton />
+        <div class="selection" :style="selection_rect"></div>
 
-      <div class="selection" :style="selection_rect"></div>
-
-      <transition name="appear-1" appear>
-        <div class="menu-section">
-          <div
-            :class="{ 'menu-text': true, animating: !animation_end }"
-            @mouseover="menu_hover"
-            @click="emit('page-changed', { main: 0, sub: 0 })"
-          >
-            <span>{{ $t(`menu_page.${menus[0].text}`) }}</span>
-          </div>
-          <div class="menu-child">
+        <transition name="appear-1" appear>
+          <div class="menu-section">
             <div
-              class="menu-line"
-              v-for="(sub_item, sub_index) in menus[0].children"
-              :key="sub_index"
+              :class="{ 'menu-text': true, animating: !animation_end }"
+              @mouseover="menu_hover"
+              @click="emit('page-changed', { main: 0, sub: 0 })"
             >
+              <span>{{ $t(`menu_page.${menus[0].text}`) }}</span>
+            </div>
+            <div class="menu-child">
               <div
-                :class="{ 'menu-text': true, animating: !animation_end }"
-                @mouseover="menu_hover"
-                @click="emit('page-changed', { main: 0, sub: sub_index })"
+                class="menu-line"
+                v-for="(sub_item, sub_index) in menus[0].children"
+                :key="sub_index"
               >
-                <span>{{ $t(`menu_page.${sub_item.text}`) }}</span>
+                <div
+                  :class="{ 'menu-text': true, animating: !animation_end }"
+                  @mouseover="menu_hover"
+                  @click="emit('page-changed', { main: 0, sub: sub_index })"
+                >
+                  <span>{{ $t(`menu_page.${sub_item.text}`) }}</span>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </transition>
+        </transition>
 
-      <transition name="appear-2" appear>
-        <div class="menu-section">
-          <div
-            :class="{ 'menu-text': true, animating: !animation_end }"
-            @mouseover="menu_hover"
-            @click="emit('page-changed', { main: 1, sub: 0 })"
-          >
-            <span>{{ $t(`menu_page.${menus[1].text}`) }}</span>
-          </div>
-          <div class="menu-child">
+        <transition name="appear-2" appear>
+          <div class="menu-section">
             <div
-              class="menu-line"
-              v-for="(sub_item, sub_index) in menus[1].children"
-              :key="sub_index"
+              :class="{ 'menu-text': true, animating: !animation_end }"
+              @mouseover="menu_hover"
+              @click="emit('page-changed', { main: 1, sub: 0 })"
             >
+              <span>{{ $t(`menu_page.${menus[1].text}`) }}</span>
+            </div>
+            <div class="menu-child">
               <div
-                :class="{ 'menu-text': true, animating: !animation_end }"
-                @mouseover="menu_hover"
-                @click="emit('page-changed', { main: 1, sub: sub_index })"
+                class="menu-line"
+                v-for="(sub_item, sub_index) in menus[1].children"
+                :key="sub_index"
               >
-                <span>{{ $t(`menu_page.${sub_item.text}`) }}</span>
+                <div
+                  :class="{ 'menu-text': true, animating: !animation_end }"
+                  @mouseover="menu_hover"
+                  @click="emit('page-changed', { main: 1, sub: sub_index })"
+                >
+                  <span>{{ $t(`menu_page.${sub_item.text}`) }}</span>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </transition>
+        </transition>
 
-      <transition name="appear-3" appear>
-        <div class="menu-section">
-          <div
-            :class="{ 'menu-text': true, animating: !animation_end }"
-            @mouseover="menu_hover"
-            @click="emit('page-changed', { main: 2, sub: 0 })"
-          >
-            <span>{{ $t(`menu_page.${menus[2].text}`) }}</span>
-          </div>
-          <div class="menu-child">
+        <transition name="appear-3" appear>
+          <div class="menu-section">
             <div
-              class="menu-line"
-              v-for="(sub_item, sub_index) in menus[2].children"
-              :key="sub_index"
+              :class="{ 'menu-text': true, animating: !animation_end }"
+              @mouseover="menu_hover"
+              @click="emit('page-changed', { main: 2, sub: 0 })"
             >
+              <span>{{ $t(`menu_page.${menus[2].text}`) }}</span>
+            </div>
+            <div class="menu-child">
               <div
-                :class="{ 'menu-text': true, animating: !animation_end }"
-                @mouseover="menu_hover"
-                @click="emit('page-changed', { main: 2, sub: sub_index })"
+                class="menu-line"
+                v-for="(sub_item, sub_index) in menus[2].children"
+                :key="sub_index"
               >
-                <span>{{ $t(`menu_page.${sub_item.text}`) }}</span>
+                <div
+                  :class="{ 'menu-text': true, animating: !animation_end }"
+                  @mouseover="menu_hover"
+                  @click="emit('page-changed', { main: 2, sub: sub_index })"
+                >
+                  <span>{{ $t(`menu_page.${sub_item.text}`) }}</span>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </transition>
+        </transition>
 
-      <transition name="appear-4" appear @after-enter="can_be_handle">
-        <div class="menu-section">
-          <div
-            :class="{ 'menu-text': true, animating: !animation_end }"
-            @mouseover="menu_hover"
-            @click="emit('page-changed', { main: 3, sub: 0 })"
-          >
-            <span>{{ $t(`menu_page.${menus[3].text}`) }}</span>
-          </div>
-          <div class="menu-child">
+        <transition name="appear-4" appear @after-enter="can_be_handle">
+          <div class="menu-section">
             <div
-              class="menu-line"
-              v-for="(sub_item, sub_index) in menus[3].children"
-              :key="sub_index"
+              :class="{ 'menu-text': true, animating: !animation_end }"
+              @mouseover="menu_hover"
+              @click="emit('page-changed', { main: 3, sub: 0 })"
             >
+              <span>{{ $t(`menu_page.${menus[3].text}`) }}</span>
+            </div>
+            <div class="menu-child">
               <div
-                :class="{ 'menu-text': true, animating: !animation_end }"
-                @mouseover="menu_hover"
-                @click="emit('page-changed', { main: 3, sub: sub_index })"
+                class="menu-line"
+                v-for="(sub_item, sub_index) in menus[3].children"
+                :key="sub_index"
               >
-                <span>{{ $t(`menu_page.${sub_item.text}`) }}</span>
+                <div
+                  :class="{ 'menu-text': true, animating: !animation_end }"
+                  @mouseover="menu_hover"
+                  @click="emit('page-changed', { main: 3, sub: sub_index })"
+                >
+                  <span>{{ $t(`menu_page.${sub_item.text}`) }}</span>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </transition>
+        </transition>
 
-      <transition name="appear-5" appear>
-        <div class="menu-section">
-          <div
-            :class="{ 'menu-text': true, animating: !animation_end }"
-            @mouseover="menu_hover"
-            @click="emit('page-changed', { main: 4, sub: 0 })"
-          >
-            <span>{{ $t(`menu_page.${menus[4].text}`) }}</span>
-          </div>
-          <div class="menu-child">
+        <transition name="appear-5" appear>
+          <div class="menu-section">
             <div
-              class="menu-line"
-              v-for="(sub_item, sub_index) in menus[4].children"
-              :key="sub_index"
+              :class="{ 'menu-text': true, animating: !animation_end }"
+              @mouseover="menu_hover"
+              @click="emit('page-changed', { main: 4, sub: 0 })"
             >
+              <span>{{ $t(`menu_page.${menus[4].text}`) }}</span>
+            </div>
+            <div class="menu-child">
               <div
-                :class="{ 'menu-text': true, animating: !animation_end }"
-                @mouseover="menu_hover"
-                @click="emit('page-changed', { main: 4, sub: sub_index })"
+                class="menu-line"
+                v-for="(sub_item, sub_index) in menus[4].children"
+                :key="sub_index"
               >
-                <span>{{ $t(`menu_page.${sub_item.text}`) }}</span>
+                <div
+                  :class="{ 'menu-text': true, animating: !animation_end }"
+                  @mouseover="menu_hover"
+                  @click="emit('page-changed', { main: 4, sub: sub_index })"
+                >
+                  <span>{{ $t(`menu_page.${sub_item.text}`) }}</span>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </transition>
+        </transition>
 
-      <transition name="appear-6" appear>
-        <div class="menu-section">
-          <div
-            :class="{ 'menu-text': true, animating: !animation_end }"
-            @mouseover="menu_hover"
-            @click="emit('page-changed', { main: 5, sub: 0 })"
-          >
-            <span>{{ $t(`menu_page.${menus[5].text}`) }}</span>
-          </div>
-          <div class="menu-child">
+        <transition name="appear-6" appear>
+          <div class="menu-section">
             <div
-              class="menu-line"
-              v-for="(sub_item, sub_index) in menus[5].children"
-              :key="sub_index"
+              :class="{ 'menu-text': true, animating: !animation_end }"
+              @mouseover="menu_hover"
+              @click="emit('page-changed', { main: 5, sub: 0 })"
             >
+              <span>{{ $t(`menu_page.${menus[5].text}`) }}</span>
+            </div>
+            <div class="menu-child">
               <div
-                :class="{ 'menu-text': true, animating: !animation_end }"
-                @mouseover="menu_hover"
-                @click="emit('page-changed', { main: 5, sub: sub_index })"
+                class="menu-line"
+                v-for="(sub_item, sub_index) in menus[5].children"
+                :key="sub_index"
               >
-                <span>{{ $t(`menu_page.${sub_item.text}`) }}</span>
+                <div
+                  :class="{ 'menu-text': true, animating: !animation_end }"
+                  @mouseover="menu_hover"
+                  @click="emit('page-changed', { main: 5, sub: sub_index })"
+                >
+                  <span>{{ $t(`menu_page.${sub_item.text}`) }}</span>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </transition>
+        </transition>
+      </div>
     </div>
   </div>
 </template>
@@ -182,7 +182,6 @@
 <script setup>
 import { reactive, ref } from 'vue'
 
-import SettingButton from '@/components/SettingButton.vue'
 import ColoredSVG from '@/components/ColoredSVG.vue'
 
 import arrow_left from '@/assets/arrow-left.svg'
@@ -272,62 +271,68 @@ const menu_hover = (e) => {
 
 <style lang="less" scoped>
 .menu-box {
-  padding: 2rem;
+  padding: 2rem 2rem 0 2rem;
   font-size: 24px;
 
-  .center-menu {
-    position: relative;
-    max-width: 800px;
-    margin: 0 auto;
+  .scroll-box {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
 
-    .menu-title {
-      position: sticky;
-      top: 0;
-      margin-bottom: 0.75rem;
-      background-color: var(--background-color);
-      z-index: 3;
+    .center-menu {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
 
-      .prev-button {
-        width: 50px;
-        height: 50px;
-        padding: 10px;
-        background-color: transparent;
-        border: 0;
-        border-radius: 99px;
+      .menu-title {
+        position: sticky;
+        top: 0;
+        margin-bottom: 0.75rem;
+        background-color: var(--background-color);
+        z-index: 3;
+
+        .prev-button {
+          width: 50px;
+          height: 50px;
+          padding: 10px;
+          background-color: transparent;
+          border: 0;
+          border-radius: 99px;
+          transition: all 0.2s;
+
+          &:hover {
+            background-color: var(--secondary-light-blue);
+          }
+        }
+      }
+
+      .selection {
+        position: absolute;
+        border-radius: 8px;
+        background-color: var(--secondary-light-blue);
         transition: all 0.2s;
-
-        &:hover {
-          background-color: var(--secondary-light-blue);
-        }
+        z-index: 1;
+        pointer-events: none;
       }
-    }
 
-    .selection {
-      position: absolute;
-      border-radius: 8px;
-      background-color: var(--secondary-light-blue);
-      transition: all 0.2s;
-      z-index: 1;
-      pointer-events: none;
-    }
+      .menu-section {
+        margin-bottom: 2rem;
 
-    .menu-section {
-      margin-bottom: 2rem;
+        .menu-text {
+          position: relative;
+          padding: 0.3rem 0.75rem;
+          line-height: 1.5em;
+          cursor: pointer;
+          z-index: 2;
 
-      .menu-text {
-        position: relative;
-        padding: 0.3rem 0.75rem;
-        line-height: 1.5em;
-        cursor: pointer;
-        z-index: 2;
-
-        &.animating {
-          cursor: default;
-          pointer-events: none;
+          &.animating {
+            cursor: default;
+            pointer-events: none;
+          }
         }
-      }
-      .menu-child {
-        padding-left: 2rem;
+        .menu-child {
+          padding-left: 2rem;
+        }
       }
     }
   }

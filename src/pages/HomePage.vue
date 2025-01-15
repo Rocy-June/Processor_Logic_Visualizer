@@ -8,8 +8,6 @@
       </div>
     </transition>
 
-    <SettingButton />
-
     <transition name="appear-2" appear>
       <LinedText class="lined">{{ $t('home_page.you_can_learn') }}</LinedText>
     </transition>
@@ -76,7 +74,6 @@ import { ref } from 'vue'
 import LinedText from '@/components/LinedText.vue'
 import ImageText from '@/components/ImageText.vue'
 import VisibleObserver from '@/components/VisibleObserver.vue'
-import SettingButton from '@/components/SettingButton.vue'
 import MainHandleButton from '@/components/MainHandleButton.vue'
 
 import gate_logo from '@/assets/gate_logo.webp'
@@ -148,15 +145,17 @@ const scroll_not_at_end = () => {
   }
 
   .next {
-    position: fixed;
-    right: 2rem;
-    bottom: 2rem;
+    position: sticky;
+    bottom: 3cqw;
+    margin-left: 95cqw;
+    white-space: nowrap;
+    transform: translateX(-100%);
     transition: all 0.3s;
 
     &.center-bottom {
-      right: 50%;
-      bottom: 12rem;
-      transform: translateX(50%);
+      bottom: 28cqh;
+      margin-left: 0;
+      transform: translateX(0);
     }
   }
 }

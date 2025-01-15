@@ -1,32 +1,41 @@
 <template>
   <div :class="{ 'page-transition': true, [locale]: true }">
+    <SettingButton />
+
     <transition name="slide-to-left" appear>
       <HomePage
         :key="1"
         v-if="steps[0] === 0"
         @next-page="set_page({ step1: 1 })"
-        style="z-index: 99"
+        style="z-index: 89"
       />
       <MenuPage
         :key="2"
         v-else-if="steps[0] === 1"
         @prev-page="set_page({ step1: 0 })"
         @page-changed="menu_page_select_page"
-        style="z-index: 98"
+        style="z-index: 88"
       />
       <SwitchesPage
         :key="3"
         v-else-if="steps[0] === 2 && steps[1] === 0 && steps[2] === 0"
         @menu-page="set_page({ step1: 1 })"
         @next-page="set_page({ step1: 2, step2: 0, step3: 1 })"
-        style="z-index: 89"
+        style="z-index: 79"
       />
       <ClaudeShannonPage
         :key="4"
         v-else-if="steps[0] === 2 && steps[1] === 0 && steps[2] === 1"
         @menu-page="set_page({ step1: 1 })"
         @next-page="set_page({ step1: 2, step2: 1, step3: 0 })"
-        style="z-index: 88"
+        style="z-index: 78"
+      />
+      <AndGatePage
+        :key="5"
+        v-else-if="steps[0] === 2 && steps[1] === 1 && steps[2] === 0"
+        @menu-page="set_page({ step1: 1 })"
+        @next-page="set_page({ step1: 2, step2: 1, step3: 1 })"
+        style="z-index: 77"
       />
     </transition>
   </div>
@@ -36,14 +45,18 @@
 import { onMounted, reactive, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 
+import SettingButton from './components/SettingButton.vue'
+
 import HomePage from './pages/HomePage.vue'
 import MenuPage from './pages/MenuPage.vue'
 import SwitchesPage from './pages/SwitchesPage.vue'
 import ClaudeShannonPage from './pages/ClaudeShannonPage.vue'
+import AndGatePage from './pages/AndGatePage.vue'
 
 const { locale } = useI18n()
 
 const steps = reactive([0, 0, 0])
+// const steps = reactive([2, 1, 0])
 
 watch(
   () => steps,
@@ -89,12 +102,45 @@ onMounted(() => {
 <style lang="less" scoped>
 .page-transition {
   position: relative;
+  aspect-ratio: 4 / 3;
+  width: auto;
+  height: auto;
+  // margin: auto;
+  max-width: 100vw;
+  max-height: 100vh;
+  overflow: hidden;
+  container-type: size;
 
   > * {
     position: absolute;
+    box-sizing: border-box;
     width: 100%;
+    height: 100%;
+    overflow: hidden overlay;
     background-color: var(--background-color);
-    min-height: 100vh;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(
+        to bottom,
+        var(--background-color) 0%,
+        transparent 1%,
+        transparent 99%,
+        var(--background-color) 100%
+      ),
+      linear-gradient(
+        to right,
+        var(--background-color) 0%,
+        transparent 1%,
+        transparent 99%,
+        var(--background-color) 100%
+      );
+    pointer-events: none;
+    z-index: 98;
   }
 }
 

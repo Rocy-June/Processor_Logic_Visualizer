@@ -98,14 +98,18 @@ onBeforeUnmount(() => {
 </script>
 
 <style lang="less" scoped>
-.setting-box {
+#app .setting-box {
   position: fixed;
   top: 2rem;
   right: 2rem;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  z-index: 9;
+  width: unset;
+  height: unset;
+  background-color: unset;
+  overflow: unset;
+  z-index: 100;
 
   .gear-button {
     position: relative;
@@ -113,7 +117,7 @@ onBeforeUnmount(() => {
     height: 50px;
     padding: 10px;
     background-color: var(--reverse-background-color);
-    border: 0;
+    border: 2px solid var(--background-color);
     border-radius: 99px;
     opacity: 0.95;
     z-index: 2;

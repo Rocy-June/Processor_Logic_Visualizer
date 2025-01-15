@@ -48,6 +48,9 @@
     --heading-color: var(--text-light);
     --text-color: rgba(27, 40, 56, 0.7);
     --sub-text-color: rgba(128, 128, 128, 0.7);
+
+    --text-solid-color: rgba(27, 40, 56);
+    --sub-text-solid-color: rgb(128, 128, 128);
   }
 }
 
@@ -66,6 +69,24 @@
     --heading-color: var(--text-dark);
     --text-color: rgba(227, 227, 227, 0.7);
     --sub-text-color: rgba(128, 128, 128, 0.7);
+
+    --text-solid-color: rgb(227, 227, 227);
+    --sub-text-solid-color: rgb(128, 128, 128);
+  }
+}
+
+#app {
+  height: 100vh;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
+
+@media (max-aspect-ratio: 4/3) {
+  #app {
+    flex-direction: column;
   }
 }
 
@@ -121,12 +142,12 @@ button {
     filter 0.2s,
     transform 0.2s;
 
-  &:hover {
+  &:not(:disabled):hover {
     filter: brightness(1.1);
     transform: scale(1.03);
   }
 
-  &:active {
+  &:not(:disabled):active {
     filter: brightness(0.9);
     transform: scale(0.97);
   }

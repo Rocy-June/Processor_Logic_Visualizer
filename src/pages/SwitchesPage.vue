@@ -77,6 +77,8 @@ onMounted(() => {
 <style lang="less" scoped>
 .switches-box {
   position: relative;
+  width: 100%;
+  height: 100%;
   padding: 2rem;
   font-size: 24px;
   color: var(--text-light);
