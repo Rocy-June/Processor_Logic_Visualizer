@@ -171,7 +171,7 @@ onMounted(() => {
   }
 
   .next {
-    position: fixed;
+    position: absolute;
     right: 2rem;
     bottom: 2rem;
   }

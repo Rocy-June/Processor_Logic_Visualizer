@@ -82,11 +82,46 @@
   justify-content: center;
   flex-wrap: nowrap;
   flex-direction: row;
+
+  .page-transition::before {
+    background-image: linear-gradient(
+      to right,
+      var(--background-color) 0%,
+      transparent 2%,
+      transparent 98%,
+      var(--background-color) 100%
+    );
+  }
 }
 
 @media (max-aspect-ratio: 4/3) {
   #app {
     flex-direction: column;
+
+    .page-transition::before {
+      background-image: linear-gradient(
+        to bottom,
+        var(--background-color) 0%,
+        transparent 2%,
+        transparent 98%,
+        var(--background-color) 100%
+      );
+    }
+  }
+}
+
+@media (max-aspect-ratio: 1) {
+  #app .recommend-aspect-ratio-box {
+    &.unexpected {
+      background-color: #8888;
+      backdrop-filter: blur(5px);
+      pointer-events: all;
+    }
+
+    .dialog-box {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }
 

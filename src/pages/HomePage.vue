@@ -96,18 +96,16 @@ const scroll_not_at_end = () => {
 <style lang="less" scoped>
 .home-box {
   padding: 2rem;
-  font-size: 24px;
+  font-size: 2.2cqw;
   text-align: center;
 
   .logo {
-    width: 20vw;
-    min-width: 100px;
-    max-width: 200px;
+    width: 18.1cqw;
     margin: 0 auto 1rem 0;
   }
 
   .title {
-    font-size: clamp(12px, calc((100vw - 4rem) / 27 * 2), 2em);
+    font-size: 4.33cqw;
     margin-bottom: 4rem;
     word-break: keep-all;
   }
@@ -118,7 +116,7 @@ const scroll_not_at_end = () => {
 
   .learn-list {
     max-width: 800px;
-    margin: 0 auto 300px auto;
+    margin: 0 auto 36.1cqh auto;
 
     > div:not(:last-child) {
       margin-bottom: 2rem;
@@ -130,17 +128,17 @@ const scroll_not_at_end = () => {
         line-height: 1em;
       }
       .intro_subtitle {
-        font-size: 16px;
+        font-size: 1.45cqw;
         color: var(--sub-text-color);
       }
       .intro_content {
-        font-size: 16px;
+        font-size: 1.45cqw;
       }
     }
   }
 
   .disclaimer {
-    font-size: 16px;
+    font-size: 1.45cqw;
     color: var(--sub-text-color);
   }
 

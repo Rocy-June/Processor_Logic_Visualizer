@@ -1,5 +1,6 @@
 <template>
   <div :class="{ 'page-transition': true, [locale]: true }">
+    <RecommendAspectRatioDialog />
     <SettingButton />
 
     <transition name="slide-to-left" appear>
@@ -45,6 +46,7 @@
 import { onMounted, reactive, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 
+import RecommendAspectRatioDialog from './components/RecommendAspectRatioDialog.vue'
 import SettingButton from './components/SettingButton.vue'
 
 import HomePage from './pages/HomePage.vue'
@@ -125,20 +127,6 @@ onMounted(() => {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(
-        to bottom,
-        var(--background-color) 0%,
-        transparent 1%,
-        transparent 99%,
-        var(--background-color) 100%
-      ),
-      linear-gradient(
-        to right,
-        var(--background-color) 0%,
-        transparent 1%,
-        transparent 99%,
-        var(--background-color) 100%
-      );
     pointer-events: none;
     z-index: 98;
   }
