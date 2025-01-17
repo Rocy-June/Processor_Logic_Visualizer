@@ -3,11 +3,11 @@
     <div class="scroll-box">
       <div class="center-menu">
         <transition name="appear-0" appear>
-          <h1 class="menu-title">
+          <h1 class="main-title menu-title">
             <button type="button" class="prev-button" @click="emit('prev-page')">
               <ColoredSVG :src="arrow_left" color="var(--text-color)" />
             </button>
-            {{ $t('menu_page.menu') }}
+            <span class="title-content">{{ $t('menu_page.menu') }}</span>
           </h1>
         </transition>
 
@@ -264,15 +264,15 @@ const menu_hover = (e) => {
 
   selection_rect.top = `${target.offsetTop}px`
   selection_rect.left = `${target.offsetLeft}px`
-  selection_rect.width = `calc(1.5rem + ${target.children[0].offsetWidth}px)`
+  selection_rect.width = `calc(1.5em + ${target.children[0].offsetWidth}px)`
   selection_rect.height = `${target.offsetHeight}px`
 }
 </script>
 
 <style lang="less" scoped>
 .menu-box {
-  padding: 2rem 2rem 0 2rem;
-  font-size: 24px;
+  padding: 2em 2em 0 2em;
+  font-size: 2.17cqw;
 
   .scroll-box {
     width: 100%;
@@ -287,17 +287,17 @@ const menu_hover = (e) => {
       .menu-title {
         position: sticky;
         top: 0;
-        margin-bottom: 0.75rem;
+        margin-bottom: 0.75em;
         background-color: var(--background-color);
         z-index: 3;
 
         .prev-button {
-          width: 50px;
-          height: 50px;
-          padding: 10px;
+          width: 4.51cqw;
+          height: 4.51cqw;
+          padding: 0.9cqw;
           background-color: transparent;
           border: 0;
-          border-radius: 99px;
+          border-radius: 9cqw;
           transition: all 0.2s;
 
           &:hover {
@@ -308,7 +308,7 @@ const menu_hover = (e) => {
 
       .selection {
         position: absolute;
-        border-radius: 8px;
+        border-radius: 0.4em;
         background-color: var(--secondary-light-blue);
         transition: all 0.2s;
         z-index: 1;
@@ -316,11 +316,11 @@ const menu_hover = (e) => {
       }
 
       .menu-section {
-        margin-bottom: 2rem;
+        margin-bottom: 2em;
 
         .menu-text {
           position: relative;
-          padding: 0.3rem 0.75rem;
+          padding: 0.3em 0.75em;
           line-height: 1.5em;
           cursor: pointer;
           z-index: 2;
@@ -331,7 +331,7 @@ const menu_hover = (e) => {
           }
         }
         .menu-child {
-          padding-left: 2rem;
+          padding-left: 2em;
         }
       }
     }

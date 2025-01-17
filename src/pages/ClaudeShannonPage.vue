@@ -1,10 +1,10 @@
 <template>
   <div class="claude-shannon-box">
-    <h1>
+    <h1 class="main-title">
       <button type="button" class="menu-button" @click="emit('menu-page')">
         <ColoredSVG :src="list_logo" :color="'var(--text-light)'" />
       </button>
-      {{ $t('claude_shannon_page.title') }}
+      <span class="title-content">{{ $t('claude_shannon_page.title') }}</span>
     </h1>
 
     <div class="who-am-i-box">
@@ -69,18 +69,19 @@ const who_am_i_clicked = () => {
 
 <style lang="less" scoped>
 .claude-shannon-box {
-  padding: 2rem;
+  padding: 2em;
+  font-size: 2.17cqw;
 
   .who-am-i-box {
     display: flex;
-    padding: 3vw 7vw;
+    padding: 3cqw 7cqw;
 
     .who-am-i-pic-box {
       position: relative;
-      width: 33vw;
-      height: 40.49vw;
-      border: 1.5vw solid var(--border-light);
-      margin-right: 2rem;
+      width: 33cqw;
+      height: 40.49cqw;
+      border: 1.5cqw solid var(--border-light);
+      margin-right: 2em;
 
       .unknown,
       .known {
@@ -112,11 +113,11 @@ const who_am_i_clicked = () => {
     }
 
     .source-tip {
-      width: 33vw;
+      width: 33cqw;
       text-align: center;
       color: var(--sub-text-color);
-      font-size: 1.23vw;
-      margin-top: 1rem;
+      font-size: 1.23cqw;
+      margin-top: 1em;
     }
 
     .detail-box {
@@ -130,7 +131,7 @@ const who_am_i_clicked = () => {
 
       .unknown {
         text-align: center;
-        font-size: 6vw;
+        font-size: 6cqw;
 
         .question {
           margin: 1em 0;
@@ -140,10 +141,10 @@ const who_am_i_clicked = () => {
       .known {
         .name {
           text-align: center;
-          font-size: 2.5vw;
+          font-size: 2.5cqw;
         }
         .introduce {
-          font-size: 1.57vw;
+          font-size: 1.57cqw;
         }
       }
     }
@@ -151,8 +152,8 @@ const who_am_i_clicked = () => {
 
   .next {
     position: absolute;
-    right: 2rem;
-    bottom: 2rem;
+    right: 2em;
+    bottom: 2em;
   }
 }
 

@@ -1,14 +1,14 @@
 s
 <template>
   <div :class="{ 'switches-box': true, dark: !switch_on }">
-    <h1>
+    <h1 class="main-title">
       <button type="button" class="menu-button" @click="emit('menu-page')">
         <ColoredSVG
           :src="list_logo"
           :color="switch_on ? 'var(--text-light)' : 'var(--text-dark)'"
         />
       </button>
-      {{ $t('switches_page.title') }}
+      <span class="title-content">{{ $t('switches_page.title') }}</span>
     </h1>
 
     <transition name="slide-to-bottom">
@@ -79,8 +79,8 @@ onMounted(() => {
   position: relative;
   width: 100%;
   height: 100%;
-  padding: 2rem;
-  font-size: 24px;
+  padding: 2em;
+  font-size: 2.17cqw;
   color: var(--text-light);
   background-image: linear-gradient(
     115deg,
@@ -106,15 +106,15 @@ onMounted(() => {
   .state-on,
   .state-off {
     position: absolute;
-    top: 50vh;
+    top: 50cqh;
     text-align: center;
-    font-size: 20vw;
+    font-size: 20cqw;
     line-height: 100%;
     transform: translateY(-50%);
     transition: all 0.3s;
 
     &.handled {
-      top: 65vh;
+      top: 65cqh;
     }
 
     .state-text {
@@ -136,14 +136,14 @@ onMounted(() => {
   }
 
   .state-on {
-    right: 20vw;
+    right: 20cqw;
 
     .state-number {
       color: var(--text-light);
     }
   }
   .state-off {
-    left: 20vw;
+    left: 20cqw;
 
     .state-number {
       color: var(--text-dark);
@@ -152,8 +152,8 @@ onMounted(() => {
 
   .switch-button {
     position: absolute;
-    left: 50vw;
-    bottom: 40vh;
+    left: 50cqw;
+    bottom: 40cqh;
     transform: translate(-50%, -50%);
     transition: all 0.3s;
 
@@ -166,14 +166,14 @@ onMounted(() => {
     }
 
     &.handled {
-      bottom: 25vh;
+      bottom: 25cqh;
     }
   }
 
   .next {
     position: absolute;
-    right: 2rem;
-    bottom: 2rem;
+    right: 2em;
+    bottom: 2em;
   }
 }
 
@@ -182,7 +182,7 @@ onMounted(() => {
   transition: all 0.3s;
 }
 .switch-on-enter-from {
-  transform: translate(-50vw, -50%) !important;
+  transform: translate(-50cqw, -50%) !important;
   opacity: 0;
 }
 .switch-on-enter-to {
@@ -194,7 +194,7 @@ onMounted(() => {
   opacity: 1;
 }
 .switch-on-leave-to {
-  transform: translate(-50vw, -50%) !important;
+  transform: translate(-50cqw, -50%) !important;
   opacity: 0;
 }
 
@@ -203,7 +203,7 @@ onMounted(() => {
   transition: all 0.3s;
 }
 .switch-off-enter-from {
-  transform: translate(50vw, -50%) !important;
+  transform: translate(50cqw, -50%) !important;
   opacity: 0;
 }
 .switch-off-enter-to {
@@ -215,7 +215,7 @@ onMounted(() => {
   opacity: 1;
 }
 .switch-off-leave-to {
-  transform: translate(50vw, -50%) !important;
+  transform: translate(50cqw, -50%) !important;
   opacity: 0;
 }
 

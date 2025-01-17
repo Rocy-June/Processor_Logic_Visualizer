@@ -1,10 +1,10 @@
 <template>
   <div class="and-gate-page-box">
-    <h1>
+    <h1 class="main-title">
       <button type="button" class="menu-button" @click="emit('menu-page')">
         <ColoredSVG :src="list_logo" :color="'var(--text-light)'" />
       </button>
-      {{ $t('and_gate_page.title') }}
+      <span class="title-content">{{ $t('and_gate_page.title') }}</span>
     </h1>
 
     <transition name="slide-to-bottom">
@@ -85,14 +85,14 @@ watch(switch_y, () => {
 
 <style lang="less" scoped>
 .and-gate-page-box {
-  padding: 2rem;
+  padding: 2em;
 
   .handle-box {
     position: relative;
     container: size;
-    width: min(1000px, 100vw - 4rem);
-    height: min(750px, (100vw - 4rem) / 4 * 3);
-    margin: 2rem auto 0;
+    width: min(1000px, 100vw - 4em);
+    height: min(750px, (100vw - 4em) / 4 * 3);
+    margin: 2em auto 0;
     overflow: hidden;
 
     .switch-a,

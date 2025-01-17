@@ -57,7 +57,7 @@ import AndGatePage from './pages/AndGatePage.vue'
 
 const { locale } = useI18n()
 
-const steps = reactive([0, 0, 0])
+const steps = reactive([2, 0, 1])
 // const steps = reactive([2, 1, 0])
 
 watch(

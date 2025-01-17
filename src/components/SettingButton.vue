@@ -5,7 +5,7 @@
     </button>
     <transition name="slide-to-left">
       <div class="setting-dialog" v-if="show_dialog">
-        <ImageText :src="translate_logo" :size="25">
+        <ImageText :src="translate_logo" size="2.26cqw">
           <DropList
             class="translate-drop-list"
             v-model="language_value"
@@ -93,15 +93,15 @@ onMounted(() => {
 })
 
 onBeforeUnmount(() => {
-  document.removeEventListener('mousedown', handle_click_outside)
+  document.emoveEventListener('mousedown', handle_click_outside)
 })
 </script>
 
 <style lang="less" scoped>
 #app .setting-box {
   position: fixed;
-  top: 2rem;
-  right: 2rem;
+  top: 2em;
+  right: 2em;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -113,34 +113,34 @@ onBeforeUnmount(() => {
 
   .gear-button {
     position: relative;
-    width: 50px;
-    height: 50px;
-    padding: 10px;
+    width: 4.51cqw;
+    height: 4.51cqw;
+    padding: 0.9cqw;
     background-color: var(--reverse-background-color);
-    border: 2px solid var(--background-color);
-    border-radius: 99px;
+    border: 0.2cqw solid var(--background-color);
+    border-radius: 9cqw;
     opacity: 0.95;
     z-index: 2;
   }
 
   .setting-dialog {
     position: relative;
-    margin-top: 10px;
-    padding: 0.25rem;
-    border-radius: 8px;
-    font-size: 16px;
+    margin-top: 0.9cqw;
+    padding: 0.25em;
+    border-radius: 0.72cqw;
+    font-size: 1.44cqw;
     background-color: var(--background-color);
     box-shadow: var(--box-shadow);
     transition: all 0.3s;
     z-index: 1;
 
     > * {
-      padding: 0.3rem 0.75rem;
+      padding: 0.3em 0.75em;
     }
   }
 
   .translate-drop-list {
-    width: 200px;
+    width: 18.05cqw;
   }
 }
 
@@ -149,7 +149,7 @@ onBeforeUnmount(() => {
   transition: all 0.3s;
 }
 .slide-to-left-enter-from {
-  transform: translate(calc(50% - 25px), calc(-50% - 25px)) scale(0.25);
+  transform: translate(calc(50% - 2.26cqw), calc(-50% - 2.26cqw)) scale(0.25);
   opacity: 0;
 }
 .slide-to-left-enter-to {
@@ -161,7 +161,7 @@ onBeforeUnmount(() => {
   opacity: 1;
 }
 .slide-to-left-leave-to {
-  transform: translate(calc(50% - 25px), calc(-50% - 25px)) scale(0.25);
+  transform: translate(calc(50% - 2.26cqw), calc(-50% - 2.26cqw)) scale(0.25);
   opacity: 0;
 }
 </style>

@@ -43,7 +43,7 @@ const search_filter = (l, f) => {
 
 <style lang="less" scoped>
 .drop-list-option-box {
-  padding: 0.3rem 0.75rem;
+  padding: 0.3em 0.75em;
   width: 100%;
   cursor: pointer;
   background-color: transparent;

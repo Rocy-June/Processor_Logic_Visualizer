@@ -10,10 +10,10 @@ const emit = defineEmits(['click'])
 
 <style lang="less" scoped>
 .main-handle-button {
-  padding: 1rem 2rem;
-  font-size: 24px;
+  padding: 0.67em 1.33em;
+  font-size: 2.17cqw;
   border: 0;
-  border-radius: 9rem;
+  border-radius: 9em;
   background-image: linear-gradient(20deg, var(--red-orange), var(--light-yellow));
   color: var(--text-light);
 }

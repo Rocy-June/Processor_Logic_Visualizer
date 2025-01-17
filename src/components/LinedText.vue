@@ -16,18 +16,16 @@
   &::after {
     content: '';
     flex: 1;
-    height: 2px;
+    height: 0.2cqw;
     background-color: var(--primary-dark-blue);
   }
 
   &::before {
-    left: 0;
-    margin-right: 2rem;
+    margin-right: 1.33em;
   }
 
   &::after {
-    right: 0;
-    margin-left: 2rem;
+    margin-left: 1.33em;
   }
 }
 </style>

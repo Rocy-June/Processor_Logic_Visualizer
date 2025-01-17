@@ -75,16 +75,15 @@ provide('select_option', select_option)
 
   .list-input {
     position: relative;
-    font-size: 0;
 
     .list-input-text {
-      font-size: 16px;
+      font-size: 1.44cqw;
       background-image: var(--input-background-image);
-      border: 1px solid var(--border-color);
-      border-radius: 9rem;
+      border: 0.1cqw solid var(--border-color);
+      border-radius: 9em;
       transition: border 0.3s;
       outline: 0;
-      padding: 0.25rem 0.5rem;
+      padding: 0.41em 0.92em;
       color: var(--text-color);
 
       &:hover,
@@ -97,9 +96,9 @@ provide('select_option', select_option)
       position: absolute;
       display: block;
       top: 50%;
-      right: 0.75rem;
+      right: 0.75em;
       border-style: solid;
-      border-width: 0 0.35rem 0.35rem 0.35rem;
+      border-width: 0 0.35em 0.35em 0.35em;
       border-color: transparent transparent var(--text-color) transparent;
       transform: translateY(-50%) rotate(0deg);
       transition: transform 0.2s;
@@ -116,12 +115,12 @@ provide('select_option', select_option)
 
     .list-options-box {
       position: absolute;
-      top: 0.25rem;
+      top: 0.25em;
       display: flex;
       flex-direction: column;
       width: 100%;
-      padding: 0.25rem;
-      border-radius: 8px;
+      padding: 0.25em;
+      border-radius: 0.72cqw;
       background-color: var(--background-color);
       box-shadow: var(--box-shadow);
     }

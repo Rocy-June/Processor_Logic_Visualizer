@@ -14,7 +14,7 @@
 
     <transition name="appear-3" appear>
       <div class="learn-list">
-        <ImageText :src="gate_logo" :size="100" spacing="2.5rem" image-mode="round">
+        <ImageText :src="gate_logo" size="9.03cqw" spacing="2.5em" image-mode="round">
           <div class="introduce_box">
             <div class="intro_title">
               {{ $t('home_page.gate.title') }} -
@@ -23,7 +23,7 @@
             <div class="intro_content">{{ $t('home_page.gate.content') }}</div>
           </div>
         </ImageText>
-        <ImageText :src="flip_flop_logo" :size="100" spacing="2.5rem" image-mode="round">
+        <ImageText :src="flip_flop_logo" size="9.03cqw" spacing="2.5em" image-mode="round">
           <div class="introduce_box">
             <div class="intro_title">
               {{ $t('home_page.flip_flop.title') }} -
@@ -32,7 +32,7 @@
             <div class="intro_content">{{ $t('home_page.flip_flop.content') }}</div>
           </div>
         </ImageText>
-        <ImageText :src="digital_circuit_logo" :size="100" spacing="2.5rem" image-mode="round">
+        <ImageText :src="digital_circuit_logo" size="9.03cqw" spacing="2.5em" image-mode="round">
           <div class="introduce_box">
             <div class="intro_title">
               {{ $t('home_page.digital_circuit.title') }} -
@@ -41,7 +41,7 @@
             <div class="intro_content">{{ $t('home_page.digital_circuit.content') }}</div>
           </div>
         </ImageText>
-        <ImageText :src="cpu_logo" :size="100" spacing="2.5rem" image-mode="round">
+        <ImageText :src="cpu_logo" size="9.03cqw" spacing="2.5em" image-mode="round">
           <div class="introduce_box">
             <div class="intro_title">
               {{ $t('home_page.cpu.title') }} -
@@ -57,14 +57,16 @@
 
     <div class="disclaimer">{{ $t('home_page.disclaimer') }}</div>
 
-    <transition name="slide-in-left" appear>
-      <MainHandleButton
-        :class="{ next: true, 'center-bottom': is_scroll_to_end }"
-        @click="emit('next-page')"
-      >
-        {{ $t('home_page.next_page') }}
-      </MainHandleButton>
-    </transition>
+    <div class="main-right-button">
+      <transition name="slide-in-left" appear>
+        <MainHandleButton
+          :class="{ next: true, 'center-bottom': is_scroll_to_end }"
+          @click="emit('next-page')"
+        >
+          {{ $t('home_page.next_page') }}
+        </MainHandleButton>
+      </transition>
+    </div>
   </div>
 </template>
 
@@ -95,37 +97,37 @@ const scroll_not_at_end = () => {
 
 <style lang="less" scoped>
 .home-box {
-  padding: 2rem;
-  font-size: 2.2cqw;
+  padding: 2.89cqw;
+  font-size: 2.17cqw;
   text-align: center;
 
   .logo {
     width: 18.1cqw;
-    margin: 0 auto 1rem 0;
+    margin: 0 auto 1em 0;
   }
 
   .title {
     font-size: 4.33cqw;
-    margin-bottom: 4rem;
+    margin-bottom: 1.33em;
     word-break: keep-all;
   }
 
   .lined {
-    margin-bottom: 2rem;
+    margin-bottom: 1.33em;
   }
 
   .learn-list {
-    max-width: 800px;
+    max-width: 72.2cqw;
     margin: 0 auto 36.1cqh auto;
 
     > div:not(:last-child) {
-      margin-bottom: 2rem;
+      margin-bottom: 1.33em;
     }
 
     .introduce_box {
       .intro_title {
-        margin-bottom: 1rem;
-        line-height: 1em;
+        margin-bottom: 0.67em;
+        line-height: 0.67em;
       }
       .intro_subtitle {
         font-size: 1.45cqw;
@@ -142,18 +144,22 @@ const scroll_not_at_end = () => {
     color: var(--sub-text-color);
   }
 
-  .next {
+  .main-right-button {
     position: sticky;
-    bottom: 3cqw;
-    margin-left: 95cqw;
-    white-space: nowrap;
-    transform: translateX(-100%);
-    transition: all 0.3s;
+    bottom: 0;
+    text-align: right;
 
-    &.center-bottom {
-      bottom: 28cqh;
-      margin-left: 0;
-      transform: translateX(0);
+    .next {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      transition: all 0.3s;
+
+      &.center-bottom {
+        bottom: 16cqh;
+        right: 50%;
+        transform: translate(50%, 0);
+      }
     }
   }
 }

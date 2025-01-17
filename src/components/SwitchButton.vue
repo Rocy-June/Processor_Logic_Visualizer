@@ -13,7 +13,7 @@
 defineProps({
   size: {
     type: String,
-    default: '100px',
+    default: '9.03cqw',
   },
   disabled: {
     type: Boolean,

@@ -1,6 +1,6 @@
 <template>
   <div class="img-txt-box">
-    <img :src="src" :style="{ width: size + 'px', height: size + 'px' }" :class="imageMode" />
+    <img :src="src" :style="{ width: size, height: size }" :class="imageMode" />
     <div class="txt-box" :style="{ 'padding-left': spacing }">
       <slot></slot>
     </div>
@@ -13,8 +13,8 @@ defineProps({
     type: String,
   },
   size: {
-    type: Number,
-    default: 65,
+    type: String,
+    default: '65px',
   },
   imageMode: {
     type: String,
@@ -22,7 +22,7 @@ defineProps({
   },
   spacing: {
     type: String,
-    default: '1rem',
+    default: '1.66em',
   },
 })
 </script>
