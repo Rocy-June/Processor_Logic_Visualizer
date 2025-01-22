@@ -1,5 +1,8 @@
 <template>
-  <div :class="{ 'logic-wire-box': true, ready: prop_in, active: model }">
+  <div
+    :class="{ 'logic-wire-box': true, ready: prop_in, active: model }"
+    :style="{ '--delay': delay + 'ms' }"
+  >
     <svg :viewBox="`0 0 ${width} ${height}`" ref="svg">
       <slot />
     </svg>
@@ -61,7 +64,7 @@ if (typeof watch_prop == 'object') {
 
   &.ready {
     circle {
-      animation: move 0.2s linear forwards;
+      animation: move var(--delay) linear forwards;
     }
   }
 
@@ -73,7 +76,7 @@ if (typeof watch_prop == 'object') {
 
   path {
     stroke: var(--text-color);
-    stroke-width: 2.5px;
+    stroke-width: 0.3cqw;
     fill: transparent;
 
     @keyframes move {

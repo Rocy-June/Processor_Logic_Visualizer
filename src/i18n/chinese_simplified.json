@@ -91,6 +91,10 @@
     "reveal": "揭晓",
     "next_section": "下一章节"
   },
+  "and_gate_page": {
+    "title": "与门",
+    "explain": "与门是指将两个开关串联起来，只有当两个开关都启用时，输出才会为 1。只要任意一个开关关闭，输出都会为 0。其逻辑关系表示为真值表如下："
+  },
 
   "recommend_aspect_ratio_dialog": {
     "title": "非常抱歉...",

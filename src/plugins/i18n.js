@@ -15,6 +15,7 @@ const messages = {
 }
 
 const i18n = createI18n({
+  warnHtmlInMessage: 'off',
   locale: 'english',
   fallbackLocale: 'english',
   messages,

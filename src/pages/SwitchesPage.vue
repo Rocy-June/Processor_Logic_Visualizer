@@ -17,13 +17,13 @@ s
 
     <transition name="switch-off" apear>
       <div :class="{ 'state-off': true, handled: handled }" v-if="!switch_on">
-        <div class="state-text">{{ $t('switches_page.switch_off') }}</div>
+        <div class="background-text">{{ $t('switches_page.switch_off') }}</div>
         <div class="state-number">0</div>
       </div>
     </transition>
     <transition name="switch-on" apear>
       <div :class="{ 'state-on': true, handled: handled }" v-if="switch_on">
-        <div class="state-text">{{ $t('switches_page.switch_on') }}</div>
+        <div class="background-text">{{ $t('switches_page.switch_on') }}</div>
         <div class="state-number">1</div>
       </div>
     </transition>
@@ -117,15 +117,10 @@ onMounted(() => {
       top: 65cqh;
     }
 
-    .state-text {
+    .background-text {
       position: absolute;
       top: -40%;
       left: 50%;
-      transform: translateX(-50%);
-      white-space: nowrap;
-      color: transparent;
-      background: linear-gradient(0deg, transparent 20%, var(--sub-text-color) 80%);
-      background-clip: text;
       z-index: 1;
     }
 
