@@ -1,15 +1,15 @@
 <template>
-  <div class="and-gate-page-box">
+  <div class="or-gate-page-box">
     <h1 class="main-title">
       <button type="button" class="menu-button" @click="emit('menu-page')">
         <ColoredSVG :src="list_logo" :color="'var(--text-light)'" />
       </button>
-      <span class="title-content">{{ $t('and_gate_page.title') }}</span>
+      <span class="title-content">{{ $t('or_gate_page.title') }}</span>
     </h1>
 
     <transition name="slide-to-bottom">
       <div class="explain" v-if="handled">
-        <div class="explain-text">{{ $t('and_gate_page.explain') }}</div>
+        <div class="explain-text">{{ $t('or_gate_page.explain') }}</div>
         <div class="explain-truth-table-box">
           <table>
             <thead>
@@ -23,12 +23,12 @@
               <tr>
                 <td class="true">1</td>
                 <td class="false">0</td>
-                <td class="false">0</td>
+                <td class="true">1</td>
               </tr>
               <tr>
                 <td class="false">0</td>
                 <td class="true">1</td>
-                <td class="false">0</td>
+                <td class="true">1</td>
               </tr>
               <tr>
                 <td class="true">1</td>
@@ -59,8 +59,8 @@
         :prop_in="switch_a"
         v-model="wire_a"
       >
-        <path d="m215 127h150v90h150" />
-        <circle r="5" fill="var(--border-color)" style="offset-path: path('m215 127h150v90h150')" />
+        <path d="m215 127h150v90h165" />
+        <circle r="5" fill="var(--border-color)" style="offset-path: path('m215 127h150v90h165')" />
       </LogicWire>
       <LogicWire
         class="wire-front b"
@@ -70,14 +70,14 @@
         :prop_in="switch_b"
         v-model="wire_b"
       >
-        <path d="m215 127h150v-90h150" />
+        <path d="m215 127h150v-90h165" />
         <circle
           r="6"
           fill="var(--border-color)"
-          style="offset-path: path('m215 127h150v-90h150')"
+          style="offset-path: path('m215 127h150v-90h165')"
         />
       </LogicWire>
-      <AndGate class="gate" :size="'10cqw'" :a="wire_a" :b="wire_b" v-model="wire_y" />
+      <OrGate class="gate" :size="'10cqw'" :a="wire_a" :b="wire_b" v-model="wire_y" />
       <LogicWire
         class="wire-back"
         :width="555"
@@ -95,7 +95,7 @@
 
     <transition name="slide-to-left">
       <MainHandleButton class="next" v-if="handled" @click="next_page">
-        {{ $t('and_gate_page.next_section') }}
+        {{ $t('or_gate_page.next_section') }}
       </MainHandleButton>
     </transition>
   </div>
@@ -107,7 +107,7 @@ import { nextTick, ref, watch } from 'vue'
 import ColoredSVG from '@/components/ColoredSVG.vue'
 import SwitchButton from '@/components/SwitchButton.vue'
 import LogicWire from '@/components/LogicWire.vue'
-import AndGate from '@/components/AndGate.vue'
+import OrGate from '@/components/OrGate.vue'
 import MainHandleButton from '@/components/MainHandleButton.vue'
 
 import list_logo from '@/assets/list.svg'
@@ -140,7 +140,7 @@ const next_page = () => {
 </script>
 
 <style lang="less" scoped>
-.and-gate-page-box {
+.or-gate-page-box {
   padding: 2em;
   font-size: 2.17cqw;
 
