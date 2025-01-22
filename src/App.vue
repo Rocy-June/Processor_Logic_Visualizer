@@ -45,6 +45,13 @@
         @next-page="set_page({ step1: 2, step2: 1, step3: 2 })"
         style="z-index: 76"
       />
+      <NotGatePage
+        :key="7"
+        v-else-if="steps[0] === 2 && steps[1] === 1 && steps[2] === 2"
+        @menu-page="set_page({ step1: 1 })"
+        @next-page="set_page({ step1: 2, step2: 1, step3: 3 })"
+        style="z-index: 75"
+      />
     </transition>
   </div>
 </template>
@@ -62,10 +69,11 @@ import SwitchesPage from './pages/SwitchesPage.vue'
 import ClaudeShannonPage from './pages/ClaudeShannonPage.vue'
 import AndGatePage from './pages/AndGatePage.vue'
 import OrGatePage from './pages/OrGatePage.vue'
+import NotGatePage from './pages/NotGatePage.vue'
 
 const { locale } = useI18n()
 
-const steps = reactive([2, 1, 1])
+const steps = reactive([2, 1, 2])
 
 watch(
   () => steps,

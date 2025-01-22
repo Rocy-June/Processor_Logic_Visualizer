@@ -101,6 +101,11 @@
     "explain": "An OR gate refers to connecting two switches in parallel, where the output will be 1 as long as at least one switch is turned on. The output will only be 0 when both switches are off. This logical relationship is represented by the following truth table:",
     "next_section": "Next section"
   },
+  "not_gate_page": {
+    "title": "NOT Gate",
+    "explain": "A NOT gate means that the output is the exact opposite of the input. When the input is 1, the output is 0, and when the input is 0, the output is 1. This logical relationship is represented by the following truth table:",
+    "next_section": "Next section"
+  },
 
   "recommend_aspect_ratio_dialog": {
     "title": "Sorry...",
