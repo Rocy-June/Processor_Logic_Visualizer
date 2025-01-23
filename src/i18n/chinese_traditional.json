@@ -33,15 +33,20 @@
       "switches": "開關",
       "claude_shannon": "《繼電器與開關電路的符號分析》"
     },
-    "menu_logic_gates": {
-      "title": "邏輯閘",
+    "menu_logic_gates_1": {
+      "title": "邏輯閘 - 第一部分",
       "and_gate": "與閘 (AND Gate)",
       "or_gate": "或閘 (OR Gate)",
       "not_gate": "非閘 (NOT Gate)",
+      "summary": "邏輯閘 - 第一部分總結"
+    },
+    "menu_logic_gates_2": {
+      "title": "邏輯閘 - 第二部分",
       "nand_gate": "與非閘 (NAND Gate)",
       "nor_gate": "或非閘 (NOR Gate)",
       "xor_gate": "異或閘 (XOR Gate)",
-      "xnor_gate": "同或閘 (XNOR Gate)"
+      "xnor_gate": "同或閘 (XNOR Gate)",
+      "summary": "邏輯閘 - 第二部分總結"
     },
     "menu_digital_circuits_1": {
       "title": "數位電路 - 第一部分",

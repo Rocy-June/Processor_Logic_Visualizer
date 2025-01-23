@@ -33,15 +33,20 @@
       "switches": "스위치",
       "claude_shannon": "릴레이 및 스위칭 회로의 상징적 분석"
     },
-    "menu_logic_gates": {
-      "title": "논리 게이트",
+    "menu_logic_gates_1": {
+      "title": "논리 게이트 - 1부",
       "and_gate": "AND 게이트",
       "or_gate": "OR 게이트",
       "not_gate": "NOT 게이트",
+      "summary": "논리 게이트 - 1부 요약"
+    },
+    "menu_logic_gates_2": {
+      "title": "논리 게이트 - 2부",
       "nand_gate": "NAND 게이트",
       "nor_gate": "NOR 게이트",
       "xor_gate": "XOR 게이트",
-      "xnor_gate": "XNOR 게이트"
+      "xnor_gate": "XNOR 게이트",
+      "summary": "논리 게이트 - 2부 요약"
     },
     "menu_digital_circuits_1": {
       "title": "디지털 회로 - 1부",

@@ -33,15 +33,20 @@
       "switches": "Switches",
       "claude_shannon": "A Symbolic Analysis of Relay and Switching Circuits"
     },
-    "menu_logic_gates": {
-      "title": "Logic Gates",
+    "menu_logic_gates_1": {
+      "title": "Logic Gates - Part 1",
       "and_gate": "AND Gate",
       "or_gate": "OR Gate",
       "not_gate": "NOT Gate",
+      "summary": "Summary of Logic Gates - Part 1"
+    },
+    "menu_logic_gates_2": {
+      "title": "Logic Gates - Part 2",
       "nand_gate": "NAND Gate",
       "nor_gate": "NOR Gate",
       "xor_gate": "XOR Gate",
-      "xnor_gate": "XNOR Gate"
+      "xnor_gate": "XNOR Gate",
+      "summary": "Summary of Logic Gates - Part 2"
     },
     "menu_digital_circuits_1": {
       "title": "Digital Circuits - Part 1",

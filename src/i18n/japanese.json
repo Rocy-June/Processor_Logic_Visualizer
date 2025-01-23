@@ -33,15 +33,20 @@
       "switches": "スイッチ",
       "claude_shannon": "リレーとスイッチング回路の記号解析"
     },
-    "menu_logic_gates": {
-      "title": "論理ゲート",
+    "menu_logic_gates_1": {
+      "title": "論理ゲート - パート1",
       "and_gate": "AND ゲート",
       "or_gate": "OR ゲート",
       "not_gate": "NOT ゲート",
+      "summary": "論理ゲート - パート1の概要"
+    },
+    "menu_logic_gates_2": {
+      "title": "論理ゲート - パート2",
       "nand_gate": "NAND ゲート",
       "nor_gate": "NOR ゲート",
       "xor_gate": "XOR ゲート",
-      "xnor_gate": "XNOR ゲート"
+      "xnor_gate": "XNOR ゲート",
+      "summary": "論理ゲート - パート2の概要"
     },
     "menu_digital_circuits_1": {
       "title": "デジタル回路 - パート1",

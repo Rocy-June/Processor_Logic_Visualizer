@@ -67,7 +67,7 @@
           </div>
         </transition>
 
-        <transition name="appear-3" appear>
+        <transition name="appear-3" appear @after-enter="can_be_handle">
           <div class="menu-section">
             <div
               :class="{ 'menu-text': true, animating: !animation_end }"
@@ -94,7 +94,7 @@
           </div>
         </transition>
 
-        <transition name="appear-4" appear @after-enter="can_be_handle">
+        <transition name="appear-4" appear>
           <div class="menu-section">
             <div
               :class="{ 'menu-text': true, animating: !animation_end }"
@@ -174,6 +174,33 @@
             </div>
           </div>
         </transition>
+
+        <transition name="appear-7" appear>
+          <div class="menu-section">
+            <div
+              :class="{ 'menu-text': true, animating: !animation_end }"
+              @mouseover="menu_hover"
+              @click="emit('page-changed', { main: 6, sub: 0 })"
+            >
+              <span>{{ $t(`menu_page.${menus[6].text}`) }}</span>
+            </div>
+            <div class="menu-child">
+              <div
+                class="menu-line"
+                v-for="(sub_item, sub_index) in menus[6].children"
+                :key="sub_index"
+              >
+                <div
+                  :class="{ 'menu-text': true, animating: !animation_end }"
+                  @mouseover="menu_hover"
+                  @click="emit('page-changed', { main: 6, sub: sub_index })"
+                >
+                  <span>{{ $t(`menu_page.${sub_item.text}`) }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </transition>
       </div>
     </div>
   </div>
@@ -194,15 +221,22 @@ const menus = [
     children: [{ text: 'menu_beginning.switches' }, { text: 'menu_beginning.claude_shannon' }],
   },
   {
-    text: 'menu_logic_gates.title',
+    text: 'menu_logic_gates_1.title',
     children: [
-      { text: 'menu_logic_gates.and_gate' },
-      { text: 'menu_logic_gates.or_gate' },
-      { text: 'menu_logic_gates.not_gate' },
-      { text: 'menu_logic_gates.nand_gate' },
-      { text: 'menu_logic_gates.nor_gate' },
-      { text: 'menu_logic_gates.xor_gate' },
-      { text: 'menu_logic_gates.xnor_gate' },
+      { text: 'menu_logic_gates_1.and_gate' },
+      { text: 'menu_logic_gates_1.or_gate' },
+      { text: 'menu_logic_gates_1.not_gate' },
+      { text: 'menu_logic_gates_1.summary' },
+    ],
+  },
+  {
+    text: 'menu_logic_gates_2.title',
+    children: [
+      { text: 'menu_logic_gates_2.nand_gate' },
+      { text: 'menu_logic_gates_2.nor_gate' },
+      { text: 'menu_logic_gates_2.xor_gate' },
+      { text: 'menu_logic_gates_2.xnor_gate' },
+      { text: 'menu_logic_gates_2.summary' },
     ],
   },
   {
@@ -351,10 +385,12 @@ const menu_hover = (e) => {
 .appear-5-enter-active,
 .appear-5-leave-active,
 .appear-6-enter-active,
-.appear-6-leave-active {
+.appear-6-leave-active,
+.appear-7-enter-active,
+.appear-7-leave-active {
   transition:
-    transform 1s,
-    opacity 1s;
+    transform 0.5s,
+    opacity 0.5s;
 }
 .appear-0-enter-from,
 .appear-1-enter-from,
@@ -362,7 +398,8 @@ const menu_hover = (e) => {
 .appear-3-enter-from,
 .appear-4-enter-from,
 .appear-5-enter-from,
-.appear-6-enter-from {
+.appear-6-enter-from,
+.appear-7-enter-from {
   transform: translateY(-50px);
   opacity: 0;
 }
@@ -372,43 +409,49 @@ const menu_hover = (e) => {
 .appear-3-enter-to,
 .appear-4-enter-to,
 .appear-5-enter-to,
-.appear-6-enter-to {
+.appear-6-enter-to,
+.appear-7-enter-to {
   transform: translateY(0);
   opacity: 1;
 }
 
 .appear-0-enter-active,
 .appear-0-leave-active {
-  transition-delay: 250ms;
+  transition-delay: 150ms;
 }
 
 .appear-1-enter-active,
 .appear-1-leave-active {
-  transition-delay: 500ms;
+  transition-delay: 300ms;
 }
 
 .appear-2-enter-active,
 .appear-2-leave-active {
-  transition-delay: 750ms;
+  transition-delay: 450ms;
 }
 
 .appear-3-enter-active,
 .appear-3-leave-active {
-  transition-delay: 1000ms;
+  transition-delay: 600ms;
 }
 
 .appear-4-enter-active,
 .appear-4-leave-active {
-  transition-delay: 1250ms;
+  transition-delay: 750ms;
 }
 
 .appear-5-enter-active,
 .appear-5-leave-active {
-  transition-delay: 1500ms;
+  transition-delay: 900ms;
 }
 
 .appear-6-enter-active,
 .appear-6-leave-active {
-  transition-delay: 1750ms;
+  transition-delay: 1050ms;
+}
+
+.appear-7-enter-active,
+.appear-7-leave-active {
+  transition-delay: 1200ms;
 }
 </style>

@@ -47,7 +47,7 @@
         <path d="m215 250h320" />
         <circle r="5" fill="var(--border-color)" style="offset-path: path('m55 250h280')" />
       </LogicWire>
-      <NotGate class="gate" :size="'10cqw'" :a="wire_a" :b="wire_b" v-model="wire_y" />
+      <NotGate class="gate" :size="'10cqw'" :a="wire_a" v-model="wire_y" />
       <LogicWire
         class="wire-back"
         :width="555"
