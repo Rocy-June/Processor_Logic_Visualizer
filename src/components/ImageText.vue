@@ -14,7 +14,7 @@ defineProps({
   },
   size: {
     type: String,
-    default: '65px',
+    default: '9.03cqw',
   },
   imageMode: {
     type: String,
@@ -22,7 +22,7 @@ defineProps({
   },
   spacing: {
     type: String,
-    default: '1.66em',
+    default: '3cqw',
   },
 })
 </script>

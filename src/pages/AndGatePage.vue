@@ -48,49 +48,49 @@
 
     <div :class="{ 'handle-box': true, handled: handled }">
       <div class="background-text a">A</div>
-      <SwitchButton class="switch a" :size="'4.5cqw'" v-model="switch_a" />
+      <SwitchButton class="switch a" size="4.5cqw" v-model="switch_a" />
       <div class="background-text b">B</div>
-      <SwitchButton class="switch b" :size="'4.5cqw'" v-model="switch_b" />
+      <SwitchButton class="switch b" size="4.5cqw" v-model="switch_b" />
       <LogicWire
         class="wire-front a"
-        :width="555"
-        :height="250"
+        :width="562"
+        :height="230"
         :delay="200"
         :prop_in="switch_a"
         v-model="wire_a"
       >
-        <path d="m215 127h150v90h150" />
-        <circle r="5" fill="var(--border-color)" style="offset-path: path('m215 127h150v90h150')" />
+        <path d="m190 115h165v90h165" />
+        <circle r="5" fill="var(--border-color)" style="offset-path: path('m190 115h165v90h165')" />
       </LogicWire>
       <LogicWire
         class="wire-front b"
-        :width="555"
+        :width="562"
         :height="250"
         :delay="200"
         :prop_in="switch_b"
         v-model="wire_b"
       >
-        <path d="m215 127h150v-90h150" />
+        <path d="m190 115h165v-90h165" />
         <circle
           r="6"
           fill="var(--border-color)"
-          style="offset-path: path('m215 127h150v-90h150')"
+          style="offset-path: path('m190 115h165v-90h165')"
         />
       </LogicWire>
       <AndGate class="gate" :size="'10cqw'" :a="wire_a" :b="wire_b" v-model="wire_y" />
       <LogicWire
         class="wire-back"
-        :width="555"
-        :height="500"
+        :width="460"
+        :height="460"
         :delay="200"
         :prop_in="wire_y"
         v-model="switch_y"
       >
-        <path d="m55 250h280" />
-        <circle r="5" fill="var(--border-color)" style="offset-path: path('m55 250h280')" />
+        <path d="m45 230h280" />
+        <circle r="5" fill="var(--border-color)" style="offset-path: path('m45 230h280')" />
       </LogicWire>
       <div class="background-text y">Y</div>
-      <SwitchButton class="switch y" :size="'4.5cqw'" v-model="switch_y" :disabled="true" />
+      <SwitchButton class="switch y" size="4.5cqw" v-model="switch_y" :disabled="true" />
     </div>
 
     <transition name="slide-to-left">
@@ -229,7 +229,7 @@ const next_page = () => {
 
     .wire-front {
       position: absolute;
-      width: 50%;
+      width: 55%;
       left: 0;
 
       &.a {
@@ -245,14 +245,14 @@ const next_page = () => {
     .wire-back {
       position: absolute;
       top: 10%;
-      width: 50%;
+      width: 45%;
       right: 0;
       height: 100%;
     }
 
     .gate {
       top: 60%;
-      left: 50%;
+      left: 55%;
     }
   }
 

@@ -256,3 +256,14 @@ onMounted(() => {
   opacity: 0;
 }
 </style>
+<style lang="less">
+body {
+  &:has(.switches-box.dark) {
+    background-color: var(--background-dark);
+  }
+
+  .page-transition::before {
+    display: none;
+  }
+}
+</style>

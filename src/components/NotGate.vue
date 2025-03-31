@@ -1,5 +1,5 @@
 <template>
-  <div :class="{ 'not-gate-box': true, active: y }">
+  <div :class="{ 'not-gate-box': true, active: y }" :title="$t('word.not_gate_full_name')">
     <svg :width="size" :height="size" viewBox="0 0 100 100">
       <path
         class="not-gate-path"

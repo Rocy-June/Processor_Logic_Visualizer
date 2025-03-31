@@ -1,5 +1,13 @@
 {
   "product_name": "Processor\u00A0Logic\u00A0Visualizer",
+  "word": {
+    "and_gate": "与门",
+    "and_gate_full_name": "与门 (AND gate)",
+    "or_gate": "或门",
+    "or_gate_full_name": "或门 (OR gate)",
+    "not_gate": "非门",
+    "not_gate_full_name": "非门 (NOT gate)"
+  },
   "home_page": {
     "title": "欢迎来到 {product_name}！",
     "you_can_learn": "在这里，你将可以学到…",
@@ -33,23 +41,23 @@
       "switches": "开关",
       "claude_shannon": "《继电器和开关电路的符号分析》"
     },
-    "menu_logic_gates_1": {
-      "title": "逻辑门 - 第一部分",
+    "menu_logic_gates_base": {
+      "title": "逻辑门 - 基础部分",
       "and_gate": "与门 (AND Gate)",
       "or_gate": "或门 (OR Gate)",
       "not_gate": "非门 (NOT Gate)",
-      "summary": "逻辑门 - 第一部分总结"
+      "summary": "逻辑门 - 基础部分总结"
     },
-    "menu_logic_gates_2": {
-      "title": "逻辑门 - 第二部分",
+    "menu_logic_gates_advance": {
+      "title": "逻辑门 - 进阶部分",
       "nand_gate": "与非门 (NAND Gate)",
       "nor_gate": "或非门 (NOR Gate)",
       "xor_gate": "异或门 (XOR Gate)",
       "xnor_gate": "同或门 (XNOR Gate)",
-      "summary": "逻辑门 - 第二部分总结"
+      "summary": "逻辑门 - 进阶部分总结"
     },
-    "menu_digital_circuits_1": {
-      "title": "数字电路 - 第一部分",
+    "menu_digital_circuits_base": {
+      "title": "数字电路 - 基础部分",
       "half_adder": "半加器 (Half Adder)",
       "full_adder": "全加器 (Full Adder)"
     },
@@ -61,8 +69,8 @@
       "t_ff": "T 触发器 (Toggle FF)",
       "et_ff": "边沿触发器 (Edge-Triggered FF)"
     },
-    "menu_digital_circuits_2": {
-      "title": "数字电路 - 第二部分",
+    "menu_digital_circuits_advance": {
+      "title": "数字电路 - 进阶部分",
       "latch": "锁存器 (Latche)",
       "rwm": "读写存储器 (RWM / Read Write Memory)",
       "ram": "随机存储器 (RAM / Random Access Memory)",
@@ -109,6 +117,11 @@
   "not_gate_page": {
     "title": "非门",
     "explain": "非门是指输入与输出恰好相反，输入为 1 时，输出为 0，输入为 0 时，输出为 1。其逻辑关系表示为真值表如下：",
+    "next_section": "下一章节"
+  },
+  "logic_gates_base_summary": {
+    "title": "逻辑门 - 基础部分总结",
+    "explain": "刚刚的三个章节中讲到的“与门”、“或门”和“非门”是逻辑电路中的基本的门电路。通过它们的组合，我们就可以构成各种复杂的逻辑电路。例如我们接下来要讲的“与非门”、“或非门”、“异或门”和“同或门”，甚至更加复杂的“触发器”以及“半加器”、“全加器”等电路，都是基于这些基本门电路的组合而成的。",
     "next_section": "下一章节"
   },
 

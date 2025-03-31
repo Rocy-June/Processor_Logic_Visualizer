@@ -1,5 +1,5 @@
 <template>
-  <div :class="{ 'and-gate-box': true, active: y }">
+  <div :class="{ 'and-gate-box': true, active: y }" :title="$t('word.and_gate_full_name')">
     <svg :width="size" :height="size" viewBox="0 0 100 100">
       <path class="and-gate-path" d="m0 0v100h50a1 1 0 000-100z" />
     </svg>

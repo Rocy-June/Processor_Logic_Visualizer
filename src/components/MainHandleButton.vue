@@ -14,7 +14,7 @@ const emit = defineEmits(['click'])
   font-size: 2.17cqw;
   border: 0;
   border-radius: 9em;
-  background-image: linear-gradient(20deg, var(--red-orange), var(--light-yellow));
+  background-image: linear-gradient(to top, var(--orange), var(--light-orange));
   color: var(--text-light);
 }
 </style>

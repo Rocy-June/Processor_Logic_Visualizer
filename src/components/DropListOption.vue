@@ -19,6 +19,10 @@ const props = defineProps({
     type: String,
     required: true,
   },
+  obj: {
+    type: Object,
+    default: () => ({}),
+  },
   active: {
     type: Boolean,
     default: false,
@@ -32,7 +36,7 @@ const select_option = inject('select_option')
 
 const handle_select = () => {
   if (select_option) {
-    select_option(props.value, props.label)
+    select_option(props.value, props.label, props.obj)
   }
 }
 
@@ -57,6 +61,9 @@ const search_filter = (l, f) => {
 
   &.hide {
     display: none;
+  }
+  &:not(:last-child) {
+    margin-bottom: 0.3em;
   }
 }
 </style>

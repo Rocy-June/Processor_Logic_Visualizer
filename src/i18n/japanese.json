@@ -1,5 +1,13 @@
 {
   "product_name": "Processor\u00A0Logic\u00A0Visualizer",
+  "word": {
+    "and_gate": "AND ゲート",
+    "and_gate_full_name": "AND ゲート",
+    "or_gate": "OR ゲート",
+    "or_gate_full_name": "OR ゲート",
+    "not_gate": "NOT ゲート",
+    "not_gate_full_name": "NOT ゲート"
+  },
   "home_page": {
     "title": "{product_name}へようこそ！",
     "you_can_learn": "ここでは次の内容を学ぶことができます...",
@@ -33,23 +41,23 @@
       "switches": "スイッチ",
       "claude_shannon": "リレーとスイッチング回路の記号解析"
     },
-    "menu_logic_gates_1": {
-      "title": "論理ゲート - パート1",
+    "menu_logic_gates_base": {
+      "title": "論理ゲート - 基本編",
       "and_gate": "AND ゲート",
       "or_gate": "OR ゲート",
       "not_gate": "NOT ゲート",
-      "summary": "論理ゲート - パート1の概要"
+      "summary": "論理ゲート - 基本編の概要"
     },
-    "menu_logic_gates_2": {
-      "title": "論理ゲート - パート2",
+    "menu_logic_gates_advance": {
+      "title": "論理ゲート - 複合編",
       "nand_gate": "NAND ゲート",
       "nor_gate": "NOR ゲート",
       "xor_gate": "XOR ゲート",
       "xnor_gate": "XNOR ゲート",
-      "summary": "論理ゲート - パート2の概要"
+      "summary": "論理ゲート - 複合編の概要"
     },
-    "menu_digital_circuits_1": {
-      "title": "デジタル回路 - パート1",
+    "menu_digital_circuits_base": {
+      "title": "デジタル回路 - 基本編",
       "half_adder": "半加算器",
       "full_adder": "全加算器"
     },
@@ -61,8 +69,8 @@
       "t_ff": "T(トグル型) フリップフロップ",
       "et_ff": "エッジトリガ型 フリップフロップ"
     },
-    "menu_digital_circuits_2": {
-      "title": "デジタル回路 - パート2",
+    "menu_digital_circuits_advance": {
+      "title": "デジタル回路 - 上級編",
       "latch": "ラッチ回路",
       "rwm": "読み書きメモリ",
       "ram": "ランダムアクセスメモリ",

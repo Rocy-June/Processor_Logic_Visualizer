@@ -221,29 +221,29 @@ const menus = [
     children: [{ text: 'menu_beginning.switches' }, { text: 'menu_beginning.claude_shannon' }],
   },
   {
-    text: 'menu_logic_gates_1.title',
+    text: 'menu_logic_gates_base.title',
     children: [
-      { text: 'menu_logic_gates_1.and_gate' },
-      { text: 'menu_logic_gates_1.or_gate' },
-      { text: 'menu_logic_gates_1.not_gate' },
-      { text: 'menu_logic_gates_1.summary' },
+      { text: 'menu_logic_gates_base.and_gate' },
+      { text: 'menu_logic_gates_base.or_gate' },
+      { text: 'menu_logic_gates_base.not_gate' },
+      { text: 'menu_logic_gates_base.summary' },
     ],
   },
   {
-    text: 'menu_logic_gates_2.title',
+    text: 'menu_logic_gates_advance.title',
     children: [
-      { text: 'menu_logic_gates_2.nand_gate' },
-      { text: 'menu_logic_gates_2.nor_gate' },
-      { text: 'menu_logic_gates_2.xor_gate' },
-      { text: 'menu_logic_gates_2.xnor_gate' },
-      { text: 'menu_logic_gates_2.summary' },
+      { text: 'menu_logic_gates_advance.nand_gate' },
+      { text: 'menu_logic_gates_advance.nor_gate' },
+      { text: 'menu_logic_gates_advance.xor_gate' },
+      { text: 'menu_logic_gates_advance.xnor_gate' },
+      { text: 'menu_logic_gates_advance.summary' },
     ],
   },
   {
-    text: 'menu_digital_circuits_1.title',
+    text: 'menu_digital_circuits_base.title',
     children: [
-      { text: 'menu_digital_circuits_1.half_adder' },
-      { text: 'menu_digital_circuits_1.full_adder' },
+      { text: 'menu_digital_circuits_base.half_adder' },
+      { text: 'menu_digital_circuits_base.full_adder' },
     ],
   },
   {
@@ -257,13 +257,13 @@ const menus = [
     ],
   },
   {
-    text: 'menu_digital_circuits_2.title',
+    text: 'menu_digital_circuits_advance.title',
     children: [
-      { text: 'menu_digital_circuits_2.latch' },
-      { text: 'menu_digital_circuits_2.rwm' },
-      { text: 'menu_digital_circuits_2.ram' },
-      { text: 'menu_digital_circuits_2.fd' },
-      { text: 'menu_digital_circuits_2.counter' },
+      { text: 'menu_digital_circuits_advance.latch' },
+      { text: 'menu_digital_circuits_advance.rwm' },
+      { text: 'menu_digital_circuits_advance.ram' },
+      { text: 'menu_digital_circuits_advance.fd' },
+      { text: 'menu_digital_circuits_advance.counter' },
     ],
   },
   {

@@ -1,5 +1,13 @@
 {
   "product_name": "Processor\u00A0Logic\u00A0Visualizer",
+  "word": {
+    "and_gate": "AND 게이트",
+    "and_gate_full_name": "AND 게이트",
+    "or_gate": "OR 게이트",
+    "or_gate_full_name": "OR 게이트",
+    "not_gate": "NOT 게이트",
+    "not_gate_full_name": "NOT 게이트"
+  },
   "home_page": {
     "title": "{product_name}에 오신\u00A0것을\u00A0환영합니다!",
     "you_can_learn": "이곳에서 다음 내용을 배울 수 있습니다...",
@@ -33,23 +41,23 @@
       "switches": "스위치",
       "claude_shannon": "릴레이 및 스위칭 회로의 상징적 분석"
     },
-    "menu_logic_gates_1": {
-      "title": "논리 게이트 - 1부",
+    "menu_logic_gates_base": {
+      "title": "논리 게이트 - 기본편",
       "and_gate": "AND 게이트",
       "or_gate": "OR 게이트",
       "not_gate": "NOT 게이트",
-      "summary": "논리 게이트 - 1부 요약"
+      "summary": "논리 게이트 - 기본편 요약"
     },
-    "menu_logic_gates_2": {
-      "title": "논리 게이트 - 2부",
+    "menu_logic_gates_advance": {
+      "title": "논리 게이트 - 복합편",
       "nand_gate": "NAND 게이트",
       "nor_gate": "NOR 게이트",
       "xor_gate": "XOR 게이트",
       "xnor_gate": "XNOR 게이트",
-      "summary": "논리 게이트 - 2부 요약"
+      "summary": "논리 게이트 - 복합편 요약"
     },
-    "menu_digital_circuits_1": {
-      "title": "디지털 회로 - 1부",
+    "menu_digital_circuits_base": {
+      "title": "디지털 회로 - 기본편",
       "half_adder": "반가산기",
       "full_adder": "전가산기"
     },
@@ -61,8 +69,8 @@
       "t_ff": "T(Toggle) 플립플롭",
       "et_ff": "엣지 트리거 플립플롭"
     },
-    "menu_digital_circuits_2": {
-      "title": "디지털 회로 - 2부",
+    "menu_digital_circuits_advance": {
+      "title": "디지털 회로 - 고급편",
       "latch": "래치",
       "rwm": "읽기-쓰기 메모리",
       "ram": "랜덤 액세스 메모리",

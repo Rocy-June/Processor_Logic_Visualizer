@@ -1,5 +1,5 @@
 <template>
-  <div :class="{ 'or-gate-box': true, active: y }">
+  <div :class="{ 'or-gate-box': true, active: y }" :title="$t('word.or_gate_full_name')">
     <svg :width="size" :height="size" viewBox="0 0 100 100">
       <path class="or-gate-path" d="m0 0a1 1.75 1 010 100h50c25 0 40-20 50-50C90 20 75 0 50 0z" />
     </svg>

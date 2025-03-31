@@ -5,11 +5,12 @@
     </button>
     <transition name="slide-to-left">
       <div class="setting-dialog" v-if="show_dialog">
-        <ImageText :src="translate_logo" size="2.26cqw">
+        <ImageText :src="translate_logo" size="2.26cqw" spacing="1cqw">
           <DropList
             class="translate-drop-list"
             v-model="language_value"
             v-model:label="language_label"
+            v-model:obj="language_obj"
             v-model:filter="language_filter"
             @change="language_changed"
             @blur="language_blur"
@@ -19,6 +20,7 @@
               :key="index"
               :value="item.pack_name"
               :label="item.local_name"
+              :obj="item"
               :active="item.pack_name == language_value"
             >
               {{ item.local_name }}
@@ -48,8 +50,9 @@ const { locale } = useI18n()
 
 const show_dialog = ref(false)
 const setting = ref(null)
-const language_label = defineModel('language_label')
-const language_value = defineModel('language_value')
+const language_label = ref()
+const language_value = ref()
+const language_obj = ref()
 const language_filter = defineModel('language_filter')
 
 const gear_click = () => {
@@ -71,6 +74,8 @@ const language_list = computed(() => {
 const language_changed = () => {
   locale.value = language_value.value
 
+  document.documentElement.lang = language_obj.value.html_lang
+
   localStorage.setItem('local_language', language_value.value)
 }
 
@@ -88,8 +93,11 @@ onMounted(() => {
   let current_lang = languages.find((item) => item.pack_name == local_language)
   language_value.value = current_lang.pack_name
   language_label.value = current_lang.local_name
+  language_obj.value = current_lang
 
   locale.value = language_value.value
+
+  document.documentElement.lang = language_obj.value.html_lang
 })
 
 onBeforeUnmount(() => {

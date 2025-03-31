@@ -1,5 +1,13 @@
 {
   "product_name": "Processor\u00A0Logic\u00A0Visualizer",
+  "word": {
+    "and_gate": "AND Gate",
+    "and_gate_full_name": "AND Gate",
+    "or_gate": "OR Gate",
+    "or_gate_full_name": "OR Gate",
+    "not_gate": "NOT Gate",
+    "not_gate_full_name": "NOT Gate"
+  },
   "home_page": {
     "title": "Welcom to {product_name}!",
     "you_can_learn": "At this site, you can learn about...",
@@ -33,23 +41,23 @@
       "switches": "Switches",
       "claude_shannon": "A Symbolic Analysis of Relay and Switching Circuits"
     },
-    "menu_logic_gates_1": {
-      "title": "Logic Gates - Part 1",
+    "menu_logic_gates_base": {
+      "title": "Logic Gates - Base Section",
       "and_gate": "AND Gate",
       "or_gate": "OR Gate",
       "not_gate": "NOT Gate",
-      "summary": "Summary of Logic Gates - Part 1"
+      "summary": "Summary of Base Logic Gates"
     },
-    "menu_logic_gates_2": {
-      "title": "Logic Gates - Part 2",
+    "menu_logic_gates_advance": {
+      "title": "Logic Gates - Advanced Section",
       "nand_gate": "NAND Gate",
       "nor_gate": "NOR Gate",
       "xor_gate": "XOR Gate",
       "xnor_gate": "XNOR Gate",
-      "summary": "Summary of Logic Gates - Part 2"
+      "summary": "Summary of Advanced Logic Gates"
     },
-    "menu_digital_circuits_1": {
-      "title": "Digital Circuits - Part 1",
+    "menu_digital_circuits_base": {
+      "title": "Digital Circuits - Base Section",
       "half_adder": "Half Adder",
       "full_adder": "Full Adder"
     },
@@ -61,8 +69,8 @@
       "t_ff": "T(Toggle) Flip-Flop",
       "et_ff": "Edge-Triggered Flip-Flop"
     },
-    "menu_digital_circuits_2": {
-      "title": "Digital Circuits - Part 2",
+    "menu_digital_circuits_advance": {
+      "title": "Digital Circuits - Advanced Section",
       "latch": "Latches",
       "rwm": "Read Write Memory",
       "ram": "Random Access Memory",
@@ -109,6 +117,11 @@
   "not_gate_page": {
     "title": "NOT Gate",
     "explain": "A NOT gate means that the output is the exact opposite of the input. When the input is 1, the output is 0, and when the input is 0, the output is 1. This logical relationship is represented by the following truth table:",
+    "next_section": "Next section"
+  },
+  "logic_gates_base_summary": {
+    "title": "Summary of Base Logic Gates",
+    "explain": "The previously covered chapters introduced the AND, OR, and NOT gates, which are the fundamental building blocks of logic circuits. By combining these basic gates, we can create a wide range of more complex logic circuits. For example, the gates we’ll explore next—NAND, NOR, XOR, and XNOR—are all constructed from combinations of these basics. Even more advanced components like flip-flops, half adders, and full adders are built upon these foundational gate structures.",
     "next_section": "Next section"
   },
 

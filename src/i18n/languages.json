@@ -1,22 +1,27 @@
 [
   {
     "local_name": "简体中文",
-    "pack_name": "chinese_simplified"
+    "pack_name": "chinese_simplified",
+    "html_lang": "zh-CN"
   },
   {
     "local_name": "繁體中文",
-    "pack_name": "chinese_traditional"
+    "pack_name": "chinese_traditional",
+    "html_lang": "zh-TW"
   },
   {
     "local_name": "English",
-    "pack_name": "english"
+    "pack_name": "english",
+    "html_lang": "en"
   },
   {
     "local_name": "日本語",
-    "pack_name": "japanese"
+    "pack_name": "japanese",
+    "html_lang": "ja"
   },
   {
     "local_name": "한글",
-    "pack_name": "korean"
+    "pack_name": "korean",
+    "html_lang": "ko"
   }
 ]

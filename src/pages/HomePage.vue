@@ -14,40 +14,64 @@
 
     <transition name="appear-3" appear>
       <div class="learn-list">
-        <ImageText :src="gate_logo" size="9.03cqw" spacing="2.5em" image-mode="round">
-          <div class="introduce_box">
-            <div class="intro_title">
-              {{ $t('home_page.gate.title') }} -
-              <span class="intro_subtitle">{{ $t('home_page.gate.subtitle') }}</span>
+        <ImageText
+          class="img-txt-box"
+          :src="gate_logo"
+          size="9.03cqw"
+          spacing="3cqw"
+          image-mode="round"
+        >
+          <div class="introduce-box">
+            <div class="intro-title-line">
+              <div class="intro-title">{{ $t('home_page.gate.title') }}</div>
+              <div class="intro-subtitle">({{ $t('home_page.gate.subtitle') }})</div>
             </div>
-            <div class="intro_content">{{ $t('home_page.gate.content') }}</div>
+            <div class="intro-content">{{ $t('home_page.gate.content') }}</div>
           </div>
         </ImageText>
-        <ImageText :src="flip_flop_logo" size="9.03cqw" spacing="2.5em" image-mode="round">
-          <div class="introduce_box">
-            <div class="intro_title">
-              {{ $t('home_page.flip_flop.title') }} -
-              <span class="intro_subtitle">{{ $t('home_page.flip_flop.subtitle') }}</span>
+        <ImageText
+          class="image-text-box"
+          :src="flip_flop_logo"
+          size="9.03cqw"
+          spacing="3cqw"
+          image-mode="round"
+        >
+          <div class="introduce-box">
+            <div class="intro-title-line">
+              <div class="intro-title">{{ $t('home_page.flip_flop.title') }}</div>
+              <div class="intro-subtitle">({{ $t('home_page.flip_flop.subtitle') }})</div>
             </div>
-            <div class="intro_content">{{ $t('home_page.flip_flop.content') }}</div>
+            <div class="intro-content">{{ $t('home_page.flip_flop.content') }}</div>
           </div>
         </ImageText>
-        <ImageText :src="digital_circuit_logo" size="9.03cqw" spacing="2.5em" image-mode="round">
-          <div class="introduce_box">
-            <div class="intro_title">
-              {{ $t('home_page.digital_circuit.title') }} -
-              <span class="intro_subtitle">{{ $t('home_page.digital_circuit.subtitle') }}</span>
+        <ImageText
+          class="image-text-box"
+          :src="digital_circuit_logo"
+          size="9.03cqw"
+          spacing="3cqw"
+          image-mode="round"
+        >
+          <div class="introduce-box">
+            <div class="intro-title-line">
+              <div class="intro-title">{{ $t('home_page.digital_circuit.title') }}</div>
+              <div class="intro-subtitle">({{ $t('home_page.digital_circuit.subtitle') }})</div>
             </div>
-            <div class="intro_content">{{ $t('home_page.digital_circuit.content') }}</div>
+            <div class="intro-content">{{ $t('home_page.digital_circuit.content') }}</div>
           </div>
         </ImageText>
-        <ImageText :src="cpu_logo" size="9.03cqw" spacing="2.5em" image-mode="round">
-          <div class="introduce_box">
-            <div class="intro_title">
-              {{ $t('home_page.cpu.title') }} -
-              <span class="intro_subtitle">{{ $t('home_page.cpu.subtitle') }}</span>
+        <ImageText
+          class="image-text-box"
+          :src="cpu_logo"
+          size="9.03cqw"
+          spacing="3cqw"
+          image-mode="round"
+        >
+          <div class="introduce-box">
+            <div class="intro-title-line">
+              <div class="intro-title">{{ $t('home_page.cpu.title') }}</div>
+              <div class="intro-subtitle">({{ $t('home_page.cpu.subtitle') }})</div>
             </div>
-            <div class="intro_content">{{ $t('home_page.cpu.content') }}</div>
+            <div class="intro-content">{{ $t('home_page.cpu.content') }}</div>
           </div>
         </ImageText>
       </div>
@@ -108,6 +132,7 @@ const scroll_not_at_end = () => {
 
   .title {
     font-size: 4.33cqw;
+    font-weight: bold;
     margin-bottom: 1.33em;
     word-break: keep-all;
   }
@@ -124,19 +149,28 @@ const scroll_not_at_end = () => {
       margin-bottom: 1.33em;
     }
 
-    .introduce_box {
-      .intro_title {
-        margin-bottom: 0.67em;
-        line-height: 0.67em;
+    .introduce-box {
+      .intro-title-line {
+        margin-bottom: 2cqw;
+
+        .intro-subtitle {
+          font-size: 1.3cqw;
+          line-height: 1em;
+          color: var(--sub-text-color);
+        }
       }
-      .intro_subtitle {
-        font-size: 1.45cqw;
-        color: var(--sub-text-color);
-      }
-      .intro_content {
-        font-size: 1.45cqw;
+
+      .intro-content {
+        font-size: 1.6cqw;
+        line-height: 1em;
       }
     }
+  }
+
+  .img-txt-box {
+    padding: 2.5cqw 3cqw;
+    border-radius: 2cqw;
+    background-color: var(--light-light-cyan);
   }
 
   .disclaimer {

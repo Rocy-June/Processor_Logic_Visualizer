@@ -1,5 +1,13 @@
 {
   "product_name": "Processor\u00A0Logic\u00A0Visualizer",
+  "word": {
+    "and_gate": "與閘",
+    "and_gate_full_name": "與閘 (AND gate)",
+    "or_gate": "或閘",
+    "or_gate_full_name": "或閘 (OR gate)",
+    "not_gate": "非閘",
+    "not_gate_full_name": "非閘 (NOT gate)"
+  },
   "home_page": {
     "title": "歡迎來到 {product_name}！",
     "you_can_learn": "在這裡，您將學習到...",
@@ -33,23 +41,23 @@
       "switches": "開關",
       "claude_shannon": "《繼電器與開關電路的符號分析》"
     },
-    "menu_logic_gates_1": {
-      "title": "邏輯閘 - 第一部分",
+    "menu_logic_gates_base": {
+      "title": "邏輯閘 - 基礎部分",
       "and_gate": "與閘 (AND Gate)",
       "or_gate": "或閘 (OR Gate)",
       "not_gate": "非閘 (NOT Gate)",
-      "summary": "邏輯閘 - 第一部分總結"
+      "summary": "邏輯閘 - 基礎部分總結"
     },
-    "menu_logic_gates_2": {
-      "title": "邏輯閘 - 第二部分",
+    "menu_logic_gates_advance": {
+      "title": "邏輯閘 - 進階部分",
       "nand_gate": "與非閘 (NAND Gate)",
       "nor_gate": "或非閘 (NOR Gate)",
       "xor_gate": "異或閘 (XOR Gate)",
       "xnor_gate": "同或閘 (XNOR Gate)",
-      "summary": "邏輯閘 - 第二部分總結"
+      "summary": "邏輯閘 - 進階部分總結"
     },
-    "menu_digital_circuits_1": {
-      "title": "數位電路 - 第一部分",
+    "menu_digital_circuits_base": {
+      "title": "數位電路 - 基礎部分",
       "half_adder": "半加器 (Half Adder)",
       "full_adder": "全加器 (Full Adder)"
     },
@@ -61,8 +69,8 @@
       "t_ff": "T 正反器 (Toggle FF)",
       "et_ff": "邊沿正反器 (Edge-Triggered FF)"
     },
-    "menu_digital_circuits_2": {
-      "title": "數位電路 - 第二部分",
+    "menu_digital_circuits_advance": {
+      "title": "數位電路 - 進階部分",
       "latch": "鎖存器 (Latche)",
       "rwm": "讀寫記憶體 (RWM / Read Write Memory)",
       "ram": "隨機存取記憶體 (RAM / Random Access Memory)",

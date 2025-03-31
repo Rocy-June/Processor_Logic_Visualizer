@@ -12,7 +12,7 @@
       <div :class="{ seletor: true, active: show_drop_list }"></div>
     </div>
     <div class="list-options-position">
-      <transition name="slide-to-left">
+      <transition name="scale-y">
         <div class="list-options-box" v-if="show_drop_list">
           <slot />
         </div>
@@ -28,6 +28,7 @@ const show_drop_list = ref(false)
 const drop_list = ref(null)
 const value = defineModel()
 const label = defineModel('label')
+const obj = defineModel('obj')
 const filter = defineModel('filter')
 
 const emit = defineEmits(['change', 'blur'])
@@ -58,9 +59,10 @@ onBeforeUnmount(() => {
   document.removeEventListener('mousedown', handle_click_outside)
 })
 
-const select_option = (v, t) => {
+const select_option = (v, t, o) => {
   label.value = t
   value.value = v
+  obj.value = o
   show_drop_list.value = false
   emit('change')
 }
@@ -127,25 +129,29 @@ provide('select_option', select_option)
   }
 }
 
-.slide-to-left-enter-active,
-.slide-to-left-leave-active {
+.scale-y-enter-active,
+.scale-y-leave-active {
   transition: all 0.3s;
   transform-origin: 0% 0%;
 }
-.slide-to-left-enter-from {
-  transform: scaleY(0.8);
+.scale-y-enter-from {
+  transform-origin: 0% 0%;
+  transform: scaleY(0.6);
   opacity: 0;
 }
-.slide-to-left-enter-to {
+.scale-y-enter-to {
+  transform-origin: 0% 0%;
   transform: scaleY(1);
   opacity: 1;
 }
-.slide-to-left-leave-from {
+.scale-y-leave-from {
+  transform-origin: 0% 0%;
   transform: scaleY(1);
   opacity: 1;
 }
-.slide-to-left-leave-to {
-  transform: scaleY(0.8);
+.scale-y-leave-to {
+  transform-origin: 0% 0%;
+  transform: scaleY(0.6);
   opacity: 0;
 }
 </style>

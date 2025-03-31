@@ -35,7 +35,7 @@
 
     <div :class="{ 'handle-box': true, handled: handled }">
       <div class="background-text a">A</div>
-      <SwitchButton class="switch a" :size="'4.5cqw'" v-model="switch_a" />
+      <SwitchButton class="switch a" size="4.5cqw" v-model="switch_a" />
       <LogicWire
         class="wire-front"
         :width="555"
@@ -60,7 +60,7 @@
         <circle r="5" fill="var(--border-color)" style="offset-path: path('m55 250h280')" />
       </LogicWire>
       <div class="background-text y">Y</div>
-      <SwitchButton class="switch y" :size="'4.5cqw'" v-model="switch_y" :disabled="true" />
+      <SwitchButton class="switch y" size="4.5cqw" v-model="switch_y" :disabled="true" />
     </div>
 
     <transition name="slide-to-left">
