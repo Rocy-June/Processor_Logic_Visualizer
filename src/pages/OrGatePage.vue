@@ -21,6 +21,11 @@
             </thead>
             <tbody>
               <tr>
+                <td class="false">0</td>
+                <td class="false">0</td>
+                <td class="false">0</td>
+              </tr>
+              <tr>
                 <td class="true">1</td>
                 <td class="false">0</td>
                 <td class="true">1</td>
@@ -34,11 +39,6 @@
                 <td class="true">1</td>
                 <td class="true">1</td>
                 <td class="true">1</td>
-              </tr>
-              <tr>
-                <td class="false">0</td>
-                <td class="false">0</td>
-                <td class="false">0</td>
               </tr>
             </tbody>
           </table>

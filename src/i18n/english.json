@@ -6,7 +6,15 @@
     "or_gate": "OR Gate",
     "or_gate_full_name": "OR Gate",
     "not_gate": "NOT Gate",
-    "not_gate_full_name": "NOT Gate"
+    "not_gate_full_name": "NOT Gate",
+    "nand_gate": "NAND Gate",
+    "nand_gate_full_name": "NAND Gate",
+    "nor_gate": "NOR Gate",
+    "nor_gate_full_name": "NOR Gate",
+    "xor_gate": "XOR Gate",
+    "xor_gate_full_name": "XOR Gate",
+    "xnor_gate": "XNOR Gate",
+    "xnor_gate_full_name": "XNOR Gate"
   },
   "home_page": {
     "title": "Welcom to {product_name}!",
@@ -106,18 +114,18 @@
   },
   "and_gate_page": {
     "title": "AND Gate",
-    "explain": "An AND gate refers to connecting two switches in series, where the output will be 1 only when both switches are turned on. If either switch is off, the output will be 0. This logical relationship is represented by the following truth table:",
-    "next_section": "Next section"
+    "explain": "An AND gate connects two switches in series, and the output is activated (1) only when both input switches are turned on (1). If either input is off, the output remains inactive (0). This logical relationship is represented by the truth table below:",
+    "next_section": "Next Section"
   },
   "or_gate_page": {
     "title": "OR Gate",
-    "explain": "An OR gate refers to connecting two switches in parallel, where the output will be 1 as long as at least one switch is turned on. The output will only be 0 when both switches are off. This logical relationship is represented by the following truth table:",
-    "next_section": "Next section"
+    "explain": "An OR gate connects two switches in parallel, and the output is activated (1) as long as at least one input switch is turned on (1). The output will only remain inactive (0) when both inputs are off. This logical relationship is represented by the truth table below:",
+    "next_section": "Next Section"
   },
   "not_gate_page": {
     "title": "NOT Gate",
-    "explain": "A NOT gate means that the output is the exact opposite of the input. When the input is 1, the output is 0, and when the input is 0, the output is 1. This logical relationship is represented by the following truth table:",
-    "next_section": "Next section"
+    "explain": "A NOT gate inverts the input signal. When the input switch is on (1), the output is inactive (0). When the input is off (0), the output becomes active (1). This logical relationship is represented by the truth table below:",
+    "next_section": "Next Section"
   },
   "logic_gates_base_summary": {
     "title": "Summary of Base Logic Gates",

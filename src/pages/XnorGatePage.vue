@@ -1,15 +1,15 @@
 <template>
-  <div class="and-gate-page-box">
+  <div class="xnor-gate-page-box">
     <h1 class="main-title">
       <button type="button" class="menu-button" @click="emit('menu-page')">
         <ColoredSVG :src="list_logo" :color="'var(--text-light)'" />
       </button>
-      <span class="title-content">{{ $t('and_gate_page.title') }}</span>
+      <span class="title-content">{{ $t('xnor_gate_page.title') }}</span>
     </h1>
 
     <transition name="slide-to-bottom">
       <div class="explain" v-if="handled">
-        <div class="explain-text">{{ $t('and_gate_page.explain') }}</div>
+        <div class="explain-text">{{ $t('xnor_gate_page.explain') }}</div>
         <div class="explain-truth-table-box">
           <table>
             <thead>
@@ -23,7 +23,7 @@
               <tr>
                 <td class="false">0</td>
                 <td class="false">0</td>
-                <td class="false">0</td>
+                <td class="true">1</td>
               </tr>
               <tr>
                 <td class="true">1</td>
@@ -59,8 +59,8 @@
         :prop_in="switch_a"
         v-model="wire_a"
       >
-        <path d="m190 115h165v90h165" />
-        <circle r="5" fill="var(--border-color)" style="offset-path: path('m190 115h165v90h165')" />
+        <path d="m190 115h185v90h185" />
+        <circle r="5" fill="var(--border-color)" style="offset-path: path('m190 115h185v90h185')" />
       </LogicWire>
       <LogicWire
         class="wire-front b"
@@ -70,14 +70,14 @@
         :prop_in="switch_b"
         v-model="wire_b"
       >
-        <path d="m190 115h165v-90h165" />
+        <path d="m190 115h185v-90h185" />
         <circle
           r="6"
           fill="var(--border-color)"
-          style="offset-path: path('m190 115h165v-90h165')"
+          style="offset-path: path('m190 115h185v-90h185')"
         />
       </LogicWire>
-      <AndGate class="gate" :size="'10cqw'" :a="wire_a" :b="wire_b" v-model="wire_y" />
+      <XnorGate class="gate" :size="'10cqw'" :a="wire_a" :b="wire_b" v-model="wire_y" />
       <LogicWire
         class="wire-back"
         :width="460"
@@ -86,8 +86,8 @@
         :prop_in="wire_y"
         v-model="switch_y"
       >
-        <path d="m45 230h280" />
-        <circle r="5" fill="var(--border-color)" style="offset-path: path('m45 230h280')" />
+        <path d="m50 230h270" />
+        <circle r="5" fill="var(--border-color)" style="offset-path: path('m50 230h270')" />
       </LogicWire>
       <div class="background-text y">Y</div>
       <SwitchButton class="switch y" size="4.5cqw" v-model="switch_y" :disabled="true" />
@@ -95,7 +95,7 @@
 
     <transition name="slide-to-left">
       <MainHandleButton class="next" v-if="handled" @click="next_page">
-        {{ $t('and_gate_page.next_section') }}
+        {{ $t('xnor_gate_page.next_section') }}
       </MainHandleButton>
     </transition>
   </div>
@@ -107,18 +107,18 @@ import { nextTick, ref, watch } from 'vue'
 import ColoredSVG from '@/components/ColoredSVG.vue'
 import SwitchButton from '@/components/SwitchButton.vue'
 import LogicWire from '@/components/LogicWire.vue'
-import AndGate from '@/components/AndGate.vue'
+import XnorGate from '@/components/XnorGate.vue'
 import MainHandleButton from '@/components/MainHandleButton.vue'
 
 import list_logo from '@/assets/list.svg'
 
 const emit = defineEmits(['menu-page', 'next-page'])
 
-const switch_a = ref(false)
+const switch_a = ref(true)
 const switch_b = ref(false)
 const switch_y = ref(false)
 
-const wire_a = ref(false)
+const wire_a = ref(true)
 const wire_b = ref(false)
 const wire_y = ref(false)
 
@@ -140,7 +140,7 @@ const next_page = () => {
 </script>
 
 <style lang="less" scoped>
-.and-gate-page-box {
+.xnor-gate-page-box {
   padding: 2em;
   font-size: 2.17cqw;
 

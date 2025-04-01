@@ -5,7 +5,7 @@
     "html_lang": "zh-CN"
   },
   {
-    "local_name": "繁體中文",
+    "local_name": "繁體中文 (施工中)",
     "pack_name": "chinese_traditional",
     "html_lang": "zh-TW"
   },
@@ -15,12 +15,12 @@
     "html_lang": "en"
   },
   {
-    "local_name": "日本語",
+    "local_name": "日本語 (工事中)",
     "pack_name": "japanese",
     "html_lang": "ja"
   },
   {
-    "local_name": "한글",
+    "local_name": "한글 (공사중)",
     "pack_name": "korean",
     "html_lang": "ko"
   }

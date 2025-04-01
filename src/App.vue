@@ -57,7 +57,35 @@
         v-else-if="steps[0] === 2 && steps[1] === 1 && steps[2] === 3"
         @menu-page="set_page({ step1: 1 })"
         @next-page="set_page({ step1: 2, step2: 2, step3: 0 })"
-        style="z-index: 76"
+        style="z-index: 74"
+      />
+      <NandGatePage
+        :key="9"
+        v-else-if="steps[0] === 2 && steps[1] === 2 && steps[2] === 0"
+        @menu-page="set_page({ step1: 1 })"
+        @next-page="set_page({ step1: 2, step2: 2, step3: 1 })"
+        style="z-index: 69"
+      />
+      <NorGatePage
+        :key="10"
+        v-else-if="steps[0] === 2 && steps[1] === 2 && steps[2] === 1"
+        @menu-page="set_page({ step1: 1 })"
+        @next-page="set_page({ step1: 2, step2: 2, step3: 2 })"
+        style="z-index: 68"
+      />
+      <XorGatePage
+        :key="11"
+        v-else-if="steps[0] === 2 && steps[1] === 2 && steps[2] === 2"
+        @menu-page="set_page({ step1: 1 })"
+        @next-page="set_page({ step1: 2, step2: 2, step3: 3 })"
+        style="z-index: 67"
+      />
+      <XnorGatePage
+        :key="12"
+        v-else-if="steps[0] === 2 && steps[1] === 2 && steps[2] === 3"
+        @menu-page="set_page({ step1: 1 })"
+        @next-page="set_page({ step1: 2, step2: 2, step3: 4 })"
+        style="z-index: 66"
       />
     </transition>
   </div>
@@ -78,10 +106,14 @@ import AndGatePage from './pages/AndGatePage.vue'
 import OrGatePage from './pages/OrGatePage.vue'
 import NotGatePage from './pages/NotGatePage.vue'
 import LogicGatesBaseSummary from './pages/LogicGatesBaseSummary.vue'
+import NandGatePage from './pages/NandGatePage.vue'
+import NorGatePage from './pages/NorGatePage.vue'
+import XorGatePage from './pages/XorGatePage.vue'
+import XnorGatePage from './pages/XnorGatePage.vue'
 
 const { locale } = useI18n()
 
-const steps = reactive([2, 1, 3])
+const steps = reactive([2, 2, 3])
 
 watch(
   () => steps,
