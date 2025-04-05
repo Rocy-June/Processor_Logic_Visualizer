@@ -58,6 +58,8 @@ if (typeof watch_prop == 'object') {
 } else {
   watch(() => props.prop_in, change_function)
 }
+
+change_function()
 </script>
 
 <style lang="less">

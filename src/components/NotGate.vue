@@ -1,6 +1,10 @@
 <template>
-  <div :class="{ 'not-gate-box': true, active: y }" :title="$t('word.not_gate_full_name')">
-    <svg :width="size" :height="size" viewBox="0 0 100 100">
+  <div
+    :class="{ 'not-gate-box': true, active: y }"
+    :style="{ width: size, height: size }"
+    :title="$t('word.not_gate_full_name')"
+  >
+    <svg width="100" height="100" viewBox="0 0 100 100">
       <path
         class="not-gate-path"
         d="m0 0v100l89-50zm85 50a1 1 0 0015 0 1 1 0 00-15 0zm4 0a1 1 0 017 0 1 1 0 01-7 0z"
@@ -39,6 +43,13 @@ watch(() => props.a, input_changed)
     .not-gate-path {
       fill: var(--border-color);
     }
+  }
+
+  > svg {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
   }
 
   .not-gate-path {

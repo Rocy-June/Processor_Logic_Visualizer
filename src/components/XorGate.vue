@@ -1,7 +1,11 @@
 <template>
-  <div :class="{ 'xor-gate-box': true, active: y }" :title="$t('word.xor_gate_full_name')">
+  <div
+    :class="{ 'xor-gate-box': true, active: y }"
+    :style="{ width: size }"
+    :title="$t('word.xor_gate_full_name')"
+  >
     <div class="hover-box" @click="gate_click"></div>
-    <svg :width="size" :height="size" viewBox="0 0 100 100" @click="gate_click">
+    <svg width="100" height="100" viewBox="0 0 100 100" @click="gate_click">
       <path
         class="xor-gate-path"
         d="m5 0a1 1.75 1 010 100 1 1 0 010-5A1 2 0 005 5a1 1 0 010-5m10 0a1 1.75 1 010 100h40c20 0 40-20 45-50C95 20 75 0 55 0z"
@@ -52,8 +56,6 @@
         <path d="m40 15h55" />
         <circle r="6" fill="var(--border-color)" style="offset-path: path('m40 15h55')" />
       </LogicWire>
-      <NotGate class="gate not a" :size="'3.5cqw'" :a="wire_a_not_a" v-model="not_a" />
-      <NotGate class="gate not b" :size="'3.5cqw'" :a="wire_b_not_b" v-model="not_b" />
       <LogicWire
         class="wire front-mid not-a-or-a"
         :width="102"
@@ -76,7 +78,6 @@
         <path d="m20 15h60" />
         <circle r="6" fill="var(--border-color)" style="offset-path: path('m20 15h60')" />
       </LogicWire>
-      <div>wire_a_or_b: {{ wire_a_or_b }}</div>
       <LogicWire
         class="wire front-mid a-or-b"
         :width="205"
@@ -99,8 +100,6 @@
         <path d="m40 170l85-155h55" />
         <circle r="6" fill="var(--border-color)" style="offset-path: path('m40 152h55')" />
       </LogicWire>
-      <OrGate class="gate or a" :size="'6cqw'" :a="not_a_or_a" :b="wire_b_or_a" v-model="or_a" />
-      <OrGate class="gate or b" :size="'6cqw'" :a="not_b_or_b" :b="wire_a_or_b" v-model="or_b" />
       <LogicWire
         class="wire back-mid or-a-nand"
         :width="102"
@@ -123,11 +122,15 @@
         <path d="m20 75h30v-60h30" />
         <circle r="6" fill="var(--border-color)" style="offset-path: path('m20 75h30v-60h30')" />
       </LogicWire>
-      <NandGate class="gate nand" :size="'8.5cqw'" :a="or_a_nand" :b="or_b_nand" v-model="nand" />
       <LogicWire class="wire back" :width="102" :height="307" :delay="50" :prop_in="nand">
         <path d="m63 152h40" />
         <circle r="6" fill="var(--border-color)" style="offset-path: path('m63 152h40')" />
       </LogicWire>
+      <NotGate class="gate not a" size="11.67%" :a="wire_a_not_a" v-model="not_a" />
+      <NotGate class="gate not b" size="11.67%" :a="wire_b_not_b" v-model="not_b" />
+      <OrGate class="gate or a" size="20%" :a="not_a_or_a" :b="wire_b_or_a" v-model="or_a" />
+      <OrGate class="gate or b" size="20%" :a="not_b_or_b" :b="wire_a_or_b" v-model="or_b" />
+      <NandGate class="gate nand" size="28.33%" :a="or_a_nand" :b="or_b_nand" v-model="nand" />
     </GateDialog>
   </div>
 </template>
@@ -191,8 +194,8 @@ watch(() => props.b, input_changed)
 .xor-gate-box {
   position: relative;
   font-size: 0;
+  aspect-ratio: 1;
   cursor: pointer;
-  z-index: 4;
 
   .hover-box {
     position: absolute;
@@ -221,6 +224,8 @@ watch(() => props.b, input_changed)
 
   > svg {
     position: relative;
+    width: 100%;
+    height: 100%;
     z-index: 2;
   }
 

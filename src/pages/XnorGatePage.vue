@@ -77,7 +77,6 @@
           style="offset-path: path('m190 115h185v-90h185')"
         />
       </LogicWire>
-      <XnorGate class="gate" :size="'10cqw'" :a="wire_a" :b="wire_b" v-model="wire_y" />
       <LogicWire
         class="wire-back"
         :width="460"
@@ -91,6 +90,7 @@
       </LogicWire>
       <div class="background-text y">Y</div>
       <SwitchButton class="switch y" size="4.5cqw" v-model="switch_y" :disabled="true" />
+      <XnorGate class="gate" :size="'10cqw'" :a="wire_a" :b="wire_b" v-model="wire_y" />
     </div>
 
     <transition name="slide-to-left">

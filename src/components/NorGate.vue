@@ -1,7 +1,11 @@
 <template>
-  <div :class="{ 'nor-gate-box': true, active: y }" :title="$t('word.nor_gate_full_name')">
+  <div
+    :class="{ 'nor-gate-box': true, active: y }"
+    :style="{ width: size }"
+    :title="$t('word.nor_gate_full_name')"
+  >
     <div class="hover-box" @click="gate_click"></div>
-    <svg :width="size" :height="size" viewBox="0 0 100 100" @click="gate_click">
+    <svg width="100" height="100" viewBox="0 0 100 100" @click="gate_click">
       <path
         class="nor-gate-path"
         d="m0 0a1 1.75 1 010 100h45c25 0 35-20 40-50C80 20 60 0 45 0zm85 50a1 1 0 0015 0 1 1 0 00-15 0zm4 0a1 1 0 017 0 1 1 0 01-7 0z"
@@ -30,13 +34,6 @@
         <path d="m0 25h115" />
         <circle r="6" fill="var(--border-color)" style="offset-path: path('m0 25h115')" />
       </LogicWire>
-      <OrGate
-        class="gate or"
-        :size="'8.5cqw'"
-        :a="wire_front_a"
-        :b="wire_front_b"
-        v-model="wire_font_or"
-      />
       <LogicWire
         class="wire mid"
         :width="136"
@@ -48,11 +45,18 @@
         <path d="m40 152h55" />
         <circle r="6" fill="var(--border-color)" style="offset-path: path('m40 152h55')" />
       </LogicWire>
-      <NotGate class="gate not" :size="'8.5cqw'" :a="wire_mid_not" v-model="wire_y" />
       <LogicWire class="wire back" :width="136" :height="307" :delay="67" :prop_in="wire_y">
         <path d="m40 153h96" />
         <circle r="6" fill="var(--border-color)" style="offset-path: path('m40 153h96')" />
       </LogicWire>
+      <OrGate
+        class="gate or"
+        size="28.33%"
+        :a="wire_front_a"
+        :b="wire_front_b"
+        v-model="wire_font_or"
+      />
+      <NotGate class="gate not" size="28.33%" :a="wire_mid_not" v-model="wire_y" />
     </GateDialog>
   </div>
 </template>
@@ -105,6 +109,7 @@ watch(() => props.b, input_changed)
 .nor-gate-box {
   position: relative;
   font-size: 0;
+  aspect-ratio: 1;
   cursor: pointer;
 
   .hover-box {
@@ -134,6 +139,8 @@ watch(() => props.b, input_changed)
 
   > svg {
     position: relative;
+    width: 100%;
+    height: 100%;
     z-index: 2;
   }
 
@@ -170,8 +177,7 @@ watch(() => props.b, input_changed)
 
     .wire {
       &.front,
-      &.front-mid,
-      &.back-mid,
+      &.mid,
       &.back {
         width: 33.33%;
       }
@@ -188,13 +194,7 @@ watch(() => props.b, input_changed)
         }
       }
 
-      &.front-mid {
-        top: 0;
-        left: 33.33%;
-        height: 100%;
-      }
-
-      &.back-mid {
+      &.mid {
         top: 0;
         left: 33.33%;
         height: 100%;
