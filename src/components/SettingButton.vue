@@ -101,7 +101,7 @@ onMounted(() => {
 })
 
 onBeforeUnmount(() => {
-  document.emoveEventListener('mousedown', handle_click_outside)
+  document.removeEventListener('mousedown', handle_click_outside)
 })
 </script>
 

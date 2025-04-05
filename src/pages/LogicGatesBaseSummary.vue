@@ -1,5 +1,5 @@
 <template>
-  <div class="logic-gates-summary-part1-box">
+  <div class="logic-gates-base-summary-box">
     <h1 class="main-title">
       <button type="button" class="menu-button" @click="emit('menu-page')">
         <ColoredSVG :src="list_logo" :color="'var(--text-light)'" />
@@ -27,7 +27,7 @@
           v-model="and_wire_a"
         >
           <path d="m75 185h50v38h50" />
-          <circle r="5" fill="var(--border-color)" style="offset-path: path('m75 185h50v38h50')" />
+          <circle r="6" fill="var(--border-color)" style="offset-path: path('m75 185h50v38h50')" />
         </LogicWire>
         <LogicWire
           class="wire-front b"
@@ -56,7 +56,7 @@
           v-model="and_switch_y"
         >
           <path d="m15 229h60" />
-          <circle r="5" fill="var(--border-color)" style="offset-path: path('m15 229h60')" />
+          <circle r="6" fill="var(--border-color)" style="offset-path: path('m15 229h60')" />
         </LogicWire>
         <div class="background-text y">Y</div>
         <SwitchButton class="switch y" size="2.6cqw" v-model="and_switch_y" :disabled="true" />
@@ -76,7 +76,7 @@
           v-model="or_wire_a"
         >
           <path d="m75 185h55v38h55" />
-          <circle r="5" fill="var(--border-color)" style="offset-path: path('m75 185h55v38h55')" />
+          <circle r="6" fill="var(--border-color)" style="offset-path: path('m75 185h55v38h55')" />
         </LogicWire>
         <LogicWire
           class="wire-front b"
@@ -99,7 +99,7 @@
           v-model="or_switch_y"
         >
           <path d="m15 229h60" />
-          <circle r="5" fill="var(--border-color)" style="offset-path: path('m15 229h60')" />
+          <circle r="6" fill="var(--border-color)" style="offset-path: path('m15 229h60')" />
         </LogicWire>
         <div class="background-text y">Y</div>
         <SwitchButton class="switch y" size="2.6cqw" v-model="or_switch_y" :disabled="true" />
@@ -117,7 +117,7 @@
           v-model="not_wire_a"
         >
           <path d="m75 230h80" />
-          <circle r="5" fill="var(--border-color)" style="offset-path: path('m75 230h80')" />
+          <circle r="6" fill="var(--border-color)" style="offset-path: path('m75 230h80')" />
         </LogicWire>
         <NotGate class="gate" :size="'3.33cqw'" :a="not_wire_a" v-model="not_wire_y" />
         <LogicWire
@@ -129,7 +129,7 @@
           v-model="not_switch_y"
         >
           <path d="m15 230h80" />
-          <circle r="5" fill="var(--border-color)" style="offset-path: path('m15 230h80')" />
+          <circle r="6" fill="var(--border-color)" style="offset-path: path('m15 230h80')" />
         </LogicWire>
         <div class="background-text y">Y</div>
         <SwitchButton class="switch y" size="2.6cqw" v-model="not_switch_y" :disabled="true" />
@@ -189,7 +189,7 @@ const next_page = () => {
 </script>
 
 <style lang="less" scoped>
-.logic-gates-summary-part1-box {
+.logic-gates-base-summary-box {
   padding: 2em;
   font-size: 2.17cqw;
 

@@ -132,6 +132,31 @@
     "explain": "The previously covered chapters introduced the AND, OR, and NOT gates, which are the fundamental building blocks of logic circuits. By combining these basic gates, we can create a wide range of more complex logic circuits. For example, the gates we’ll explore next—NAND, NOR, XOR, and XNOR—are all constructed from combinations of these basics. Even more advanced components like flip-flops, half adders, and full adders are built upon these foundational gate structures.",
     "next_section": "Next section"
   },
+  "nand_gate_page": {
+    "title": "NAND Gate",
+    "explain": "A NAND gate is the inverse of an AND gate. When both input switches are on (1), the output is inactive (0). In all other cases—when at least one input is off—the output is active (1). This logical relationship is represented by the truth table below:",
+    "next_section": "Next Section"
+  },
+  "nor_gate_page": {
+    "title": "NOR Gate",
+    "explain": "A NOR gate is the inverse of an OR gate. When both input switches are off (0), the output is active (1). If either input is on, the output remains inactive (0). This logical relationship is represented by the truth table below:",
+    "next_section": "Next Section"
+  },
+  "xor_gate_page": {
+    "title": "XOR Gate",
+    "explain": "An XOR gate outputs 1 when the two input switches are in opposite states. If both inputs are the same, the output is 0. This logical relationship is represented by the truth table below:",
+    "next_section": "Next Section"
+  },
+  "xnor_gate_page": {
+    "title": "XNOR Gate",
+    "explain": "An XNOR gate, also known as an Exclusive-NOR gate, outputs 1 when both input switches are in the same state. If the inputs are different, the output is 0. This logical relationship is represented by the truth table below:",
+    "next_section": "Next Section"
+  },
+  "logic_gates_advanced_summary": {
+    "title": "Summary of Advanced Logic Gates",
+    "explain": "The four gates we've just covered—NAND, NOR, XOR, and XNOR—are considered advanced logic gates. By combining them, we can build even more complex logic circuits. For example, the circuits we'll explore next—such as flip-flops, half adders, and full adders—are all constructed using combinations of these advanced gates.",
+    "next_section": "Next Section"
+  },
 
   "recommend_aspect_ratio_dialog": {
     "title": "Sorry...",

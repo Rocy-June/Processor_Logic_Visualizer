@@ -1,6 +1,6 @@
 <template>
   <div
-    :class="{ 'logic-wire-box': true, ready: prop_in, active: model }"
+    :class="{ 'logic-wire-box': true, ready: prop_in, active: prop_in }"
     :style="{ '--delay': delay + 'ms' }"
   >
     <svg :viewBox="`0 0 ${width} ${height}`" ref="svg">
@@ -25,7 +25,10 @@ const props = defineProps({
     type: Number,
     default: 0,
   },
-  prop_in: {},
+  prop_in: {
+    type: Boolean,
+    default: false,
+  },
 })
 
 const model = defineModel()
@@ -97,7 +100,7 @@ if (typeof watch_prop == 'object') {
     }
   }
 
-  circle {
+  circle:not(.visible) {
     opacity: 0;
   }
 }

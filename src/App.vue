@@ -87,6 +87,13 @@
         @next-page="set_page({ step1: 2, step2: 2, step3: 4 })"
         style="z-index: 66"
       />
+      <LogicGatesAdvancedSummary
+        :key="13"
+        v-else-if="steps[0] === 2 && steps[1] === 2 && steps[2] === 4"
+        @menu-page="set_page({ step1: 1 })"
+        @next-page="set_page({ step1: 2, step2: 3, step3: 0 })"
+        style="z-index: 65"
+      />
     </transition>
   </div>
 </template>
@@ -110,10 +117,11 @@ import NandGatePage from './pages/NandGatePage.vue'
 import NorGatePage from './pages/NorGatePage.vue'
 import XorGatePage from './pages/XorGatePage.vue'
 import XnorGatePage from './pages/XnorGatePage.vue'
+import LogicGatesAdvancedSummary from './pages/LogicGatesAdvancedSummary.vue'
 
 const { locale } = useI18n()
 
-const steps = reactive([2, 2, 3])
+const steps = reactive([2, 2, 2])
 
 watch(
   () => steps,

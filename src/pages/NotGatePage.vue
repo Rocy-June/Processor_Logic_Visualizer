@@ -45,9 +45,8 @@
         v-model="wire_a"
       >
         <path d="m215 250h320" />
-        <circle r="5" fill="var(--border-color)" style="offset-path: path('m55 250h280')" />
+        <circle r="6" fill="var(--border-color)" style="offset-path: path('m55 250h280')" />
       </LogicWire>
-      <NotGate class="gate" :size="'10cqw'" :a="wire_a" v-model="wire_y" />
       <LogicWire
         class="wire-back"
         :width="555"
@@ -57,10 +56,11 @@
         v-model="switch_y"
       >
         <path d="m55 250h280" />
-        <circle r="5" fill="var(--border-color)" style="offset-path: path('m55 250h280')" />
+        <circle r="6" fill="var(--border-color)" style="offset-path: path('m55 250h280')" />
       </LogicWire>
       <div class="background-text y">Y</div>
       <SwitchButton class="switch y" size="4.5cqw" v-model="switch_y" :disabled="true" />
+      <NotGate class="gate" :size="'10cqw'" :a="wire_a" v-model="wire_y" />
     </div>
 
     <transition name="slide-to-left">

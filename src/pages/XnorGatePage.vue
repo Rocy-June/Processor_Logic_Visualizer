@@ -60,7 +60,7 @@
         v-model="wire_a"
       >
         <path d="m190 115h185v90h185" />
-        <circle r="5" fill="var(--border-color)" style="offset-path: path('m190 115h185v90h185')" />
+        <circle r="6" fill="var(--border-color)" style="offset-path: path('m190 115h185v90h185')" />
       </LogicWire>
       <LogicWire
         class="wire-front b"
@@ -87,7 +87,7 @@
         v-model="switch_y"
       >
         <path d="m50 230h270" />
-        <circle r="5" fill="var(--border-color)" style="offset-path: path('m50 230h270')" />
+        <circle r="6" fill="var(--border-color)" style="offset-path: path('m50 230h270')" />
       </LogicWire>
       <div class="background-text y">Y</div>
       <SwitchButton class="switch y" size="4.5cqw" v-model="switch_y" :disabled="true" />
