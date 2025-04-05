@@ -12,7 +12,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onBeforeUnmount } from 'vue'
+import { ref /*, onMounted, onBeforeUnmount*/ } from 'vue'
 
 import ColoredSVG from './ColoredSVG.vue'
 
@@ -28,12 +28,12 @@ const close_click = () => {
   emit('close')
 }
 
-const handle_click_outside = (event) => {
-  if (dialog.value && !dialog.value.contains(event.target)) {
-    enabled.value = false
-  }
-}
-
+// const handle_click_outside = (event) => {
+//   if (dialog.value && !dialog.value.contains(event.target)) {
+//     enabled.value = false
+//   }
+// }
+//
 // onMounted(() => {
 //   document.addEventListener('mousedown', handle_click_outside)
 // })

@@ -1,16 +1,11 @@
 <template>
-  <div
-    class="colored-svg-box"
-    :style="{
-      'mask-image': `url(${src})`,
-      'background-color': color,
-      'background-image': colorImage,
-    }"
-  ></div>
+  <div class="colored-svg-box" :style="style_object"></div>
 </template>
 
 <script setup>
-defineProps({
+import { ref, watch } from 'vue'
+
+const props = defineProps({
   color: {
     type: String,
   },
@@ -21,6 +16,31 @@ defineProps({
     type: String,
   },
 })
+
+const style_object = ref({
+  'mask-image': `url("${props.src}")`,
+  'background-color': props.color,
+  'background-image': props.colorImage,
+})
+
+watch(
+  () => props.src,
+  (newSrc) => {
+    style_object.value['mask-image'] = `url("${newSrc}")`
+  },
+)
+watch(
+  () => props.color,
+  (newColor) => {
+    style_object.value['background-color'] = newColor
+  },
+)
+watch(
+  () => props.colorImage,
+  (newColorImage) => {
+    style_object.value['background-image'] = newColorImage
+  },
+)
 </script>
 
 <style lang="less" scoped>
