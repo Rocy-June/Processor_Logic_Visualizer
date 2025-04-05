@@ -126,23 +126,11 @@
         <path d="m63 152h40" />
         <circle r="6" fill="var(--border-color)" style="offset-path: path('m63 152h40')" />
       </LogicWire>
-      <NotGate class="gate not a" :size="'3.5cqw'" :a="wire_a_not_a" v-model="not_a" />
-      <NotGate class="gate not b" :size="'3.5cqw'" :a="wire_b_not_b" v-model="not_b" />
-      <AndGate
-        class="gate or a"
-        :size="'6cqw'"
-        :a="not_a_and_a"
-        :b="wire_b_and_a"
-        v-model="and_a"
-      />
-      <AndGate
-        class="gate or b"
-        :size="'6cqw'"
-        :a="not_b_and_b"
-        :b="wire_a_and_b"
-        v-model="and_b"
-      />
-      <NorGate class="gate nor" :size="'8.5cqw'" :a="and_a_nor" :b="and_b_nor" v-model="nor" />
+      <NotGate class="gate not a" size="8%" :a="wire_a_not_a" v-model="not_a" />
+      <NotGate class="gate not b" size="8%" :a="wire_b_not_b" v-model="not_b" />
+      <AndGate class="gate or a" size="15%" :a="not_a_and_a" :b="wire_b_and_a" v-model="and_a" />
+      <AndGate class="gate or b" size="15%" :a="not_b_and_b" :b="wire_a_and_b" v-model="and_b" />
+      <NorGate class="gate nor" size="21.7%" :a="and_a_nor" :b="and_b_nor" v-model="nor" />
     </GateDialog>
   </div>
 </template>

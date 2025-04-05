@@ -51,12 +51,12 @@
       </LogicWire>
       <AndGate
         class="gate and"
-        size="28.33%"
+        size="21.5%"
         :a="wire_front_a"
         :b="wire_front_b"
         v-model="wire_font_and"
       />
-      <NotGate class="gate not" size="28.33%" :a="wire_mid_not" v-model="wire_y" />
+      <NotGate class="gate not" size="21.5%" :a="wire_mid_not" v-model="wire_y" />
     </GateDialog>
   </div>
 </template>

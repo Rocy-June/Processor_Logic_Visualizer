@@ -1,7 +1,7 @@
 <template>
   <div
     :class="{ 'not-gate-box': true, active: y }"
-    :style="{ width: size, height: size }"
+    :style="{ width: size }"
     :title="$t('word.not_gate_full_name')"
   >
     <svg width="100" height="100" viewBox="0 0 100 100">
@@ -38,6 +38,7 @@ watch(() => props.a, input_changed)
 <style lang="less" scoped>
 .not-gate-box {
   font-size: 0;
+  aspect-ratio: 1;
 
   &.active {
     .not-gate-path {

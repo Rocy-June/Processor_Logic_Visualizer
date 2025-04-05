@@ -126,11 +126,11 @@
         <path d="m63 152h40" />
         <circle r="6" fill="var(--border-color)" style="offset-path: path('m63 152h40')" />
       </LogicWire>
-      <NotGate class="gate not a" size="11.67%" :a="wire_a_not_a" v-model="not_a" />
-      <NotGate class="gate not b" size="11.67%" :a="wire_b_not_b" v-model="not_b" />
-      <OrGate class="gate or a" size="20%" :a="not_a_or_a" :b="wire_b_or_a" v-model="or_a" />
-      <OrGate class="gate or b" size="20%" :a="not_b_or_b" :b="wire_a_or_b" v-model="or_b" />
-      <NandGate class="gate nand" size="28.33%" :a="or_a_nand" :b="or_b_nand" v-model="nand" />
+      <NotGate class="gate not a" size="8%" :a="wire_a_not_a" v-model="not_a" />
+      <NotGate class="gate not b" size="8%" :a="wire_b_not_b" v-model="not_b" />
+      <OrGate class="gate or a" size="15%" :a="not_a_or_a" :b="wire_b_or_a" v-model="or_a" />
+      <OrGate class="gate or b" size="15%" :a="not_b_or_b" :b="wire_a_or_b" v-model="or_b" />
+      <NandGate class="gate nand" size="21.7%" :a="or_a_nand" :b="or_b_nand" v-model="nand" />
     </GateDialog>
   </div>
 </template>

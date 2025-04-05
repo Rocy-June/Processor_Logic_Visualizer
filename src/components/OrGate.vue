@@ -1,7 +1,7 @@
 <template>
   <div
     :class="{ 'or-gate-box': true, active: y }"
-    :style="{ width: size, height: size }"
+    :style="{ width: size }"
     :title="$t('word.or_gate_full_name')"
   >
     <svg width="100" height="100" viewBox="0 0 100 100">
@@ -40,6 +40,7 @@ watch(() => props.b, input_changed)
 <style lang="less" scoped>
 .or-gate-box {
   font-size: 0;
+  aspect-ratio: 1;
 
   &.active {
     .or-gate-path {
