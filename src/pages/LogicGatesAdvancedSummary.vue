@@ -15,9 +15,9 @@
       <div class="nand-gate">
         <div class="background-text gate-name">{{ $t('word.nand_gate') }}</div>
         <div class="background-text a">A</div>
-        <SwitchButton class="switch a" size="2.6cqw" v-model="nand_switch_a" />
+        <SwitchButton class="switch a" size="3cqw" v-model="nand_switch_a" />
         <div class="background-text b">B</div>
-        <SwitchButton class="switch b" size="2.6cqw" v-model="nand_switch_b" />
+        <SwitchButton class="switch b" size="3cqw" v-model="nand_switch_b" />
         <LogicWire
           class="wire-front a"
           :width="276"
@@ -26,8 +26,8 @@
           :prop_in="nand_switch_a"
           v-model="nand_wire_a"
         >
-          <path d="m75 40h92v41h92" />
-          <circle r="6" fill="var(--border-color)" style="offset-path: path('m75 40h92v41h92')" />
+          <path d="m75 40h85v41h85" />
+          <circle r="6" fill="var(--border-color)" style="offset-path: path('m75 40h85v41h85')" />
         </LogicWire>
         <LogicWire
           class="wire-front b"
@@ -37,16 +37,9 @@
           :prop_in="nand_switch_b"
           v-model="nand_wire_b"
         >
-          <path d="m75 55h92v-41h92" />
-          <circle r="6" fill="var(--border-color)" style="offset-path: path('m75 55h92v-41h92')" />
+          <path d="m75 55h85v-41h85" />
+          <circle r="6" fill="var(--border-color)" style="offset-path: path('m75 55h85v-41h85')" />
         </LogicWire>
-        <NandGate
-          class="gate"
-          :size="'3.33cqw'"
-          :a="nand_wire_a"
-          :b="nand_wire_b"
-          v-model="nand_wire_y"
-        />
         <LogicWire
           class="wire-back"
           :width="235"
@@ -55,18 +48,25 @@
           :prop_in="nand_wire_y"
           v-model="nand_switch_y"
         >
-          <path d="m15 88h155" />
-          <circle r="6" fill="var(--border-color)" style="offset-path: path('m15 88h155')" />
+          <path d="m30 88h135" />
+          <circle r="6" fill="var(--border-color)" style="offset-path: path('m30 88h135')" />
         </LogicWire>
         <div class="background-text y">Y</div>
-        <SwitchButton class="switch y" size="2.6cqw" v-model="nand_switch_y" :disabled="true" />
+        <SwitchButton class="switch y" size="3cqw" v-model="nand_switch_y" :disabled="true" />
+        <NandGate
+          class="gate"
+          size="6cqw"
+          :a="nand_wire_a"
+          :b="nand_wire_b"
+          v-model="nand_wire_y"
+        />
       </div>
       <div class="nor-gate">
         <div class="background-text gate-name">{{ $t('word.nor_gate') }}</div>
         <div class="background-text a">A</div>
-        <SwitchButton class="switch a" size="2.6cqw" v-model="nor_switch_a" />
+        <SwitchButton class="switch a" size="3cqw" v-model="nor_switch_a" />
         <div class="background-text b">B</div>
-        <SwitchButton class="switch b" size="2.6cqw" v-model="nor_switch_b" />
+        <SwitchButton class="switch b" size="3cqw" v-model="nor_switch_b" />
         <LogicWire
           class="wire-front a"
           :width="276"
@@ -75,8 +75,8 @@
           :prop_in="nor_switch_a"
           v-model="nor_wire_a"
         >
-          <path d="m75 40h102v41h102" />
-          <circle r="6" fill="var(--border-color)" style="offset-path: path('m75 40h102v41h102')" />
+          <path d="m75 40h95v41h95" />
+          <circle r="6" fill="var(--border-color)" style="offset-path: path('m75 40h95v41h95')" />
         </LogicWire>
         <LogicWire
           class="wire-front b"
@@ -86,20 +86,9 @@
           :prop_in="nor_switch_b"
           v-model="nor_wire_b"
         >
-          <path d="m75 55h102v-41h102" />
-          <circle
-            r="6"
-            fill="var(--border-color)"
-            style="offset-path: path('m75 55h102v-41h102')"
-          />
+          <path d="m75 55h95v-41h95" />
+          <circle r="6" fill="var(--border-color)" style="offset-path: path('m75 55h95v-41h95')" />
         </LogicWire>
-        <NorGate
-          class="gate"
-          :size="'3.33cqw'"
-          :a="nor_wire_a"
-          :b="nor_wire_b"
-          v-model="nor_wire_y"
-        />
         <LogicWire
           class="wire-back"
           :width="235"
@@ -108,18 +97,19 @@
           :prop_in="nor_wire_y"
           v-model="nor_switch_y"
         >
-          <path d="m15 88h155" />
-          <circle r="6" fill="var(--border-color)" style="offset-path: path('m15 88h155')" />
+          <path d="m30 88h135" />
+          <circle r="6" fill="var(--border-color)" style="offset-path: path('m30 88h135')" />
         </LogicWire>
         <div class="background-text y">Y</div>
-        <SwitchButton class="switch y" size="2.6cqw" v-model="nor_switch_y" :disabled="true" />
+        <SwitchButton class="switch y" size="3cqw" v-model="nor_switch_y" :disabled="true" />
+        <NorGate class="gate" size="6cqw" :a="nor_wire_a" :b="nor_wire_b" v-model="nor_wire_y" />
       </div>
       <div class="xor-gate">
         <div class="background-text gate-name">{{ $t('word.xor_gate') }}</div>
         <div class="background-text a">A</div>
-        <SwitchButton class="switch a" size="2.6cqw" v-model="xor_switch_a" />
+        <SwitchButton class="switch a" size="3cqw" v-model="xor_switch_a" />
         <div class="background-text b">B</div>
-        <SwitchButton class="switch b" size="2.6cqw" v-model="xor_switch_b" />
+        <SwitchButton class="switch b" size="3cqw" v-model="xor_switch_b" />
         <LogicWire
           class="wire-front a"
           :width="276"
@@ -128,8 +118,8 @@
           :prop_in="xor_switch_a"
           v-model="xor_wire_a"
         >
-          <path d="m75 40h102v41h102" />
-          <circle r="6" fill="var(--border-color)" style="offset-path: path('m75 40h102v41h102')" />
+          <path d="m75 40h100v41h100" />
+          <circle r="6" fill="var(--border-color)" style="offset-path: path('m75 40h100v41h100')" />
         </LogicWire>
         <LogicWire
           class="wire-front b"
@@ -139,20 +129,13 @@
           :prop_in="xor_switch_b"
           v-model="xor_wire_b"
         >
-          <path d="m75 55h102v-41h102" />
+          <path d="m75 55h100v-41h100" />
           <circle
             r="6"
             fill="var(--border-color)"
-            style="offset-path: path('m75 55h102v-41h102')"
+            style="offset-path: path('m75 55h100v-41h100')"
           />
         </LogicWire>
-        <XorGate
-          class="gate"
-          :size="'3.33cqw'"
-          :a="xor_wire_a"
-          :b="xor_wire_b"
-          v-model="xor_wire_y"
-        />
         <LogicWire
           class="wire-back"
           :width="235"
@@ -161,18 +144,19 @@
           :prop_in="xor_wire_y"
           v-model="xor_switch_y"
         >
-          <path d="m15 88h155" />
-          <circle r="6" fill="var(--border-color)" style="offset-path: path('m15 88h155')" />
+          <path d="m30 88h135" />
+          <circle r="6" fill="var(--border-color)" style="offset-path: path('m30 88h135')" />
         </LogicWire>
         <div class="background-text y">Y</div>
-        <SwitchButton class="switch y" size="2.6cqw" v-model="xor_switch_y" :disabled="true" />
+        <SwitchButton class="switch y" size="3cqw" v-model="xor_switch_y" :disabled="true" />
+        <XorGate class="gate" size="6cqw" :a="xor_wire_a" :b="xor_wire_b" v-model="xor_wire_y" />
       </div>
       <div class="xnor-gate">
         <div class="background-text gate-name">{{ $t('word.xnor_gate') }}</div>
         <div class="background-text a">A</div>
-        <SwitchButton class="switch a" size="2.6cqw" v-model="xnor_switch_a" />
+        <SwitchButton class="switch a" size="3cqw" v-model="xnor_switch_a" />
         <div class="background-text b">B</div>
-        <SwitchButton class="switch b" size="2.6cqw" v-model="xnor_switch_b" />
+        <SwitchButton class="switch b" size="3cqw" v-model="xnor_switch_b" />
         <LogicWire
           class="wire-front a"
           :width="276"
@@ -181,8 +165,8 @@
           :prop_in="xnor_switch_a"
           v-model="xnor_wire_a"
         >
-          <path d="m75 40h102v41h102" />
-          <circle r="6" fill="var(--border-color)" style="offset-path: path('m75 40h102v41h102')" />
+          <path d="m75 40h100v41h100" />
+          <circle r="6" fill="var(--border-color)" style="offset-path: path('m75 40h100v41h100')" />
         </LogicWire>
         <LogicWire
           class="wire-front b"
@@ -192,20 +176,13 @@
           :prop_in="xnor_switch_b"
           v-model="xnor_wire_b"
         >
-          <path d="m75 55h102v-41h102" />
+          <path d="m75 55h100v-41h100" />
           <circle
             r="6"
             fill="var(--border-color)"
-            style="offset-path: path('m75 55h102v-41h102')"
+            style="offset-path: path('m75 55h100v-41h100')"
           />
         </LogicWire>
-        <XnorGate
-          class="gate"
-          :size="'3.33cqw'"
-          :a="xnor_wire_a"
-          :b="xnor_wire_b"
-          v-model="xnor_wire_y"
-        />
         <LogicWire
           class="wire-back"
           :width="235"
@@ -214,11 +191,18 @@
           :prop_in="xnor_wire_y"
           v-model="xnor_switch_y"
         >
-          <path d="m15 88h155" />
-          <circle r="6" fill="var(--border-color)" style="offset-path: path('m15 88h155')" />
+          <path d="m30 88h135" />
+          <circle r="6" fill="var(--border-color)" style="offset-path: path('m30 88h135')" />
         </LogicWire>
         <div class="background-text y">Y</div>
-        <SwitchButton class="switch y" size="2.6cqw" v-model="xnor_switch_y" :disabled="true" />
+        <SwitchButton class="switch y" size="3cqw" v-model="xnor_switch_y" :disabled="true" />
+        <XnorGate
+          class="gate"
+          size="6cqw"
+          :a="xnor_wire_a"
+          :b="xnor_wire_b"
+          v-model="xnor_wire_y"
+        />
       </div>
     </div>
 
@@ -303,7 +287,6 @@ const next_page = () => {
     right: 0;
     width: 100cqw;
     height: 60cqh;
-    overflow: hidden;
     transition: all 0.3s;
 
     .nand-gate,
@@ -314,8 +297,12 @@ const next_page = () => {
 
       .background-text {
         position: absolute;
-        font-size: 6.67cqw;
+        font-size: 7.5cqw;
         z-index: 2;
+
+        &.gate-name {
+          font-size: 6cqw;
+        }
       }
       .switch,
       .gate {
@@ -332,19 +319,19 @@ const next_page = () => {
     .nand-gate {
       .background-text {
         &.gate-name {
-          top: 5%;
+          top: 3%;
           left: 25%;
         }
         &.a {
-          top: 9%;
+          top: 6%;
           left: 5%;
         }
         &.b {
-          top: 30%;
+          top: 27%;
           left: 5%;
         }
         &.y {
-          top: 19.45%;
+          top: 17%;
           left: 46%;
         }
       }
@@ -394,19 +381,19 @@ const next_page = () => {
     .nor-gate {
       .background-text {
         &.gate-name {
-          top: 5%;
+          top: 3%;
           left: 75%;
         }
         &.a {
-          top: 9%;
+          top: 6%;
           left: 55%;
         }
         &.b {
-          top: 30%;
+          top: 27%;
           left: 55%;
         }
         &.y {
-          top: 19.45%;
+          top: 17%;
           left: 96%;
         }
       }
@@ -456,19 +443,19 @@ const next_page = () => {
     .xor-gate {
       .background-text {
         &.gate-name {
-          top: 55%;
+          top: 53%;
           left: 25%;
         }
         &.a {
-          top: 59%;
+          top: 56%;
           left: 5%;
         }
         &.b {
-          top: 80%;
+          top: 77%;
           left: 5%;
         }
         &.y {
-          top: 69.45%;
+          top: 67%;
           left: 46%;
         }
       }
@@ -511,26 +498,26 @@ const next_page = () => {
       }
 
       .gate {
-        top: 83%;
+        top: 83.3%;
         left: 27%;
       }
     }
     .xnor-gate {
       .background-text {
         &.gate-name {
-          top: 55%;
+          top: 53%;
           left: 75%;
         }
         &.a {
-          top: 59%;
+          top: 56%;
           left: 55%;
         }
         &.b {
-          top: 80%;
+          top: 77%;
           left: 55%;
         }
         &.y {
-          top: 69.45%;
+          top: 67%;
           left: 96%;
         }
       }
@@ -573,7 +560,7 @@ const next_page = () => {
       }
 
       .gate {
-        top: 83%;
+        top: 83.3%;
         left: 77%;
       }
     }

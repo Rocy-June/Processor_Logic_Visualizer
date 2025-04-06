@@ -121,7 +121,7 @@ import LogicGatesAdvancedSummary from './pages/LogicGatesAdvancedSummary.vue'
 
 const { locale } = useI18n()
 
-const steps = reactive([2, 2, 3])
+const steps = reactive([2, 2, 4])
 
 watch(
   () => steps,
