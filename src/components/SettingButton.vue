@@ -27,6 +27,15 @@
             </DropListOption>
           </DropList>
         </ImageText>
+        <ImageText
+          class="clickable"
+          :src="debug_logo"
+          size="2.26cqw"
+          spacing="1cqw"
+          @click="change_debug_mode"
+        >
+          <div class="list-text">{{ $t('app.change_debug_mode') }}</div>
+        </ImageText>
       </div>
     </transition>
   </div>
@@ -43,6 +52,7 @@ import DropListOption from './DropListOption.vue'
 
 import gear_logo from '@/assets/gear.svg'
 import translate_logo from '@/assets/translate_logo.svg'
+import debug_logo from '@/assets/debug_logo.svg'
 
 import languages from '@/i18n/languages.json'
 
@@ -54,6 +64,8 @@ const language_label = ref()
 const language_value = ref()
 const language_obj = ref()
 const language_filter = defineModel('language_filter')
+
+const emit = defineEmits(['page-debug'])
 
 const gear_click = () => {
   show_dialog.value = !show_dialog.value
@@ -82,6 +94,11 @@ const language_changed = () => {
 const language_blur = () => {
   let current_lang = languages.find((item) => item.pack_name == locale.value)
   language_label.value = current_lang.local_name
+}
+
+const change_debug_mode = () => {
+  emit('page-debug')
+  show_dialog.value = false
 }
 
 onMounted(() => {
@@ -144,6 +161,21 @@ onBeforeUnmount(() => {
 
     > * {
       padding: 0.3em 0.75em;
+    }
+
+    .clickable {
+      cursor: pointer;
+      border-radius: calc(0.72cqw - 0.25em);
+      background-color: transparent;
+      transition: all 0.2s;
+
+      &:hover {
+        background-color: var(--secondary-light-blue);
+      }
+    }
+
+    .list-text {
+      padding-left: 0.92em;
     }
   }
 

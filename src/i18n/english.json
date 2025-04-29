@@ -1,5 +1,8 @@
 {
   "product_name": "Processor\u00A0Logic\u00A0Visualizer",
+  "app": {
+    "change_debug_mode": "Change Debug Mode"
+  },
   "word": {
     "and_gate": "AND Gate",
     "and_gate_full_name": "AND Gate",
@@ -155,6 +158,11 @@
   "logic_gates_advanced_summary": {
     "title": "Summary of Advanced Logic Gates",
     "explain": "The four gates we've just covered—NAND, NOR, XOR, and XNOR—are considered advanced logic gates. By combining them, we can build even more complex logic circuits. For example, the circuits we'll explore next—such as flip-flops, half adders, and full adders—are all constructed using combinations of these advanced gates.",
+    "next_section": "Next Section"
+  },
+  "half_adder_page": {
+    "title": "Half Adder",
+    "explain": "Half Adder's explain text placeholder ... Half Adder's explain text placeholder ... Half Adder's explain text placeholder ... Half Adder's explain text placeholder ... Half Adder's explain text placeholder ... Half Adder's explain text placeholder ... Half Adder's explain text placeholder ... Half Adder's explain text placeholder ... ",
     "next_section": "Next Section"
   },
 

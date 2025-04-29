@@ -1,7 +1,15 @@
 <template>
   <div :class="{ 'page-transition': true, [locale]: true }">
     <RecommendAspectRatioDialog />
-    <SettingButton />
+    <SettingButton @page-debug="set_page_debug" />
+    <div :class="{ 'test-page-changer-box': true, active: page_debug }">
+      <div class="title">step1:</div>
+      <div class="input"><input type="number" v-model="steps[0]" /></div>
+      <div class="title">step2:</div>
+      <div class="input"><input type="number" v-model="steps[1]" /></div>
+      <div class="title">step3:</div>
+      <div class="input"><input type="number" v-model="steps[2]" /></div>
+    </div>
 
     <transition name="slide-to-left" appear>
       <HomePage
@@ -94,12 +102,19 @@
         @next-page="set_page({ step1: 2, step2: 3, step3: 0 })"
         style="z-index: 65"
       />
+      <HalfAdderPage
+        :key="15"
+        v-else-if="steps[0] === 2 && steps[1] === 3 && steps[2] === 1"
+        @menu-page="set_page({ step1: 1 })"
+        @next-page="set_page({ step1: 2, step2: 3, step3: 0 })"
+        style="z-index: 58"
+      />
     </transition>
   </div>
 </template>
 
 <script setup>
-import { onMounted, reactive, watch } from 'vue'
+import { onMounted, reactive, ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 
 import RecommendAspectRatioDialog from './components/RecommendAspectRatioDialog.vue'
@@ -118,10 +133,11 @@ import NorGatePage from './pages/NorGatePage.vue'
 import XorGatePage from './pages/XorGatePage.vue'
 import XnorGatePage from './pages/XnorGatePage.vue'
 import LogicGatesAdvancedSummary from './pages/LogicGatesAdvancedSummary.vue'
+import HalfAdderPage from './pages/HalfAdderPage.vue'
 
 const { locale } = useI18n()
 
-const steps = reactive([2, 2, 4])
+const steps = reactive([2, 3, 0])
 
 watch(
   () => steps,
@@ -130,6 +146,11 @@ watch(
   },
   { deep: true },
 )
+
+const page_debug = ref(false)
+const set_page_debug = () => {
+  page_debug.value = !page_debug.value
+}
 
 const set_page = (option) => {
   option.scroll_to_top ?? (option.scroll_to_top = true)
@@ -220,6 +241,54 @@ onMounted(() => {
 
   * {
     font-family: 'SarasaMonoSlab-SC';
+  }
+
+  .test-page-changer-box {
+    position: fixed;
+    display: flex;
+    top: -100px;
+    left: 50%;
+    height: 50px;
+    width: auto;
+    opacity: 0;
+    transform: translateX(-50%);
+    padding: 0.55em 1em;
+    border-radius: 0.72cqw;
+    transition: all 0.3s;
+    background-color: var(--background-color);
+    box-shadow: var(--box-shadow);
+    z-index: 99;
+
+    &.active {
+      top: 0.5em;
+      opacity: 1;
+      z-index: 99;
+    }
+
+    .title {
+      font-size: 1.44cqw;
+      line-height: 30px;
+    }
+
+    .input {
+      flex: 1;
+
+      input {
+        width: 3em;
+        font-size: 1.44cqw;
+        background-image: var(--input-background-image);
+        border: 0.1cqw solid var(--border-color);
+        border-radius: 0.75em;
+        transition: border 0.3s;
+        outline: 0;
+        padding: 0.2em 0.5em;
+        color: var(--text-color);
+      }
+
+      &:not(:last-child) {
+        margin-right: 0.5em;
+      }
+    }
   }
 
   // smallest font size
