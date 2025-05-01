@@ -4,11 +4,11 @@
       <button type="button" class="menu-button" @click="emit('menu-page')">
         <ColoredSVG :src="list_logo" :color="'var(--text-light)'" />
       </button>
-      <span class="title-content">{{ $t('logic_gates_advanced_summary.title') }}</span>
+      <span class="title-content">{{ $t('logic_gates_advanced_summary_page.title') }}</span>
     </h1>
 
     <transition name="slide-to-bottom" appear>
-      <div class="explain">{{ $t('logic_gates_advanced_summary.explain') }}</div>
+      <div class="explain">{{ $t('logic_gates_advanced_summary_page.explain') }}</div>
     </transition>
 
     <div class="handle-box">
@@ -208,7 +208,7 @@
 
     <transition name="slide-to-top" appear>
       <MainHandleButton class="next" @click="next_page">
-        {{ $t('logic_gates_advanced_summary.next_section') }}
+        {{ $t('logic_gates_advanced_summary_page.next_section') }}
       </MainHandleButton>
     </transition>
   </div>

@@ -1,5 +1,8 @@
 {
   "product_name": "Processor\u00A0Logic\u00A0Visualizer",
+  "app": {
+    "change_debug_mode": "切换调试模式"
+  },
   "word": {
     "and_gate": "与门",
     "and_gate_full_name": "与门 (AND gate)",
@@ -66,6 +69,7 @@
     },
     "menu_digital_circuits_base": {
       "title": "数字电路 - 基础部分",
+      "digital_circuit_base_intro": "数字电路 - 基本介绍",
       "half_adder": "半加器 (Half Adder)",
       "full_adder": "全加器 (Full Adder)"
     },
@@ -127,7 +131,7 @@
     "explain": "非门是指将输入状态反转后输出的门电路。当输入开关启用（为 1）时，输出不会被激活（为 0）。当输入开关没被启用（为 0）时，输出才会被激活（为 1）。其逻辑关系表示为真值表如下：",
     "next_section": "下一章节"
   },
-  "logic_gates_base_summary": {
+  "logic_gates_base_summary_page": {
     "title": "逻辑门 - 基础部分总结",
     "explain": "刚刚的三个章节中讲到的“与门”、“或门”和“非门”是逻辑电路中的基本的门电路。通过它们的组合，我们就可以构成各种复杂的逻辑电路。例如我们接下来要讲的“与非门”、“或非门”、“异或门”和“同或门”，甚至更加复杂的“触发器”以及“半加器”、“全加器”等电路，都是基于这些基本门电路的组合而成的。",
     "next_section": "下一章节"
@@ -152,9 +156,32 @@
     "explain": "同或门，又称异或非门。是指两个输入开关的状态相同时，则输出被激活（为 1）。否则两个输入开关的状态相反时，输出不会被激活（为 0）。其逻辑关系表示为真值表如下：",
     "next_section": "下一章节"
   },
-  "logic_gates_advanced_summary": {
+  "logic_gates_advanced_summary_page": {
     "title": "逻辑门 - 进阶部分总结",
     "explain": "刚刚的四个章节中讲到的“与非门”、“或非门”、“异或门”和“同或门”是逻辑电路中的进阶门电路。通过它们的组合，我们就可以构成更加复杂的逻辑电路。例如我们接下来要讲的“触发器”以及“半加器”、“全加器”等电路，都是基于这些进阶门电路的组合而成的。",
+    "next_section": "下一章节"
+  },
+  "digital_circuit_base_intro_page": {
+    "title": "数字电路 - 基本介绍",
+    "input_decimal_text_guide": "在讲解“半加器”、“全加器”之前，让我们先回顾一下我们人类是怎么进行数学加法计算的。在下方输入框中随意输入（或点击左侧的骰子来随机）两个 10 ~ 99 的数字吧：",
+    "confirm_decimals": "继续吧！",
+    "decimal_calc_step_0": "按照正常的数学计算方法，我们将左边的 {decimal_1} 加上右边的 {decimal_2}...",
+    "decimal_calc_step_1": "先将算式左边的 {decimal_1} 放在上端，右边的 {decimal_2} 放在下端，标定计算符号后画上一条结果线...",
+    "decimal_calc_step_2": "将个位数相加，得到 {units_result}...",
+    "decimal_calc_step_2_with_carry": "将个位数相加，得到 {units_result}，产生进位...",
+    "decimal_calc_step_3": "将十位数相加，得到 {tens_result}，最终得到 {result}。",
+    "decimal_calc_step_3_with_units_carry": "将十位数相加，再加上个位的进位，得到 {tens_result}，最终得到 {result}。",
+    "decimal_calc_step_3_with_tens_carry": "将十位数相加，得到 {tens_result}，产生进位，最终得到 {result}。",
+    "decimal_calc_step_3_with_units_and_tens_carry": "将十位数相加，再加上个位的进位，得到 {tens_result}，再次产生进位后得到 {result}。",
+    "decimal_calc_step_4": "但是，以上的演示是十进制的加法计算过程。再之前的章节中，我们讲过：计算机只能理解二进制数字的 0 和 1。因此，我们需要先将十进制的数字转换为二进制数字。",
+    "decimal_to_binary": "二进制与十进制之间的转换关系，实际上就是：二进制的每一位乘以对应位数的权重，然后相加就可以得到十进制数字。操作下方的开关，尝试理解一下二进制与十进制之间的转换关系吧！",
+
+    "binary_calc_step_0": "...",
+    "binary_calc_step_1": "...",
+    "step_1_prev": "上一步",
+    "step_1_next": "下一步",
+    "step_2_prev": "重试上一部分",
+    "step_2_next": "继续",
     "next_section": "下一章节"
   },
   "half_adder_page": {

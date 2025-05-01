@@ -69,6 +69,7 @@
     },
     "menu_digital_circuits_base": {
       "title": "Digital Circuits - Base Section",
+      "digital_circuit_base_intro": "Introduction to Basic Digital Circuits",
       "half_adder": "Half Adder",
       "full_adder": "Full Adder"
     },
@@ -104,7 +105,7 @@
   "claude_shannon_page": {
     "title": "A Symbolic Analysis of Relay and Switching Circuits",
     "source_tip": "This image is from Claude\u00A0Shannon's Wikipedia\u00A0page",
-    "who_am_i": "Who am i?",
+    "who_am_i": "Who am I?",
     "claude_shannon": "Claude Elwood Shannon",
     "born": "Born on {born_on}",
     "born_on": "April 30, 1916",
@@ -130,7 +131,7 @@
     "explain": "A NOT gate inverts the input signal. When the input switch is on (1), the output is inactive (0). When the input is off (0), the output becomes active (1). This logical relationship is represented by the truth table below:",
     "next_section": "Next Section"
   },
-  "logic_gates_base_summary": {
+  "logic_gates_base_summary_page": {
     "title": "Summary of Base Logic Gates",
     "explain": "The previously covered chapters introduced the AND, OR, and NOT gates, which are the fundamental building blocks of logic circuits. By combining these basic gates, we can create a wide range of more complex logic circuits. For example, the gates we’ll explore next—NAND, NOR, XOR, and XNOR—are all constructed from combinations of these basics. Even more advanced components like flip-flops, half adders, and full adders are built upon these foundational gate structures.",
     "next_section": "Next section"
@@ -155,9 +156,14 @@
     "explain": "An XNOR gate, also known as an Exclusive-NOR gate, outputs 1 when both input switches are in the same state. If the inputs are different, the output is 0. This logical relationship is represented by the truth table below:",
     "next_section": "Next Section"
   },
-  "logic_gates_advanced_summary": {
+  "logic_gates_advanced_summary_page": {
     "title": "Summary of Advanced Logic Gates",
     "explain": "The four gates we've just covered—NAND, NOR, XOR, and XNOR—are considered advanced logic gates. By combining them, we can build even more complex logic circuits. For example, the circuits we'll explore next—such as flip-flops, half adders, and full adders—are all constructed using combinations of these advanced gates.",
+    "next_section": "Next Section"
+  },
+  "digital_circuit_base_intro_page": {
+    "title": "Introduction to Basic Digital Circuits",
+    "explain": "Placeholder",
     "next_section": "Next Section"
   },
   "half_adder_page": {

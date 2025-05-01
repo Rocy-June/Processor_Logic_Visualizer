@@ -242,6 +242,7 @@ const menus = [
   {
     text: 'menu_digital_circuits_base.title',
     children: [
+      { text: 'menu_digital_circuits_base.digital_circuit_base_intro' },
       { text: 'menu_digital_circuits_base.half_adder' },
       { text: 'menu_digital_circuits_base.full_adder' },
     ],

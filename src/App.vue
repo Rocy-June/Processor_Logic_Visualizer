@@ -95,12 +95,19 @@
         @next-page="set_page({ step1: 2, step2: 2, step3: 4 })"
         style="z-index: 66"
       />
-      <LogicGatesAdvancedSummary
+      <LogicGatesAdvancedSummaryPage
         :key="13"
         v-else-if="steps[0] === 2 && steps[1] === 2 && steps[2] === 4"
         @menu-page="set_page({ step1: 1 })"
         @next-page="set_page({ step1: 2, step2: 3, step3: 0 })"
         style="z-index: 65"
+      />
+      <DigitalCircuitBaseIntroPage
+        :key="14"
+        v-else-if="steps[0] === 2 && steps[1] === 3 && steps[2] === 0"
+        @menu-page="set_page({ step1: 1 })"
+        @next-page="set_page({ step1: 2, step2: 3, step3: 1 })"
+        style="z-index: 59"
       />
       <HalfAdderPage
         :key="15"
@@ -127,12 +134,13 @@ import ClaudeShannonPage from './pages/ClaudeShannonPage.vue'
 import AndGatePage from './pages/AndGatePage.vue'
 import OrGatePage from './pages/OrGatePage.vue'
 import NotGatePage from './pages/NotGatePage.vue'
-import LogicGatesBaseSummary from './pages/LogicGatesBaseSummary.vue'
+import LogicGatesBaseSummary from './pages/LogicGatesBaseSummaryPage.vue'
 import NandGatePage from './pages/NandGatePage.vue'
 import NorGatePage from './pages/NorGatePage.vue'
 import XorGatePage from './pages/XorGatePage.vue'
 import XnorGatePage from './pages/XnorGatePage.vue'
-import LogicGatesAdvancedSummary from './pages/LogicGatesAdvancedSummary.vue'
+import LogicGatesAdvancedSummaryPage from './pages/LogicGatesAdvancedSummaryPage.vue'
+import DigitalCircuitBaseIntroPage from './pages/DigitalCircuitBaseIntroPage.vue'
 import HalfAdderPage from './pages/HalfAdderPage.vue'
 
 const { locale } = useI18n()

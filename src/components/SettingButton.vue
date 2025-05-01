@@ -51,8 +51,8 @@ import DropList from './DropList.vue'
 import DropListOption from './DropListOption.vue'
 
 import gear_logo from '@/assets/gear.svg'
-import translate_logo from '@/assets/translate_logo.svg'
-import debug_logo from '@/assets/debug_logo.svg'
+import translate_logo from '@/assets/translate.svg'
+import debug_logo from '@/assets/debug.svg'
 
 import languages from '@/i18n/languages.json'
 
